@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2017/10/29/Simple-Data-Select/</loc>
+    
+    <lastmod>2017-10-29T15:08:57.583Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/10/26/markdown-course/</loc>
+    
+    <lastmod>2017-10-29T14:45:57.108Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>/2017/10/28/HBuilder-svn-plugin/</loc>
     
     <lastmod>2017-10-28T15:08:02.302Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>/2017/10/26/yaml-course/</loc>
     
     <lastmod>2017-10-26T15:58:05.995Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/10/26/markdown-course/</loc>
-    
-    <lastmod>2017-10-26T15:12:39.709Z</lastmod>
     
   </url>
   

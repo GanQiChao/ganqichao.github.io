@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="GanQiChao&#39;s Blog">
 <meta property="og:description" content="Markdown 的目标是实现「易读易写」。 Markdown 语法的目标是：成为一种适用于网络的书写语言。  Markdown 是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。 Markdown 的语法简洁明了、学习容易，而且功能比纯文本更强。 标题123456H1 :# Header 1H2 :## Header 2H3 :### Heade">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-26T15:12:39.709Z">
+<meta property="og:updated_time" content="2017-10-29T14:45:57.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown 语言学习">
 <meta name="twitter:description" content="Markdown 的目标是实现「易读易写」。 Markdown 语法的目标是：成为一种适用于网络的书写语言。  Markdown 是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。 Markdown 的语法简洁明了、学习容易，而且功能比纯文本更强。 标题123456H1 :# Header 1H2 :## Header 2H3 :### Heade">
@@ -74,7 +74,7 @@
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/collect/">collect</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/script/">script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/system/">system</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tool/">tool</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/collect/">collect</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/script/">script</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/system/">system</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tool/">tool</a></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -222,6 +222,33 @@
 <p>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 &lt;p&gt; 标签包起来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*   Bird</div><div class="line"></div><div class="line">*   Magic</div></pre></td></tr></table></figure></p>
 <p>当然，项目列表很可能会不小心产生，像是下面这样的写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1986. What a great season.</div></pre></td></tr></table></figure></p>
 <p>换句话说，也就是在行首出现数字-句点-空白，要避免这样的状况，你可以在句点前面加上反斜杠。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1986\. What a great season.</div></pre></td></tr></table></figure></p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">| Tables        | Col           | Type  |</div><div class="line">| ------------- |:-------------:| -----:|</div><div class="line">| SA_User       |     Type      |   int |</div><div class="line">| SA_Role       |   RoleName    |  char |</div><div class="line">| SA_UserRole   |    UserId     |     1 |</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th style="text-align:center">Col</th>
+<th style="text-align:right">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SA_User</td>
+<td style="text-align:center">Type</td>
+<td style="text-align:right">int</td>
+</tr>
+<tr>
+<td>SA_Role</td>
+<td style="text-align:center">RoleName</td>
+<td style="text-align:right">char</td>
+</tr>
+<tr>
+<td>SA_UserRole</td>
+<td style="text-align:center">UserId</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
 <h3 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">一般网址的链接文字就和链接地址一样</div><div class="line">&lt;http://example.com/&gt;</div></pre></td></tr></table></figure>
 <h3 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h3><p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 &lt;em&gt; 标签），可以在星号的前面加上反斜杠：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\*literal asterisks\*</div></pre></td></tr></table></figure></p>
 <p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">\   反斜线</div><div class="line">`   反引号</div><div class="line">*   星号</div><div class="line">_   底线</div><div class="line">&#123;&#125;  花括号</div><div class="line">[]  方括号</div><div class="line">()  括弧</div><div class="line">#   井字号</div><div class="line">+   加号</div><div class="line">-   减号</div><div class="line">.   英文句点</div><div class="line">!   惊叹号</div></pre></td></tr></table></figure></p>
@@ -232,7 +259,7 @@
 
 
 
-    <a data-url="/2017/10/26/markdown-course/" data-id="cj9bgoem2000mlgvuomx2kyem" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="/2017/10/26/markdown-course/" data-id="cj9cw70ts000mzgvuiq75dhb4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -395,6 +422,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/10/29/Simple-Data-Select/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/database/">database</a></p>
+                            <p class="item-title"><a href="/2017/10/29/Simple-Data-Select/" class="title">Simple.Data 介绍、检索数据（1）</a></p>
+                            <p class="item-date"><time datetime="2017-10-29T13:57:14.000Z" itemprop="datePublished">2017-10-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/10/28/HBuilder-svn-plugin/" class="thumbnail">
     
     
@@ -472,26 +519,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/10/26/yaml-course/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/script/">script</a></p>
-                            <p class="item-title"><a href="/2017/10/26/yaml-course/" class="title">YMAL 语言学习</a></p>
-                            <p class="item-date"><time datetime="2017-10-26T14:17:21.000Z" itemprop="datePublished">2017-10-26</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -501,7 +528,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/collect/">collect</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/script/">script</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/system/">system</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/collect/">collect</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/script/">script</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/system/">system</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -511,7 +538,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">10</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">11</span></li></ul>
         </div>
     </div>
 
@@ -521,7 +548,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collect/">collect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/install/">install</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/">license</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md/">md</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/theme/">theme</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ymal/">ymal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Simple-Data/">Simple.Data</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collect/">collect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/install/">install</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/">license</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md/">md</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/theme/">theme</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ymal/">ymal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -531,7 +558,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/md/" style="font-size: 10px;">md</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/theme/" style="font-size: 13.33px;">theme</a> <a href="/tags/ymal/" style="font-size: 10px;">ymal</a> <a href="/tags/前端/" style="font-size: 16.67px;">前端</a>
+            <a href="/tags/Simple-Data/" style="font-size: 10px;">Simple.Data</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/md/" style="font-size: 10px;">md</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/theme/" style="font-size: 13.33px;">theme</a> <a href="/tags/ymal/" style="font-size: 10px;">ymal</a> <a href="/tags/前端/" style="font-size: 16.67px;">前端</a>
         </div>
     </div>
 
