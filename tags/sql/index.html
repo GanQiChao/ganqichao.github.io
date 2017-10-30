@@ -3,24 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Simple.Data 介绍、检索数据（1） | GanQiChao&#39;s Blog</title>
+    <title>标签：: sql | GanQiChao&#39;s Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Simple.Data" />
-    
-    <meta name="description" content="接触 ORM 至今为止，从最初的 NHibernate、Castle、EF 相对强大的类库，到现在使用的“很黄很暴力”的 Simple.Data，已经有10年的时间。而 ORM 之前基本都是写一句 SQL 语句查询返回 DataSet（.NET），后来在此基础上增加数据访问层 Dao 来封装，再进一步返回业务对象。现在感触最深的还是回归到可控性最强的 SQL 但无法避免返回 DataSet 问题（">
-<meta name="keywords" content="Simple.Data">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Simple.Data 介绍、检索数据（1）">
-<meta property="og:url" content="/2017/10/29/Simple-Data-Select/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="GanQiChao&#39;s Blog">
+<meta property="og:url" content="/tags/sql/index.html">
 <meta property="og:site_name" content="GanQiChao&#39;s Blog">
-<meta property="og:description" content="接触 ORM 至今为止，从最初的 NHibernate、Castle、EF 相对强大的类库，到现在使用的“很黄很暴力”的 Simple.Data，已经有10年的时间。而 ORM 之前基本都是写一句 SQL 语句查询返回 DataSet（.NET），后来在此基础上增加数据访问层 Dao 来封装，再进一步返回业务对象。现在感触最深的还是回归到可控性最强的 SQL 但无法避免返回 DataSet 问题（">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-30T13:39:49.785Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Simple.Data 介绍、检索数据（1）">
-<meta name="twitter:description" content="接触 ORM 至今为止，从最初的 NHibernate、Castle、EF 相对强大的类库，到现在使用的“很黄很暴力”的 Simple.Data，已经有10年的时间。而 ORM 之前基本都是写一句 SQL 语句查询返回 DataSet（.NET），后来在此基础上增加数据访问层 Dao 来封装，再进一步返回业务对象。现在感触最深的还是回归到可控性最强的 SQL 但无法避免返回 DataSet 问题（">
+<meta name="twitter:title" content="GanQiChao&#39;s Blog">
     
 
     
@@ -129,248 +122,71 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/database/">database</a>
+    <i class="icon fa fa-tag"></i>标签：: <em>sql</em>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-Simple-Data-Select" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2017/10/30/sql-date-function/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/database/">database</a>
+            </div>
+            <div class="date"><time datetime="2017-10-30T13:40:40.000Z" itemprop="datePublished">2017-10-30</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        Simple.Data 介绍、检索数据（1）
+        <a href="/2017/10/30/sql-date-function/">sql 日期时间函数</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2017/10/29/Simple-Data-Select/" class="article-date">
-            <time datetime="2017-10-29T13:57:14.000Z" itemprop="datePublished">2017-10-29</time>
-        </a>
-    </div>
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Simple-Data/">Simple.Data</a>
-    </div>
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <p>接触 ORM 至今为止，从最初的 NHibernate、Castle、EF 相对强大的类库，到现在使用的“很黄很暴力”的 Simple.Data，已经有10年的时间。<br>而 ORM 之前基本都是写一句 SQL 语句查询返回 DataSet（.NET），后来在此基础上增加数据访问层 Dao 来封装，再进一步返回业务对象。<br>现在感触最深的还是回归到可控性最强的 SQL 但无法避免返回 DataSet 问题（虽然可以用 Reader解决），而 Simple.Data 可以牺牲一定可控性的基础上换取便利的对象操作。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li>要求 .NET 4.0 或以上</li>
-<li>使用 nuget 搜索 simple.data.core（核心库）</li>
-<li>根据数据库引擎需要，在主项目使用 nuget 搜索 simple.data.sqldata（mysql/oracle），安装过程同时自动安装 simple.data.adoadapter</li>
-</ol>
-<h2 id="检索数据-retrieve-data"><a href="#检索数据-retrieve-data" class="headerlink" title="检索数据 - retrieve data"></a>检索数据 - retrieve data</h2><p>标准类型 SimpleExpression(SE)，返回 SimpleQuery(SQ) 可以通过迭代 SimpleRecord(SR) 集合获取结果数据对象，此对象为 dynamic 类型，可使用强类型转换为期望类型或 IDictionary<string, object="">。</string,></p>
-<p>dynamic 类型优点在于允许直接访问属性（列名） result.ColumnName，也可以通过索引访问 result[“ColumnName”]（记得可以的，若不行则需要强类型转换 IDictionar<string, object="">。</string,></p>
-<p>若数据存在外键，还允许在 SE 通过外键表名称直接写条件，如 table.Topic.Title.Like(“%我的心得%”)，避免繁琐的 Join On。</p>
-<h2 id="当然，据目前使用过程还发现一些-Bug"><a href="#当然，据目前使用过程还发现一些-Bug" class="headerlink" title="当然，据目前使用过程还发现一些 Bug"></a>当然，据目前使用过程还发现一些 Bug</h2><ul>
-<li>存在两个或以上的外键指向同一张表，SE 只建立最后一个外键（字段顺序也可能是外键顺序，但不确认），建议出现此类情况还是使用 JOIN ON 来解决</li>
-<li>ToFirstOrDefault 导致从表仅返回第一条数据，建议使用 Find 或延迟加载从表数据</li>
-<li>Skip 且没有 Where 引起分页条件位置不正确，导致数据分页查询返回结果不正确，建议增加默认条件</li>
-<li>WithTotalCount 返回属性含有集合对象Bug，原因未明，建议尽量不要返回集合数据对象，改用 Select 优化，如无法避免则建议使用 dynamic 延迟加载集合对象。</li>
-</ul>
-<h2 id="Simple-Data-主要常用类型有"><a href="#Simple-Data-主要常用类型有" class="headerlink" title="Simple.Data 主要常用类型有"></a>Simple.Data 主要常用类型有</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>缩写</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DynamicStrategy</td>
-<td>DS</td>
-<td>数据库</td>
-</tr>
-<tr>
-<td>DynamicTable</td>
-<td>DT</td>
-<td>数据表</td>
-</tr>
-<tr>
-<td>SimpleQuery</td>
-<td>SQ</td>
-<td>查询</td>
-</tr>
-<tr>
-<td>SimpleExpression</td>
-<td>SE</td>
-<td>条件表达式</td>
-</tr>
-<tr>
-<td>SimpleRecord</td>
-<td>SR</td>
-<td>记录</td>
-</tr>
-<tr>
-<td>SimpleList</td>
-<td>SL</td>
-<td>记录列表</td>
-</tr>
-<tr>
-<td>ObjectReference</td>
-<td>OR</td>
-<td>对象引用，DS.DT、DT.Field 都可转换为此对象</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:center">参数</th>
-<th style="text-align:center">返回</th>
-<th style="text-align:center">说明 </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">All</td>
-<td style="text-align:center">SE</td>
-<td style="text-align:center">SQ</td>
-<td style="text-align:center">返回表所有数据</td>
-</tr>
-<tr>
-<td style="text-align:left">FindAll</td>
-<td style="text-align:center">SE</td>
-<td style="text-align:center">SQ</td>
-<td style="text-align:center">通过标准返回表数据</td>
-</tr>
-<tr>
-<td style="text-align:left">FindAllBy</td>
-<td style="text-align:center">OR[]</td>
-<td style="text-align:center">SQ</td>
-<td style="text-align:center">通过列名和值返回表数据</td>
-</tr>
-<tr>
-<td style="text-align:left">Find</td>
-<td style="text-align:center">SE</td>
-<td style="text-align:center">SR</td>
-<td style="text-align:center">通过标准返回一条表数据，若查询到多条只返回第一条</td>
-</tr>
-<tr>
-<td style="text-align:left">Get</td>
-<td style="text-align:center">object[]</td>
-<td style="text-align:center">SR</td>
-<td style="text-align:center">通过主键返回一条表数据</td>
-</tr>
-<tr>
-<td style="text-align:left">GetCount</td>
-<td style="text-align:center">SE</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">通过标准返回表数据数量</td>
-</tr>
-<tr>
-<td style="text-align:left">GetCountBy</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">通过列名和值返回表数据数量</td>
-</tr>
-<tr>
-<td style="text-align:left">Exists/Any</td>
-<td style="text-align:center">SE</td>
-<td style="text-align:center">bool</td>
-<td style="text-align:center">通过标准返回是否存在表数据</td>
-</tr>
-<tr>
-<td style="text-align:left">ExistsBy/AnyBy</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">bool</td>
-<td style="text-align:center">通过列名和值返回是否存在表数据数量</td>
-</tr>
-</tbody>
-</table>
-<h3 id="其他注意问题"><a href="#其他注意问题" class="headerlink" title="其他注意问题"></a>其他注意问题</h3><ul>
-<li>Query、QueryBy：已过时，请使用 All、FindAllBy</li>
-<li>FindBy：已过时，请使用 FindAllBy.FirstOrDefault() 或 Get</li>
-<li>SimpleQuery：可以使用迭代或 ToList、ToFirstOrDefault、ToScalar 等 Linq 相似的方法或数据对象</li>
-</ul>
-
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="/2017/10/29/Simple-Data-Select/" data-id="cj9e8zj7m0005hgvuwbb4fmwm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+        <p class="article-excerpt">
+            datediff功能： 返回两个日期之间的间隔语法： datediff ( date-path, date-expression-1, date-expression-2 )date-part： year | quarter | month | week | day | hour | minute | second | milliseconddate-part 2： yy/yyyy | qq/q 
+        </p>
     </div>
 </article>
-
-    <section id="comments">
     
-    </section>
+        </div>
+    
+
+
+    </div></section>
+
 
 
                         </div>
@@ -431,29 +247,6 @@
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2017/10/30/Simple-Data-Select-2/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            Simple.Data 检索数据（2）
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2017/10/28/HBuilder-svn-plugin/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">HBuilder svn 插件安装</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         

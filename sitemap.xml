@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2017/10/30/sql-date-function/</loc>
+    
+    <lastmod>2017-10-30T13:55:47.082Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>/2017/10/29/Simple-Data-Select/</loc>
     
-    <lastmod>2017-10-29T15:08:57.583Z</lastmod>
+    <lastmod>2017-10-30T13:39:49.785Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/10/30/Simple-Data-Select-2/</loc>
+    
+    <lastmod>2017-10-30T13:39:36.377Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/10/27/javascript-inherit-collect/</loc>
+    
+    <lastmod>2017-10-30T12:14:01.065Z</lastmod>
     
   </url>
   
@@ -19,13 +40,6 @@
     <loc>/2017/10/28/HBuilder-svn-plugin/</loc>
     
     <lastmod>2017-10-28T15:08:02.302Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/10/27/javascript-inherit-collect/</loc>
-    
-    <lastmod>2017-10-28T14:57:03.774Z</lastmod>
     
   </url>
   

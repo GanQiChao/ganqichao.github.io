@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="GanQiChao&#39;s Blog">
 <meta property="og:description" content="定义父类12345678910111213// 定义一个动物类function Animal (name) &amp;#123;  // 属性  this.name = name || &amp;apos;Animal&amp;apos;;  // 实例方法  this.sleep = function()&amp;#123;    console.log(this.name + &amp;apos; 正在睡觉！&amp;apos;);  &amp;#">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-28T14:57:03.774Z">
+<meta property="og:updated_time" content="2017-10-30T12:14:01.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript 继承收集">
 <meta name="twitter:description" content="定义父类12345678910111213// 定义一个动物类function Animal (name) &amp;#123;  // 属性  this.name = name || &amp;apos;Animal&amp;apos;;  // 实例方法  this.sleep = function()&amp;#123;    console.log(this.name + &amp;apos; 正在睡觉！&amp;apos;);  &amp;#">
@@ -166,7 +166,9 @@
         
         <div class="article-entry" itemprop="articleBody">
             <h3 id="定义父类"><a href="#定义父类" class="headerlink" title="定义父类"></a>定义父类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 定义一个动物类</div><div class="line">function Animal (name) &#123;</div><div class="line">  // 属性</div><div class="line">  this.name = name || &apos;Animal&apos;;</div><div class="line">  // 实例方法</div><div class="line">  this.sleep = function()&#123;</div><div class="line">    console.log(this.name + &apos; 正在睡觉！&apos;);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line">// 原型方法</div><div class="line">Animal.prototype.eat = function(food) &#123;</div><div class="line">  console.log(this.name + &apos; 正在吃：&apos; + food);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="推荐继承"><a href="#推荐继承" class="headerlink" title="推荐继承"></a>推荐继承</h3><p>直接贴代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">// 继承</div><div class="line">function inherit(superConstructor, subConstructor) &#123;</div><div class="line">  var proto = beget(superConstructor.prototype); // 核心</div><div class="line">  proto.constructor = subConstructor;            // 修改构造函数</div><div class="line">  subConstructor.prototype = proto;              // 修改原型链，将实例作为子类的原型</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function beget(obj) &#123;</div><div class="line">  var F = function () &#123;&#125;;</div><div class="line">  F.prototype = obj;</div><div class="line">  return new F();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Cat(name) &#123;</div><div class="line">  Animal.call(this, name);  // 调用父类构造函数，创建属性和实例方法</div><div class="line">  this.base = this.__proto__.__proto__;</div><div class="line">&#125;</div><div class="line"></div><div class="line">inherit(Animal, Cat);</div><div class="line"></div><div class="line">Cat.prototype.eat = function(food, fav)&#123;</div><div class="line">  if (fav) &#123;</div><div class="line">    console.log(this.name + &apos; 最喜欢的食物是：&apos; + food);</div><div class="line">  &#125; else &#123;</div><div class="line">    this.base.eat.call(this, food);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var cat = new Cat(&apos;Tom cat&apos;);</div><div class="line">cat.eat(&apos;fish&apos;, true); // cat 最喜欢的食物是：fish</div><div class="line">cat.eat(&apos;fish&apos;); // cat 正在吃：fish</div><div class="line">console.log(typeof cat.sleep === &apos;function&apos;); // true, 实例方法无法继承</div></pre></td></tr></table></figure></p>
+<h3 id="推荐继承"><a href="#推荐继承" class="headerlink" title="推荐继承"></a><strong>推荐继承</strong></h3><p>直接贴代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">// 继承</div><div class="line">function inherit(superConstructor, subConstructor) &#123;</div><div class="line">  var proto = beget(superConstructor.prototype); // 核心</div><div class="line">  proto.constructor = subConstructor;            // 修改构造函数</div><div class="line">  subConstructor.prototype = proto;              // 修改原型链，将实例作为子类的原型</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function beget(obj) &#123;</div><div class="line">  var F = function () &#123;&#125;;</div><div class="line">  F.prototype = obj;</div><div class="line">  return new F();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Cat(name) &#123;</div><div class="line">  Animal.call(this, name);                // 调用父类构造函数，创建属性和实例方法</div><div class="line">  this.base = this.__proto__.__proto__;   // 定义基类对象</div><div class="line">  this.color = &apos;white&apos;;</div><div class="line">  // 重载实例方法，也可以使用原型方法重载</div><div class="line">  this.sleep = function(fav) &#123;</div><div class="line">    if (fav) &#123;</div><div class="line">      console.log(this.name + &apos; 最喜欢在&apos; + fav + &apos;睡觉&apos;);</div><div class="line">    &#125; else &#123;</div><div class="line">      this.base.sleep.call(this);         // 注意这里是调用基类方法，使用 call 改变调用对象</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">inherit(Animal, Cat);  // Cat 继承 Animal</div><div class="line"></div><div class="line">// 重载原型方法，必须在继承后</div><div class="line">Cat.prototype.eat = function(food, fav)&#123;</div><div class="line">  if (fav) &#123;</div><div class="line">    console.log(this.name + &apos; 最喜欢的食物是：&apos; + food);</div><div class="line">  &#125; else &#123;</div><div class="line">    this.base.eat.call(this, food);        // 调用基类方法，使用 call 或 apply</div><div class="line">    // this.base.eat.apply(this, arguments);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var cat = new Cat(&apos;Tom cat&apos;);</div><div class="line">cat.eat(&apos;fish&apos;, true); // cat 最喜欢的食物是：fish</div><div class="line">cat.eat(&apos;fish&apos;); // cat 正在吃：fish</div><div class="line">console.log(typeof cat.sleep === &apos;function&apos;); // true, 实例方法无法继承</div></pre></td></tr></table></figure></p>
+<p>继承可使用上述代码实现，如需详细了解其他方式可见下文。</p>
+<p>========== 分界线 ===========</p>
 <h3 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h3><p><strong>核心</strong>： 将父类的实例作为子类的原型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Cat()&#123; </div><div class="line">&#125;</div><div class="line">Cat.prototype = new Animal();</div><div class="line">Cat.prototype.name = &apos;cat&apos;;</div><div class="line"></div><div class="line">//　Test Code</div><div class="line">var cat = new Cat();</div><div class="line">console.log(cat.name);</div><div class="line">console.log(cat.eat(&apos;fish&apos;));</div><div class="line">console.log(cat.sleep());</div><div class="line">console.log(cat instanceof Animal); // true </div><div class="line">console.log(cat instanceof Cat); // true</div></pre></td></tr></table></figure></p>
 <p>问题：</p>
 <ul>
@@ -207,7 +209,7 @@
 
 
 
-    <a data-url="/2017/10/27/javascript-inherit-collect/" data-id="cj9cw70tc000hzgvuauh681ms" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="/2017/10/27/javascript-inherit-collect/" data-id="cj9e8zj82000hhgvuxlsifbc9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -370,6 +372,46 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/10/30/sql-date-function/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/database/">database</a></p>
+                            <p class="item-title"><a href="/2017/10/30/sql-date-function/" class="title">sql 日期时间函数</a></p>
+                            <p class="item-date"><time datetime="2017-10-30T13:40:40.000Z" itemprop="datePublished">2017-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/30/Simple-Data-Select-2/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/database/">database</a></p>
+                            <p class="item-title"><a href="/2017/10/30/Simple-Data-Select-2/" class="title">Simple.Data 检索数据（2）</a></p>
+                            <p class="item-date"><time datetime="2017-10-30T12:15:19.000Z" itemprop="datePublished">2017-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/10/29/Simple-Data-Select/" class="thumbnail">
     
     
@@ -427,46 +469,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/10/27/grunt-jshint-options/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/script/">script</a></p>
-                            <p class="item-title"><a href="/2017/10/27/grunt-jshint-options/" class="title">Grunt jshint 配置</a></p>
-                            <p class="item-date"><time datetime="2017-10-27T04:45:52.000Z" itemprop="datePublished">2017-10-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/10/26/markdown-course/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/script/">script</a></p>
-                            <p class="item-title"><a href="/2017/10/26/markdown-course/" class="title">Markdown 语言学习</a></p>
-                            <p class="item-date"><time datetime="2017-10-26T14:17:29.000Z" itemprop="datePublished">2017-10-26</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -476,7 +478,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/collect/">collect</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/script/">script</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/system/">system</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/collect/">collect</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/script/">script</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/system/">system</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -486,7 +488,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">11</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -496,7 +498,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Simple-Data/">Simple.Data</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collect/">collect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/install/">install</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/">license</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md/">md</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/theme/">theme</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ymal/">ymal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Simple-Data/">Simple.Data</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collect/">collect</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/install/">install</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/license/">license</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md/">md</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/theme/">theme</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ymal/">ymal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -506,7 +508,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Simple-Data/" style="font-size: 10px;">Simple.Data</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/collect/" style="font-size: 10px;">collect</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/md/" style="font-size: 10px;">md</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/theme/" style="font-size: 13.33px;">theme</a> <a href="/tags/ymal/" style="font-size: 10px;">ymal</a> <a href="/tags/前端/" style="font-size: 16.67px;">前端</a>
+            <a href="/tags/Simple-Data/" style="font-size: 13.33px;">Simple.Data</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/collect/" style="font-size: 13.33px;">collect</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/license/" style="font-size: 10px;">license</a> <a href="/tags/md/" style="font-size: 10px;">md</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/theme/" style="font-size: 13.33px;">theme</a> <a href="/tags/ymal/" style="font-size: 10px;">ymal</a> <a href="/tags/前端/" style="font-size: 16.67px;">前端</a>
         </div>
     </div>
 
