@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>sdp 页面编码 | GanQiChao&#39;s Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="project" />
+    
+    <meta name="description" content="sdp 索引导航 前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。    项目 描述     标题 分类（可选，如APP/WEB-）+界面名称（与原型设计界面一样）   名称 访问路由路径   页面 页面文件放置路径   原型 选择对应的原型设计   附件 上传相关文件   描述 详细叙述页面具体元素、操作、系统响应，便于指导后续测试及系统操作手册编写   接口 页面使用到的接口，通">
+<meta name="keywords" content="project">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sdp 页面编码">
+<meta property="og:url" content="/2017/11/06/sdp-page/index.html">
+<meta property="og:site_name" content="GanQiChao&#39;s Blog">
+<meta property="og:description" content="sdp 索引导航 前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。    项目 描述     标题 分类（可选，如APP/WEB-）+界面名称（与原型设计界面一样）   名称 访问路由路径   页面 页面文件放置路径   原型 选择对应的原型设计   附件 上传相关文件   描述 详细叙述页面具体元素、操作、系统响应，便于指导后续测试及系统操作手册编写   接口 页面使用到的接口，通">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-06T14:45:56.049Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sdp 页面编码">
+<meta name="twitter:description" content="sdp 索引导航 前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。    项目 描述     标题 分类（可选，如APP/WEB-）+界面名称（与原型设计界面一样）   名称 访问路由路径   页面 页面文件放置路径   原型 选择对应的原型设计   附件 上传相关文件   描述 详细叙述页面具体元素、操作、系统响应，便于指导后续测试及系统操作手册编写   接口 页面使用到的接口，通">
+    
+
+    
+        <link rel="alternate" href="/" title="GanQiChao&#39;s Blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">GanQiChao&#39;s Blog - Tec &amp; Collect</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/database/">database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/license/">license</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/sdp/">sdp</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tool/">tool</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/前端/">前端</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/sdp/">sdp</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-sdp-page" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        sdp 页面编码
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/11/06/sdp-page/" class="article-date">
+            <time datetime="2017-11-06T03:11:17.000Z" itemprop="datePublished">2017-11-06</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/project/">project</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><a href="../sdp-index/index.html">sdp 索引导航</a></p>
+<p>前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标题</td>
+<td>分类（可选，如APP/WEB-）+界面名称（与原型设计界面一样）</td>
+</tr>
+<tr>
+<td>名称</td>
+<td>访问路由路径</td>
+</tr>
+<tr>
+<td>页面</td>
+<td>页面文件放置路径</td>
+</tr>
+<tr>
+<td>原型</td>
+<td>选择对应的原型设计</td>
+</tr>
+<tr>
+<td>附件</td>
+<td>上传相关文件</td>
+</tr>
+<tr>
+<td>描述</td>
+<td>详细叙述页面具体元素、操作、系统响应，<br>便于指导后续测试及系统操作手册编写</td>
+</tr>
+<tr>
+<td>接口</td>
+<td>页面使用到的接口，通过右边菜单选择<br>对应的接口，与引用的使用一样。</td>
+</tr>
+<tr>
+<td>引用</td>
+<td>弱关系</td>
+</tr>
+</tbody>
+</table>
+<p><strong>弱关系</strong></p>
+<ol>
+<li>若A被页面编码引用，则表示A的上文；格式为“（上文）【入口】+ 标题”</li>
+<li>若A与页面编码存在关系，则表示A的下文；格式为“（下文）【出口】+ 标题”</li>
+</ol>
+<p><strong><em>A提示和B提示说明应在原型设计加以说明。</em></strong></p>
+<blockquote>
+<p>示例</p>
+<ul>
+<li>标题：WEB-登录页面</li>
+<li>名称：/Login</li>
+<li>页面：Views/Login/Login.html</li>
+<li>原型：WEB-登录页面</li>
+<li>附件：无</li>
+<li>描述：填写登录信息登陆账号、登陆密码，点击【登陆】按钮<ol>
+<li>若登陆信息验证通过，则提交系统；    <ul>
+<li>若登陆信息正确，则页面转向系统首页；</li>
+<li>若登陆信息有误，则B提示错误信息：<ol>
+<li>【登陆账号不存在】</li>
+<li>【该账号已被停用，请与管理员联系】</li>
+<li>【登陆密码错误】</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>若登陆信息验证不通过，则A提示验证信息：<ul>
+<li>【登陆账号不能为空】</li>
+<li>【登陆密码不能为空】</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>引用：<ol>
+<li>（下文）【出口】WEB-系统首页</li>
+</ol>
+</li>
+<li>接口：如下表</li>
+</ul>
+</blockquote>
+<p><strong>接口</strong></p>
+<table>
+<thead>
+<tr>
+<th>通讯接口</th>
+<th>子模块</th>
+<th>系统模块</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>登录</td>
+<td>登录管理</td>
+<td>系统安全</td>
+</tr>
+</tbody>
+</table>
+<p><a href="../sdp-index/index.html">sdp 索引导航</a></p>
+
+        </div>
+        <footer class="article-footer">
+            <!---->
+            
+<nav id="article-nav-footer">
+    
+    <a href="/2017/11/06/sdp-communication-scene/" style="float: left">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">sdp 通讯场景</p>
+    </a>
+    
+    
+    <a href="/2017/11/06/sdp-exception-record/" style="float: right">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            sdp 异常登记
+        
+        </p>
+    </a>
+    
+</nav>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/11/06/sdp-exception-record/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            sdp 异常登记
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/11/06/sdp-communication-scene/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">sdp 通讯场景</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/06/sdp-exception-record/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sdp/">sdp</a></p>
+                            <p class="item-title"><a href="/2017/11/06/sdp-exception-record/" class="title">sdp 异常登记</a></p>
+                            <p class="item-date"><time datetime="2017-11-06T03:11:30.000Z" itemprop="datePublished">2017-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/06/sdp-page/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sdp/">sdp</a></p>
+                            <p class="item-title"><a href="/2017/11/06/sdp-page/" class="title">sdp 页面编码</a></p>
+                            <p class="item-date"><time datetime="2017-11-06T03:11:17.000Z" itemprop="datePublished">2017-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/06/sdp-communication-scene/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sdp/">sdp</a></p>
+                            <p class="item-title"><a href="/2017/11/06/sdp-communication-scene/" class="title">sdp 通讯场景</a></p>
+                            <p class="item-date"><time datetime="2017-11-06T03:11:00.000Z" itemprop="datePublished">2017-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/06/sdp-communication-interface/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sdp/">sdp</a></p>
+                            <p class="item-title"><a href="/2017/11/06/sdp-communication-interface/" class="title">sdp 通讯接口</a></p>
+                            <p class="item-date"><time datetime="2017-11-06T03:10:49.000Z" itemprop="datePublished">2017-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/11/06/sdp-datatable/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/sdp/">sdp</a></p>
+                            <p class="item-title"><a href="/2017/11/06/sdp-datatable/" class="title">sdp 数据库表</a></p>
+                            <p class="item-date"><time datetime="2017-11-06T03:10:30.000Z" itemprop="datePublished">2017-11-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/license/">license</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/sdp/">sdp</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">14</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Simple-Data/">Simple.Data</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/collect/">collect</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grunt/">grunt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/install/">install</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/md/">md</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/project/">project</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/script/">script</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/theme/">theme</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ymal/">ymal</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Simple-Data/" style="font-size: 16px;">Simple.Data</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/collect/" style="font-size: 14px;">collect</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/hexo/" style="font-size: 16px;">hexo</a> <a href="/tags/install/" style="font-size: 10px;">install</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/md/" style="font-size: 12px;">md</a> <a href="/tags/mobile/" style="font-size: 10px;">mobile</a> <a href="/tags/plugin/" style="font-size: 12px;">plugin</a> <a href="/tags/project/" style="font-size: 20px;">project</a> <a href="/tags/script/" style="font-size: 18px;">script</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/theme/" style="font-size: 12px;">theme</a> <a href="/tags/ymal/" style="font-size: 10px;">ymal</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 GanQiChao</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

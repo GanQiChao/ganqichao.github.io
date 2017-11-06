@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2017-11-05T15:28:22.426Z</updated>
+  <updated>2017-11-06T12:27:39.163Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,375 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>sdp 异常登记</title>
+    <link href="/2017/11/06/sdp-exception-record/"/>
+    <id>/2017/11/06/sdp-exception-record/</id>
+    <published>2017-11-06T03:11:30.000Z</published>
+    <updated>2017-11-06T12:27:39.163Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 页面编码</title>
+    <link href="/2017/11/06/sdp-page/"/>
+    <id>/2017/11/06/sdp-page/</id>
+    <published>2017-11-06T03:11:17.000Z</published>
+    <updated>2017-11-06T14:45:56.049Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>分类（可选，如APP/WEB-）+界面名称（与原型设计界面一样）</td></tr><tr><td>名称</td><td>访问路由路径</td></tr><tr><td>页面</td><td>页面文件放置路径</td></tr><tr><td>原型</td><td>选择对应的原型设计</td></tr><tr><td>附件</td><td>上传相关文件</td></tr><tr><td>描述</td><td>详细叙述页面具体元素、操作、系统响应，<br>便于指导后续测试及系统操作手册编写</td></tr><tr><td>接口</td><td>页面使用到的接口，通过右边菜单选择<br>对应的接口，与引用的使用一样。</td></tr><tr><td>引用</td><td>弱关系</td></tr></tbody></table><p><strong>弱关系</strong></p><ol><li>若A被页面编码引用，则表示A的上文；格式为“（上文）【入口】+ 标题”</li><li>若A与页面编码存在关系，则表示A的下文；格式为“（下文）【出口】+ 标题”</li></ol><p><strong><em>A提示和B提示说明应在原型设计加以说明。</em></strong></p><blockquote><p>示例</p><ul><li>标题：WEB-登录页面</li><li>名称：/Login</li><li>页面：Views/Login/Login.html</li><li>原型：WEB-登录页面</li><li>附件：无</li><li>描述：填写登录信息登陆账号、登陆密码，点击【登陆】按钮<ol><li>若登陆信息验证通过，则提交系统；    <ul><li>若登陆信息正确，则页面转向系统首页；</li><li>若登陆信息有误，则B提示错误信息：<ol><li>【登陆账号不存在】</li><li>【该账号已被停用，请与管理员联系】</li><li>【登陆密码错误】</li></ol></li></ul></li><li>若登陆信息验证不通过，则A提示验证信息：<ul><li>【登陆账号不能为空】</li><li>【登陆密码不能为空】</li></ul></li></ol></li><li>引用：<ol><li>（下文）【出口】WEB-系统首页</li></ol></li><li>接口：如下表</li></ul></blockquote><p><strong>接口</strong></p><table><thead><tr><th>通讯接口</th><th>子模块</th><th>系统模块</th><th>备注</th></tr></thead><tbody><tr><td>登录</td><td>登录管理</td><td>系统安全</td></tr></tbody></table><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 通讯场景</title>
+    <link href="/2017/11/06/sdp-communication-scene/"/>
+    <id>/2017/11/06/sdp-communication-scene/</id>
+    <published>2017-11-06T03:11:00.000Z</published>
+    <updated>2017-11-06T12:27:38.866Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 通讯接口</title>
+    <link href="/2017/11/06/sdp-communication-interface/"/>
+    <id>/2017/11/06/sdp-communication-interface/</id>
+    <published>2017-11-06T03:10:49.000Z</published>
+    <updated>2017-11-06T12:27:38.866Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 数据库表</title>
+    <link href="/2017/11/06/sdp-datatable/"/>
+    <id>/2017/11/06/sdp-datatable/</id>
+    <published>2017-11-06T03:10:30.000Z</published>
+    <updated>2017-11-06T12:27:39.116Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 数据库设计</title>
+    <link href="/2017/11/06/sdp-database-design/"/>
+    <id>/2017/11/06/sdp-database-design/</id>
+    <published>2017-11-06T03:10:16.000Z</published>
+    <updated>2017-11-06T12:27:38.898Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 系统功能</title>
+    <link href="/2017/11/06/sdp-system-function/"/>
+    <id>/2017/11/06/sdp-system-function/</id>
+    <published>2017-11-06T03:09:56.000Z</published>
+    <updated>2017-11-06T12:27:39.304Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 系统子模块</title>
+    <link href="/2017/11/06/sdp-system-sub-module/"/>
+    <id>/2017/11/06/sdp-system-sub-module/</id>
+    <published>2017-11-06T03:09:49.000Z</published>
+    <updated>2017-11-06T12:27:39.366Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 系统模块</title>
+    <link href="/2017/11/06/sdp-system-module/"/>
+    <id>/2017/11/06/sdp-system-module/</id>
+    <published>2017-11-06T03:09:29.000Z</published>
+    <updated>2017-11-06T12:27:39.320Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 原型设计</title>
+    <link href="/2017/11/06/sdp-model-design/"/>
+    <id>/2017/11/06/sdp-model-design/</id>
+    <published>2017-11-06T03:09:03.000Z</published>
+    <updated>2017-11-06T14:33:33.930Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>名字其实 Prototype Design 更适合，管理项目启动初期，为响应需求而设计的系统原型图<strong>草稿</strong>。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>分类（可选，如APP/WEB-）+界面名称+后缀（可选，_v1.0）</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>附件</td><td>具体的界面设计，主要以图片为主，可上传多个</td></tr><tr><td>描述</td><td>介绍界面的主要元素以及各个元素的输入格式、<br>验证方式或者元素的点击事件可能发生的情况。<br>描写该页面的操作，主要用于生成操作文档</td></tr><tr><td>引用</td><td>弱关系，展示应当按照引用顺序排序</td></tr></tbody></table><p><strong>引用</strong></p><ol><li>若A与业务用例【需求】存在关系，则表示A的下文；格式为“（下文）【需求】+ 标题”</li><li>若A被原型设计引用，则表示A的上文；格式为“（上文）【入口】+ 标题”</li><li>若A与原型设计存在关系，则表示A的下文；格式为“（下文）【出口】+ 标题”</li></ol><blockquote><p>示例</p><ul><li>标题：WEB-登录页面</li><li>名称：Login</li><li>附件：《基准地价定级计算系统登录界面》</li><li>描述：<ol><li>元素描述：输入框有账户和密码，登录按钮，密码采用掩码的方式显示。</li><li>元素验证：账户和密码为必填项，统一采用提交时（登录）验证。<del>账户若未填写账户，提示【账户不能为空】。密码若未填写密码，则提示【登录密码不能为空】。</del>验证提示统一采用输入框样式改变的提示方式。</li><li>元素事件：登录按钮—若登录不成功，则弹出框提示用户不成功原因。登录成功直接跳转到首页。</li></ol></li><li>操作说明：用户打开系统访问地址，进入到系统登录界面，输入账号和密码，点击登录按钮，登录成功则直接跳转到系统首页，不成功则提示用户不成功信息。</li><li>引用：<ol><li>（下文）【出口】WEB-系统首页</li></ol></li></ul></blockquote><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;名字其实 Prototype Design 更适合，管理项目启动初期，为响应需求而设计的系统原型图&lt;strong&gt;草稿&lt;/strong&gt;。&lt;/p&gt;
+&lt;table&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 用户故事</title>
+    <link href="/2017/11/06/sdp-user-story/"/>
+    <id>/2017/11/06/sdp-user-story/</id>
+    <published>2017-11-06T03:07:28.000Z</published>
+    <updated>2017-11-06T14:04:05.403Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>用户故事、需求详情、修改详情，细化业务用例内容，拆分每一项内容作为独立的工作登记记录，可以理解为任务分解。</p><h3 id="需求详情-Requirement-Detail"><a href="#需求详情-Requirement-Detail" class="headerlink" title="需求详情 - Requirement Detail"></a>需求详情 - Requirement Detail</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>需求项</td></tr><tr><td>展示</td><td>分类+标题</td></tr><tr><td>分类</td><td>【需求】，标题的前缀，SDP系统提供选项</td></tr><tr><td>名称</td><td>英文或yyyyMMdd-01</td></tr><tr><td>描述</td><td>1）客户对该需求项的描述。<br>2）需求分析师对需求的理解和响应</td></tr><tr><td>引用</td><td>弱关系</td></tr></tbody></table><p><strong>需求项</strong><br>需求文档具体的每项需求应当记录一个用户故事；另外需求分为【功能性需求】和【非功能性需求】，非功能型需求指响应时间等，建议在标题前缀添加【功能】与【非功能】标识</p><p><strong>弱关系</strong></p><ol><li>若A与业务用例存在关系，则表示A的上文；格式为“（上文）【需求】业务用例-标题”</li><li>若A与用户故事存在关系，则表示A的下级；格式为“（下文）【需求】【功能】用户故事-标题”</li><li>若A与系统功能存在关系，则表示A的下级；格式为“（下文）系统功能-标题”</li></ol><blockquote><p>示例1</p><ul><li>标题：【需求】【功能】网格点分值计算</li><li>名称：20171106-01</li><li>描述：网格点是由网格大小将定级范围划分；分值计算是由因子树、计算方式按用途（商业、住宅、办公）分别计算各种用途下每个网格点的分值；因子树是由外部ArgGis工具制作图层shp文件导入。</li><li>引用：<ol><li>（上文）【需求】业务用例-基准地价定级计算系统需求20171021</li><li>（下文）【需求】【功能】因子因素体系及图层管理</li></ol></li></ul></blockquote><p>用户故事【需求】还存在关键字说明，如上例的因子、图层。</p><blockquote><p>示例2</p><ul><li>标题：【需求】关键字说明</li><li>名称：Keyword</li><li>描述：<ol><li>因子…</li><li>因素…</li><li>图层…</li></ol></li><li>引用：无</li></ul></blockquote><h3 id="修改详情-Change-Detail"><a href="#修改详情-Change-Detail" class="headerlink" title="修改详情 - Change Detail"></a>修改详情 - Change Detail</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>修改项，参照“用户故事【需求】，标题”<br>应当严格按照引用业务用例划分为【修改】</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>描述</td><td>资料文件</td></tr><tr><td>引用</td><td>参照“用户故事【修改】”</td></tr></tbody></table><h3 id="用户故事-User-Story"><a href="#用户故事-User-Story" class="headerlink" title="用户故事 - User Story"></a>用户故事 - User Story</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>执行者/业务工人/业务实体+场景概述</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>故事</td><td>叙述现状和改进，现状将严格依据客户当前实际情况。<br>改进将采用步骤方式说明执行者、业务工人、<br>业务实体和待研发系统之间是如何协调以完成工作。</td></tr><tr><td>引用</td><td>参照《用户故事【需求】》</td></tr></tbody></table><p><strong>标题</strong></p><ol><li>业务工人， 与系统直接打交道的组织内的人</li><li>业务实体， 非人，系统、时间等</li><li>场景概述，概述故事</li></ol><blockquote><p>示例</p><ul><li>标题：【业务】数据人员计算网格点分值成果</li><li>名称：Data manager get grid point score result</li><li>描述：<ol><li>数据人员建立因子树</li><li>数据人员导入图层</li><li>数据人员建立网格</li><li>数据人员提交计算方式</li><li>系统计算并记录网格点分值</li><li>数据人员下载网格点分值成果shp</li></ol></li><li>引用：<ol><li>（上文）【业务】评估部门获取网格点分值成果</li><li>（下文）【业务】数据人员建立因子树</li><li>（下文）【业务】数据人员导入图层</li><li>（下文）【业务】数据人员建立网格</li><li>（下文）【业务】数据人员提交计算方式</li><li>（下文）【业务】系统计算并记录网格点分值</li></ol></li></ul></blockquote><p><strong>（下文）【业务】数据人员建立因子树</strong></p><blockquote><p>示例：</p><ul><li>标题：【业务】数据人员建立因子树</li><li>名称：Data manager build factor tree</li><li>描述：（假设不存在现状，直接叙述故事步骤）<ol><li>数据人员添加因素和因子</li><li>数据人员修改因素和因子</li><li>数据人员删除错误因素和因子</li><li>数据人员验证因子数据</li><li>略</li></ol></li><li>引用：<ol><li>（上文）【业务】数据人员计算网格点分值成果</li></ol></li></ul></blockquote><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用户故事、需求详情、修改详情，细化业务用例内容，拆分每一项内容作为独立的工作登记记录，可以理解为任务分解。&lt;/p&gt;
+&lt;h3 id=&quot;需求详情-Requirement-
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 业务用例</title>
+    <link href="/2017/11/06/sdp-usecase/"/>
+    <id>/2017/11/06/sdp-usecase/</id>
+    <published>2017-11-06T03:06:49.000Z</published>
+    <updated>2017-11-06T12:27:40.116Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>业务用例、需求汇总文档、修改汇总文档、会议记录文档、聊天记录文档，所有由客户提出需求相关的汇总资料。<br>业务用例必须结合用户故事一起说明，本章介绍业务用例。</p><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ol><li>弱关系：表示SDP各个模块间基于表示任意组合的一种关联。</li><li>上下文：表示引用和包含，也理解为父子或链式关系；上文表示引用，下文表示包含。</li></ol><h3 id="使用场景划分"><a href="#使用场景划分" class="headerlink" title="使用场景划分"></a>使用场景划分</h3><ul><li><p><strong>客户提供需求资料文档</strong><br>  客户提供具体待研发系统的需求资料，项目负责人需要按照客户提供的需求问题进行响应，这种情况下，必须以【需求】为主导开展工作（项目）。应当将严格按照需求资料内容在SDP系统详细记录，具体要求如下：</p><ol><li>相关需求资料文档登记为一个【业务用例】，分类标记【需求】</li><li>进入研发阶段以后，客户再次提供任何资料或反馈建议，每次都必须登记为一个【业务用例】，分类标记【修改】</li><li>用户故事的标记中，【需求】和【修改】是针对资料文档每一项进行详细记录，主要目的有：响应用户需求和反馈（工作量评估）、衡量是否完成标准。</li></ol></li><li><p><strong>自主研发系统</strong><br>  业务用例和用户故事以【业务】为主，基于故事开展工作（SDP、基准地价）。应当将严格按照需求资料内容在SDP系统详细记录，具体要求如下：</p><ol><li>分析待研究组织、业务执行者和用例，则每个系统卖点登记为一个【业务用例】，分类标记【业务】，业务用例必须有具体执行者。</li><li>用户故事的【业务】是对业务用例的详细描述，必须结合现状和改进场景加以阐述。</li><li>用户故事主要目的是响应用户需求和反馈（工作量评估）、衡量是否完成标准。</li></ol></li><li><p><strong>协助客户共同编写需求</strong><br>  需求人员协助客户共同对待研发系统深入研究，可以【业务】和【需求】为主导开展工作，具体有双方协商（如准备开展的土地出让项目）。此类情况按应当结合上述1、2两点开展工作。</p></li></ul><blockquote><p>总结<br>业务用例和用户故事具体标记分为三类：<strong>需求、修改、业务</strong>，存在一一对应关系。需求和修改主要是为了面对客户，由系统自动生产相关响应文档《需求设计文档》，结合系统功能可另外生成《系统功能需求文档》《系统研发工作量评估》。业务主要便于研发人员从业务角度理解待研发系统在实际工作中具体起到的作用，通过现状和改进后得到体现。</p></blockquote><h3 id="需求汇总-Requirement"><a href="#需求汇总-Requirement" class="headerlink" title="需求汇总 - Requirement"></a>需求汇总 - Requirement</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>文档名称</td></tr><tr><td>名称</td><td>英文，【REQ】 – yyyyMMdd</td></tr><tr><td>业务角色</td><td>以下所有都改为分类</td></tr><tr><td>附件</td><td>具体资料及文档，可上传多个</td></tr><tr><td>需求</td><td>介绍资料背景，如获取时间、谁提供、如何获取、<br>个人对于需求理解，以助于日后将场景还原，<br>例如需求会议记录概要。</td></tr><tr><td>引用</td><td>弱关系</td></tr></tbody></table><p><strong>标题</strong></p><ol><li>展示：分类+标题。</li><li>分类：【需求】，标题的前缀，SDP系统提供选项。</li><li>文档：后缀添加年月日yyyyMMdd，也可添加版本号_v1.0。</li></ol><p><strong>引用</strong></p><ol><li>若A与业务用例存在关系，则表示A的下文；格式为“（下文）【需求】业务用例-标题”。</li><li>若A与用户故事存在关系，则表示A的下文；格式为“（下文）【需求】用户故事-标题”。</li><li>展示应当按照引用顺序排序。</li></ol><blockquote><p>示例</p><ul><li>标题：【需求】基准地价定级计算系统需求20171021</li><li>名称：【REQ】- 20171021</li><li>附件：《基准地价定级计算系统需求规格说明书》</li><li>描述：2017-10-21由提供，该需求文档经过双方两次远程视频会议及多次QQ沟通。</li><li>引用：无</li></ul></blockquote><h3 id="修改汇总-Change"><a href="#修改汇总-Change" class="headerlink" title="修改汇总 - Change"></a>修改汇总 - Change</h3><p>进入编码阶段后，任何新需求和反馈问题全部统一视为【修改】</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>文档名称，参照“业务用例【需求】，标题”</td></tr><tr><td>名称</td><td>英文，【CHG】 – yyyyMMdd</td></tr><tr><td>附件</td><td>资料文件</td></tr><tr><td>描述</td><td>参照“业务用例【需求】，描述”</td></tr><tr><td>引用</td><td>参照“业务用例【需求】，引用”</td></tr></tbody></table><h3 id="业务用例-Use-Case"><a href="#业务用例-Use-Case" class="headerlink" title="业务用例 - Use Case"></a>业务用例 - Use Case</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>执行者+用例</td></tr><tr><td>执行者</td><td>与待研究组织打交道的人</td></tr><tr><td>待研究组织</td><td>本次系统使用的组织</td></tr><tr><td>用例</td><td>待研究组织的价值</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>附件</td><td>可不上传</td></tr><tr><td>描述</td><td>简述该用例现状。</td></tr><tr><td>引用</td><td>参照《业务用例【需求】》</td></tr></tbody></table><blockquote><p>示例</p><ul><li>标题：【业务】评估部门获取网格点分值成果</li><li>名称：Appraisal dep get the grid point score result</li><li>附件：无</li><li>描述：因评估部门制作土地等级等价格成果图件，需要评估土地地价，现行是采用网格点价格方式，故需要从数据部门获取到网格点分值以便于计算网格点价格。</li><li>引用：无</li></ul></blockquote><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;业务用例、需求汇总文档、修改汇总文档、会议记录文档、聊天记录文档，所有由客户提出需求相关的汇总资料。&lt;br&gt;业务用例必须结合用户故事一起说明，本章介绍业务用例。&lt;/p
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 索引导航</title>
+    <link href="/2017/11/06/sdp-index/"/>
+    <id>/2017/11/06/sdp-index/</id>
+    <published>2017-11-06T03:06:35.000Z</published>
+    <updated>2017-11-06T14:11:16.900Z</updated>
+    
+    <content type="html"><![CDATA[<p>软件流程管理系统，简称 SDP，用于在软件研发中对资源和过程的一套自主研发的管理型系统，该系统还在完善中。</p><p>系统核心是如何结合研发管理，因此必须对研发流程的各个模块标准化，包括如何命名、如何描述、用词标准等。</p><p>以下是各个模块的链接，先占位再完善内容：</p><ol><li><h3 id="Use-Case-业务用例"><a href="#Use-Case-业务用例" class="headerlink" title="Use Case - 业务用例"></a><a href="../sdp-usecase/index.html">Use Case - 业务用例</a></h3><p>业务用例、需求汇总文档、修改汇总文档、会议记录文档、聊天记录文档，所有由客户提出需求相关的汇总资料。</p></li><li><h3 id="User-Story-用户故事"><a href="#User-Story-用户故事" class="headerlink" title="User Story - 用户故事"></a><a href="../sdp-user-story/index.html">User Story - 用户故事</a></h3><p>用户故事、需求详情、修改详情，细化业务用例内容，拆分每一项内容作为独立的工作登记记录，可以理解为任务分解。</p></li><li><h3 id="Sequence-Diagram-时序图"><a href="#Sequence-Diagram-时序图" class="headerlink" title="Sequence Diagram - 时序图"></a>Sequence Diagram - 时序图</h3><p>必须结合用户故事，主要描述业务角色、业务工作和业务实体如何依据时间来协调工作，关注与职责，从而挖掘系统真实的功能。</p></li><li><h3 id="Model-Design-原型设计"><a href="#Model-Design-原型设计" class="headerlink" title="Model Design - 原型设计"></a><a href="../sdp-model-design/index.html">Model Design - 原型设计</a></h3><p>名字其实 Prototype Design 更适合，管理项目启动初期，为响应需求而设计的系统原型图<strong>草稿</strong>。</p></li><li><h3 id="System-Module-系统模块"><a href="#System-Module-系统模块" class="headerlink" title="System Module - 系统模块"></a><a href="../sdp-system-module/index.html">System Module - 系统模块</a></h3><p>以“用”为视角，为系统设计功能菜单便于用户在需求阶段理解系统，此模块多为一级菜单，需要结合系统子模块做进一步完善。</p></li><li><h3 id="System-Sub-Module-系统子模块"><a href="#System-Sub-Module-系统子模块" class="headerlink" title="System Sub Module - 系统子模块"></a><a href="../sdp-system-sub-module/index.html">System Sub Module - 系统子模块</a></h3><p>延续系统模块，细化一级菜单，此模块多为二级菜单，即可视的用户页面。非页面子模块需结合设计分解，但不建议在此系统子模块。</p></li><li><h3 id="System-Function-系统功能"><a href="#System-Function-系统功能" class="headerlink" title="System Function - 系统功能"></a><a href="../sdp-system-function/index.html">System Function - 系统功能</a></h3><p>延续系统子模块，细化用户页面，描述页面加载和功能按钮具体的作用，多为检索和提交操作，非直观可视的无需作为系统功能，如获取数据源。</p></li><li><h3 id="Domain-Model-领域模型"><a href="#Domain-Model-领域模型" class="headerlink" title="Domain Model - 领域模型"></a>Domain Model - 领域模型</h3><p>以“设计”为视角，结合业务知识分解核心领域，如人可分为心肺功能、神经系统等，而不是跑步。</p></li><li><h3 id="Database-Design-数据库设计"><a href="#Database-Design-数据库设计" class="headerlink" title="Database Design - 数据库设计"></a><a href="../sdp-database-design/index.html">Database Design - 数据库设计</a></h3><p>数据库引擎、ORM 技术选型、数据库命名及初始化 SQL。</p></li><li><h3 id="Data-Table-数据库表"><a href="#Data-Table-数据库表" class="headerlink" title="Data Table - 数据库表"></a><a href="../sdp-datatable/index.html">Data Table - 数据库表</a></h3><p>延续数据库中数据表设计，包括字段、备注。</p></li><li><h3 id="Communication-Interface-通讯接口"><a href="#Communication-Interface-通讯接口" class="headerlink" title="Communication Interface - 通讯接口"></a><a href="../sdp-communication-interface/index.html">Communication Interface - 通讯接口</a></h3><p>前端和后端的通讯接口标准和期望正确的系统响应，约定接口输入参数和输出结果，还有验证规则要求，便于前端人员和后端人员编码一致。</p></li><li><h3 id="Communication-Scene-通讯场景"><a href="#Communication-Scene-通讯场景" class="headerlink" title="Communication Scene - 通讯场景"></a><a href="../sdp-communication-scene/index.html">Communication Scene - 通讯场景</a></h3><p>后端编码，依据不同场景下输入参数及测试数据，系统如何响应编写场景说明。</p></li><li><h3 id="Page-Code-页面编码"><a href="#Page-Code-页面编码" class="headerlink" title="Page Code - 页面编码"></a><a href="../sdp-page/index.html">Page Code - 页面编码</a></h3><p>前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。</p></li><li><h3 id="Test-Plan-测试计划"><a href="#Test-Plan-测试计划" class="headerlink" title="Test Plan - 测试计划"></a>Test Plan - 测试计划</h3><p>用于检测后端编码不同场景是否按照测试计划所设计方案正确执行。</p></li><li><h3 id="Exception-Record-异常登记"><a href="#Exception-Record-异常登记" class="headerlink" title="Exception Record - 异常登记"></a><a href="../sdp-exception-record/index.html">Exception Record - 异常登记</a></h3><p>测试和编码人员提交系统存在的 BUG 以及其处理结果。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;软件流程管理系统，简称 SDP，用于在软件研发中对资源和过程的一套自主研发的管理型系统，该系统还在完善中。&lt;/p&gt;
+&lt;p&gt;系统核心是如何结合研发管理，因此必须对研发流程的各个模块标准化，包括如何命名、如何描述、用词标准等。&lt;/p&gt;
+&lt;p&gt;以下是各个模块的链接，先占位再完善内
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
     <title>git 学习 3</title>
     <link href="/2017/11/05/git-study-3/"/>
     <id>/2017/11/05/git-study-3/</id>
     <published>2017-11-05T15:04:15.000Z</published>
-    <updated>2017-11-05T15:28:22.426Z</updated>
+    <updated>2017-11-06T12:27:38.834Z</updated>
     
     <content type="html"><![CDATA[<p>远程仓库</p><h3 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h3><p>GitHub 注册账号并建立 repository，Clone with SSH<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot; // 一路回车，使用默认值即可</div></pre></td></tr></table></figure></p><p>如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。<br>登陆GitHub，打开“Account settings”，“SSH Keys”页面然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容</p><p>首次注意事项：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git pull origin master</div><div class="line">// 若上述命令失败，请使用一下命令</div><div class="line">git pull origin master --allow-unrelated-histories // 第一次踩雷</div><div class="line">// 可正式推送文件到远程仓库了~~！！</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure></p><blockquote><p>git vim 保存退出：按下 “ESC” 键，退出编辑模式，切换到命令模式，在命令模式下键入”ZZ”或者”:wq”保存修改并且退出 vi </p><blockquote><p>commit 若不带参数 -m 也会进入 vim</p></blockquote></blockquote><p>分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步</p><h3 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h3><p>远程库已经准备好，用命令 git clone 克隆一个本地库<br>$ git clone git@github.com:[ account name ]/[ repository name ]</p>]]></content>
     
@@ -34,6 +398,8 @@
       
     
     </summary>
+    
+      <category term="tool" scheme="/categories/tool/"/>
     
     
       <category term="git" scheme="/tags/git/"/>
@@ -194,335 +560,6 @@
       <category term="collect" scheme="/tags/collect/"/>
     
       <category term="sql" scheme="/tags/sql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Simple.Data 检索数据（2）</title>
-    <link href="/2017/10/30/Simple-Data-Select-2/"/>
-    <id>/2017/10/30/Simple-Data-Select-2/</id>
-    <published>2017-10-30T12:15:19.000Z</published>
-    <updated>2017-11-05T09:07:14.822Z</updated>
-    
-    <content type="html"><![CDATA[<p>Simple.Data 利用 .NET 4.0 动态类型技术 dynamic，令此对象支持想要的任何特性，如果使用过的脚本语言这样的写法就并不陌生（javascript、python），可简化类型转换代码，而且允许直接使用索引方式访问属性。</p><h2 id="Simple-Data-主要常用类型有"><a href="#Simple-Data-主要常用类型有" class="headerlink" title="Simple.Data 主要常用类型有"></a>Simple.Data 主要常用类型有</h2><table><thead><tr><th>名称</th><th>缩写</th><th>说明</th></tr></thead><tbody><tr><td>DynamicStrategy</td><td>DS</td><td>数据库</td></tr><tr><td>DynamicTable</td><td>DT</td><td>数据表</td></tr><tr><td>SimpleQuery</td><td>SQ</td><td>查询</td></tr><tr><td>SimpleExpression</td><td>SE</td><td>条件表达式</td></tr><tr><td>SimpleRecord</td><td>SR</td><td>记录</td></tr><tr><td>SimpleList</td><td>SL</td><td>记录列表</td></tr><tr><td>ObjectReference</td><td>OR</td><td>对象引用，DS.DT、DT.Field 都可转换为此对象</td></tr></tbody></table><h2 id="查询、关联、合计、函数-Query、Join、Aggregate、Function"><a href="#查询、关联、合计、函数-Query、Join、Aggregate、Function" class="headerlink" title="查询、关联、合计、函数 - Query、Join、Aggregate、Function"></a>查询、关联、合计、函数 - Query、Join、Aggregate、Function</h2><table><thead><tr><th style="text-align:left">命令</th><th style="text-align:center">参数</th><th style="text-align:center">返回</th><th style="text-align:center">说明 </th></tr></thead><tbody><tr><td style="text-align:left">Select</td><td style="text-align:center">OR[]</td><td style="text-align:center">SQ</td><td style="text-align:center">指定返回查询字段数据</td></tr><tr><td style="text-align:left">Star/AllColumns</td><td style="text-align:center">null</td><td style="text-align:center">SQ</td><td style="text-align:center">用于 Table，返回表所有字段数据</td></tr><tr><td style="text-align:left">Distinct</td><td style="text-align:center">null</td><td style="text-align:center">SQ</td><td style="text-align:center">用于 Column，过滤相同数据</td></tr><tr><td style="text-align:left">As</td><td style="text-align:center">str</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Table、Column，设置列别名</td></tr><tr><td style="text-align:left">Where</td><td style="text-align:center">SE</td><td style="text-align:center">SQ</td><td style="text-align:center">更新标准</td></tr><tr><td style="text-align:left">Operators</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">用于 Column，二元操作符+、-、*、/、%、==、!=、&lt;、&lt;=、&gt;、&gt;=</td></tr><tr><td style="text-align:left">In</td><td style="text-align:center">obj[]</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，in 语法</td></tr><tr><td style="text-align:left">Between</td><td style="text-align:center">num</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，两个数值之间 1.to(20)，也支持日期</td></tr><tr><td style="text-align:left">Like</td><td style="text-align:center">str</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，模糊条件</td></tr><tr><td style="text-align:left">is null</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">用于 Column，查询空值</td></tr><tr><td style="text-align:left">OrderBy</td><td style="text-align:center">OR</td><td style="text-align:center">SQ</td><td style="text-align:center">升序</td></tr><tr><td style="text-align:left">OrderByDescending</td><td style="text-align:center">OR</td><td style="text-align:center">SQ</td><td style="text-align:center">降序</td></tr><tr><td style="text-align:left">ThenBy</td><td style="text-align:center">OR</td><td style="text-align:center">SQ</td><td style="text-align:center">升序，OrderBy 后面使用</td></tr><tr><td style="text-align:left">ThenByDescending</td><td style="text-align:center">OR</td><td style="text-align:center">SQ</td><td style="text-align:center">降序，OrderBy 后面使用</td></tr><tr><td style="text-align:left">Natural Join</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">外键关联</td></tr><tr><td style="text-align:left">Join</td><td style="text-align:center">DT</td><td style="text-align:center">SQ</td><td style="text-align:center">Join On</td></tr><tr><td style="text-align:left">Left Join</td><td style="text-align:center">DT</td><td style="text-align:center">SQ</td><td style="text-align:center">LeftJoin On</td></tr><tr><td style="text-align:left">With</td><td style="text-align:center">DT</td><td style="text-align:center">SQ</td><td style="text-align:center">eager-loaded，单个或多个记录</td></tr><tr><td style="text-align:left">WithOne</td><td style="text-align:center">DT</td><td style="text-align:center">SQ</td><td style="text-align:center">eager-loaded，单个记录</td></tr><tr><td style="text-align:left">WithMany</td><td style="text-align:center">DT</td><td style="text-align:center">SQ</td><td style="text-align:center">eager-loaded，多个记录</td></tr><tr><td style="text-align:left">Having</td><td style="text-align:center">SE</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，Function 查询标准条件</td></tr><tr><td style="text-align:left">Min</td><td style="text-align:center">null</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，最小值</td></tr><tr><td style="text-align:left">Max</td><td style="text-align:center">null</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，最大值</td></tr><tr><td style="text-align:left">Avg</td><td style="text-align:center">null</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，平均值</td></tr><tr><td style="text-align:left">Sum</td><td style="text-align:center">null</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，合计</td></tr><tr><td style="text-align:left">Count</td><td style="text-align:center">null</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，数量</td></tr><tr><td style="text-align:left">CountDistinct</td><td style="text-align:center">null</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，过滤重复后的数量</td></tr><tr><td style="text-align:left">Length</td><td style="text-align:center">null</td><td style="text-align:center">OR</td><td style="text-align:center">用于 Column，字符长度</td></tr><tr><td style="text-align:left">ToScalar</td><td style="text-align:center">null</td><td style="text-align:center">object</td><td style="text-align:center">获取第一行第一列</td></tr><tr><td style="text-align:left">ToScalarList</td><td style="text-align:center">null</td><td style="text-align:center">IList&lt;&gt;</td><td style="text-align:center">获取所有行第一列</td></tr><tr><td style="text-align:left">ToScalarArray</td><td style="text-align:center">null</td><td style="text-align:center">object[]</td><td style="text-align:center">获取所有行第一列</td></tr><tr><td style="text-align:left">ToScalarOrDefault</td><td style="text-align:center">null</td><td style="text-align:center">object</td><td style="text-align:center">获取第一行第一列或默认</td></tr><tr><td style="text-align:left">Implicit Casting</td><td style="text-align:center"></td><td style="text-align:center"></td><td style="text-align:center">强类型转换，可直接赋值给予定义变量</td></tr><tr><td style="text-align:left">Cast<t></t></td><td style="text-align:center"></td><td style="text-align:center">IEnumerable<t></t></td><td style="text-align:center">强类型转换</td></tr><tr><td style="text-align:left">ToList</td><td style="text-align:center"></td><td style="text-align:center">IList<dynamic></dynamic></td><td style="text-align:center">获取数据对象列表</td></tr><tr><td style="text-align:left">ToList<t></t></td><td style="text-align:center"></td><td style="text-align:center">IList<t></t></td><td style="text-align:center">获取数据对象列表</td></tr><tr><td style="text-align:left">ToArray</td><td style="text-align:center"></td><td style="text-align:center">dynamic[]</td><td style="text-align:center">获取数据对象数组，遍历速度高于列表</td></tr><tr><td style="text-align:left">ToArray<t></t></td><td style="text-align:center"></td><td style="text-align:center">IList<t></t></td><td style="text-align:center">获取数据对象数组</td></tr><tr><td style="text-align:left">Skip</td><td style="text-align:center">int</td><td style="text-align:center">SQ</td><td style="text-align:center">忽略记录数量</td></tr><tr><td style="text-align:left">Take</td><td style="text-align:center">int</td><td style="text-align:center">SQ</td><td style="text-align:center">提取记录数量</td></tr><tr><td style="text-align:left">WithTotalCount</td><td style="text-align:center"></td><td style="text-align:center">SQ</td><td style="text-align:center">记录总数</td></tr><tr><td style="text-align:left">First</td><td style="text-align:center"></td><td style="text-align:center">SQ</td><td style="text-align:center">获取第一行数据</td></tr><tr><td style="text-align:left">FirstOrDefault</td><td style="text-align:center"></td><td style="text-align:center">SQ</td><td style="text-align:center">获取第一行数据或 null</td></tr><tr><td style="text-align:left">Single</td><td style="text-align:center"></td><td style="text-align:center">SQ</td><td style="text-align:center">获取第一行数据</td></tr><tr><td style="text-align:left">SingleOrDefault</td><td style="text-align:center"></td><td style="text-align:center">SQ</td><td style="text-align:center">获取第一行数据或 null</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Simple.Data 利用 .NET 4.0 动态类型技术 dynamic，令此对象支持想要的任何特性，如果使用过的脚本语言这样的写法就并不陌生（javascript、python），可简化类型转换代码，而且允许直接使用索引方式访问属性。&lt;/p&gt;
-&lt;h2 id=&quot;Simp
-      
-    
-    </summary>
-    
-      <category term="database" scheme="/categories/database/"/>
-    
-    
-      <category term="Simple.Data" scheme="/tags/Simple-Data/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Simple.Data 介绍、检索数据（1）</title>
-    <link href="/2017/10/29/Simple-Data-Select/"/>
-    <id>/2017/10/29/Simple-Data-Select/</id>
-    <published>2017-10-29T13:57:14.000Z</published>
-    <updated>2017-11-02T15:11:04.891Z</updated>
-    
-    <content type="html"><![CDATA[<p>接触 ORM 至今为止，从最初的 NHibernate、Castle、EF 相对强大的类库，到现在使用的“很黄很暴力”的 Simple.Data，已经有10年的时间。<br>而 ORM 之前基本都是写一句 SQL 语句查询返回 DataSet（.NET），后来在此基础上增加数据访问层 Dao 来封装，再进一步返回业务对象。<br>现在感触最深的还是回归到可控性最强的 SQL 但无法避免返回 DataSet 问题（虽然可以用 Reader解决），而 Simple.Data 可以牺牲一定可控性的基础上换取便利的对象操作。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol><li>要求 .NET 4.0 或以上</li><li>使用 nuget 搜索 simple.data.core（核心库）</li><li>根据数据库引擎需要，在主项目使用 nuget 搜索 simple.data.sqldata（mysql/oracle），安装过程同时自动安装 simple.data.adoadapter</li></ol><h2 id="检索数据-retrieve-data"><a href="#检索数据-retrieve-data" class="headerlink" title="检索数据 - retrieve data"></a>检索数据 - retrieve data</h2><p>标准类型 SimpleExpression(SE)，返回 SimpleQuery(SQ) 可以通过迭代 SimpleRecord(SR) 集合获取结果数据对象，此对象为 dynamic 类型，可使用强类型转换为期望类型或 IDictionary<string, object="">。</string,></p><p>dynamic 类型优点在于允许直接访问属性（列名） result.ColumnName，也可以通过索引访问 result[“ColumnName”]（记得可以的，若不行则需要强类型转换 IDictionar<string, object="">。</string,></p><p>若数据存在外键，还允许在 SE 通过外键表名称直接写条件，如 table.Topic.Title.Like(“%我的心得%”)，避免繁琐的 Join On。</p><h2 id="当然，据目前使用过程还发现一些-Bug"><a href="#当然，据目前使用过程还发现一些-Bug" class="headerlink" title="当然，据目前使用过程还发现一些 Bug"></a>当然，据目前使用过程还发现一些 Bug</h2><ul><li>存在两个或以上的外键指向同一张表，SE 只建立最后一个外键（字段顺序也可能是外键顺序，但不确认），建议出现此类情况还是使用 JOIN ON 来解决</li><li>ToFirstOrDefault 导致从表仅返回第一条数据，建议使用 Find 或延迟加载从表数据</li><li>Skip 且没有 Where 引起分页条件位置不正确，导致数据分页查询返回结果不正确，建议增加默认条件</li><li>WithTotalCount 返回属性含有集合对象Bug，原因未明，建议尽量不要返回集合数据对象，改用 Select 优化，如无法避免则建议使用 dynamic 延迟加载集合对象。</li></ul><h2 id="Simple-Data-主要常用类型有"><a href="#Simple-Data-主要常用类型有" class="headerlink" title="Simple.Data 主要常用类型有"></a>Simple.Data 主要常用类型有</h2><table><thead><tr><th>名称</th><th>缩写</th><th>说明</th></tr></thead><tbody><tr><td>DynamicStrategy</td><td>DS</td><td>数据库</td></tr><tr><td>DynamicTable</td><td>DT</td><td>数据表</td></tr><tr><td>SimpleQuery</td><td>SQ</td><td>查询</td></tr><tr><td>SimpleExpression</td><td>SE</td><td>条件表达式</td></tr><tr><td>SimpleRecord</td><td>SR</td><td>记录</td></tr><tr><td>SimpleList</td><td>SL</td><td>记录列表</td></tr><tr><td>ObjectReference</td><td>OR</td><td>对象引用，DS.DT、DT.Field 都可转换为此对象</td></tr></tbody></table><table><thead><tr><th style="text-align:left">命令</th><th style="text-align:center">参数</th><th style="text-align:center">返回</th><th style="text-align:center">说明 </th></tr></thead><tbody><tr><td style="text-align:left">All</td><td style="text-align:center">SE</td><td style="text-align:center">SQ</td><td style="text-align:center">返回表所有数据</td></tr><tr><td style="text-align:left">FindAll</td><td style="text-align:center">SE</td><td style="text-align:center">SQ</td><td style="text-align:center">通过标准返回表数据</td></tr><tr><td style="text-align:left">FindAllBy</td><td style="text-align:center">OR[]</td><td style="text-align:center">SQ</td><td style="text-align:center">通过列名和值返回表数据</td></tr><tr><td style="text-align:left">Find</td><td style="text-align:center">SE</td><td style="text-align:center">SR</td><td style="text-align:center">通过标准返回一条表数据，若查询到多条只返回第一条</td></tr><tr><td style="text-align:left">Get</td><td style="text-align:center">o[]</td><td style="text-align:center">SR</td><td style="text-align:center">通过主键返回一条表数据</td></tr><tr><td style="text-align:left">GetCount</td><td style="text-align:center">SE</td><td style="text-align:center">int</td><td style="text-align:center">通过标准返回表数据数量</td></tr><tr><td style="text-align:left">GetCountBy</td><td style="text-align:center">str</td><td style="text-align:center">int</td><td style="text-align:center">通过列名和值返回表数据数量</td></tr><tr><td style="text-align:left">Exists/Any</td><td style="text-align:center">SE</td><td style="text-align:center">bool</td><td style="text-align:center">通过标准返回是否存在表数据</td></tr><tr><td style="text-align:left">ExistsBy/AnyBy</td><td style="text-align:center">str</td><td style="text-align:center">bool</td><td style="text-align:center">通过列名和值返回是否存在表数据数量</td></tr></tbody></table><h3 id="其他注意问题"><a href="#其他注意问题" class="headerlink" title="其他注意问题"></a>其他注意问题</h3><ul><li>Query、QueryBy：已过时，请使用 All、FindAllBy</li><li>FindBy：已过时，请使用 FindAllBy.FirstOrDefault() 或 Get</li><li>SimpleQuery：可以使用迭代或 ToList、ToFirstOrDefault、ToScalar 等 Linq 相似的方法或数据对象</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;接触 ORM 至今为止，从最初的 NHibernate、Castle、EF 相对强大的类库，到现在使用的“很黄很暴力”的 Simple.Data，已经有10年的时间。&lt;br&gt;而 ORM 之前基本都是写一句 SQL 语句查询返回 DataSet（.NET），后来在此基础上增加
-      
-    
-    </summary>
-    
-      <category term="database" scheme="/categories/database/"/>
-    
-    
-      <category term="Simple.Data" scheme="/tags/Simple-Data/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HBuilder svn 插件安装</title>
-    <link href="/2017/10/28/HBuilder-svn-plugin/"/>
-    <id>/2017/10/28/HBuilder-svn-plugin/</id>
-    <published>2017-10-28T14:57:54.000Z</published>
-    <updated>2017-11-02T14:41:27.994Z</updated>
-    
-    <content type="html"><![CDATA[<p>安装步骤</p><ol><li>工具 &gt;&gt; 插件安装</li><li>选择 SVN &gt;&gt; 安装，重启 HBuilder</li><li>工具 &gt;&gt; 插件安装  &gt;&gt; 手动安装插件（SVN 版本问题，必须更新版本）</li><li>Work with： <a href="http://subclipse.tigris.org/update_1.10.x" target="_blank" rel="external">http://subclipse.tigris.org/update_1.10.x</a></li><li>全部保存，一直点击【下一步】，最后【完成】，重启 Hbuilder</li><li>视图 &gt;&gt; 定制透视图</li><li>命令和快捷方式选项卡勾选 SVN，tool bar 和 menu 勾选 SVN</li><li>确定后，安装完毕</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;安装步骤&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;工具 &amp;gt;&amp;gt; 插件安装&lt;/li&gt;
-&lt;li&gt;选择 SVN &amp;gt;&amp;gt; 安装，重启 HBuilder&lt;/li&gt;
-&lt;li&gt;工具 &amp;gt;&amp;gt; 插件安装  &amp;gt;&amp;gt; 手动安装插件（SVN 版本问题，必须更新版本）&lt;/l
-      
-    
-    </summary>
-    
-      <category term="tool" scheme="/categories/tool/"/>
-    
-    
-      <category term="mobile" scheme="/tags/mobile/"/>
-    
-      <category term="plugin" scheme="/tags/plugin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript 继承收集</title>
-    <link href="/2017/10/27/javascript-inherit-collect/"/>
-    <id>/2017/10/27/javascript-inherit-collect/</id>
-    <published>2017-10-27T05:52:23.000Z</published>
-    <updated>2017-11-02T14:45:39.950Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="定义父类"><a href="#定义父类" class="headerlink" title="定义父类"></a>定义父类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 定义一个动物类</div><div class="line">function Animal (name) &#123;</div><div class="line">  // 属性</div><div class="line">  this.name = name || &apos;Animal&apos;;</div><div class="line">  // 实例方法</div><div class="line">  this.sleep = function()&#123;</div><div class="line">    console.log(this.name + &apos; 正在睡觉！&apos;);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line">// 原型方法</div><div class="line">Animal.prototype.eat = function(food) &#123;</div><div class="line">  console.log(this.name + &apos; 正在吃：&apos; + food);</div><div class="line">&#125;;</div></pre></td></tr></table></figure><h3 id="推荐继承"><a href="#推荐继承" class="headerlink" title="推荐继承"></a><strong>推荐继承</strong></h3><p>直接贴代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">// 继承</div><div class="line">function inherit(superConstructor, subConstructor) &#123;</div><div class="line">  var proto = beget(superConstructor.prototype); // 核心</div><div class="line">  proto.constructor = subConstructor;            // 修改构造函数</div><div class="line">  subConstructor.prototype = proto;              // 修改原型链，将实例作为子类的原型</div><div class="line">&#125;;</div><div class="line"></div><div class="line">function beget(obj) &#123;</div><div class="line">  var F = function () &#123;&#125;;</div><div class="line">  F.prototype = obj;</div><div class="line">  return new F();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Cat(name) &#123;</div><div class="line">  Animal.call(this, name);                // 调用父类构造函数，创建属性和实例方法</div><div class="line">  this.base = this.__proto__.__proto__;   // 定义基类对象</div><div class="line">  this.color = &apos;white&apos;;</div><div class="line">  // 重载实例方法，也可以使用原型方法重载</div><div class="line">  this.sleep = function(fav) &#123;</div><div class="line">    if (fav) &#123;</div><div class="line">      console.log(this.name + &apos; 最喜欢在&apos; + fav + &apos;睡觉&apos;);</div><div class="line">    &#125; else &#123;</div><div class="line">      this.base.sleep.call(this);         // 注意这里是调用基类方法，使用 call 改变调用对象</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">inherit(Animal, Cat);  // Cat 继承 Animal</div><div class="line"></div><div class="line">// 重载原型方法，必须在继承后</div><div class="line">Cat.prototype.eat = function(food, fav)&#123;</div><div class="line">  if (fav) &#123;</div><div class="line">    console.log(this.name + &apos; 最喜欢的食物是：&apos; + food);</div><div class="line">  &#125; else &#123;</div><div class="line">    this.base.eat.call(this, food);        // 调用基类方法，使用 call 或 apply</div><div class="line">    // this.base.eat.apply(this, arguments);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var cat = new Cat(&apos;Tom cat&apos;);</div><div class="line">cat.eat(&apos;fish&apos;, true); // cat 最喜欢的食物是：fish</div><div class="line">cat.eat(&apos;fish&apos;); // cat 正在吃：fish</div><div class="line">console.log(typeof cat.sleep === &apos;function&apos;); // true, 实例方法无法继承</div></pre></td></tr></table></figure></p><p>继承可使用上述代码实现，如需详细了解其他方式可见下文。</p><p>========== 分界线 ===========</p><h3 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h3><p><strong>核心</strong>： 将父类的实例作为子类的原型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Cat()&#123; </div><div class="line">&#125;</div><div class="line">Cat.prototype = new Animal();</div><div class="line">Cat.prototype.name = &apos;cat&apos;;</div><div class="line"></div><div class="line">//　Test Code</div><div class="line">var cat = new Cat();</div><div class="line">console.log(cat.name);</div><div class="line">console.log(cat.eat(&apos;fish&apos;));</div><div class="line">console.log(cat.sleep());</div><div class="line">console.log(cat instanceof Animal); // true </div><div class="line">console.log(cat instanceof Cat); // true</div></pre></td></tr></table></figure></p><p>问题：</p><ul><li>要想为子类新增属性和方法，必须要在new Animal()这样的语句之后执行，不能放到构造器中</li><li>无法实现多继承</li><li>来自原型对象的引用属性是所有实例共享的</li><li>创建子类实例时，无法向父类构造函数传参</li></ul><h3 id="构造继承"><a href="#构造继承" class="headerlink" title="构造继承"></a>构造继承</h3><p><strong>核心</strong>：使用父类的构造函数来增强子类实例，等于是复制父类的实例属性给子类（没用到原型）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function Cat(name)&#123;</div><div class="line">  Animal.call(this);</div><div class="line">  this.name = name || &apos;Tom&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Test Code</div><div class="line">var cat = new Cat();</div><div class="line">console.log(cat.name);</div><div class="line">console.log(cat.sleep());</div><div class="line">console.log(cat instanceof Animal); // false</div><div class="line">console.log(cat instanceof Cat); // true</div></pre></td></tr></table></figure></p><p><strong>问题</strong>：</p><ul><li>实例并不是父类的实例，只是子类的实例</li><li>只能继承父类的实例属性和方法，不能继承原型属性/方法</li><li>无法实现函数复用，每个子类都有父类实例函数的副本，影响性能</li></ul><h3 id="实例继承"><a href="#实例继承" class="headerlink" title="实例继承"></a>实例继承</h3><p><strong>核心</strong>：为父类实例添加新特性，作为子类实例返回<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Cat(name)&#123;</div><div class="line">  var instance = new Animal();</div><div class="line">  instance.name = name || &apos;Tom&apos;;</div><div class="line">  return instance;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Test Code</div><div class="line">var cat = new Cat();</div><div class="line">console.log(cat.name);</div><div class="line">console.log(cat.sleep());</div><div class="line">console.log(cat instanceof Animal); // true</div><div class="line">console.log(cat instanceof Cat); // false</div></pre></td></tr></table></figure></p><p><strong>问题</strong>：</p><ul><li>实例是父类的实例，不是子类的实例</li><li>不支持多继承</li></ul><h3 id="拷贝继承"><a href="#拷贝继承" class="headerlink" title="拷贝继承"></a>拷贝继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Cat(name)&#123;</div><div class="line">  var animal = new Animal();</div><div class="line">  for(var p in animal)&#123;</div><div class="line">    Cat.prototype[p] = animal[p];</div><div class="line">  &#125;</div><div class="line">  Cat.prototype.name = name || &apos;Tom&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// Test Code</div><div class="line">var cat = new Cat();</div><div class="line">console.log(cat.name);</div><div class="line">console.log(cat.sleep());</div><div class="line">console.log(cat instanceof Animal); // false</div><div class="line">console.log(cat instanceof Cat); // true</div></pre></td></tr></table></figure><p><strong>问题</strong>：</p><ul><li>效率较低，内存占用高（因为要拷贝父类的属性）</li><li>无法获取父类不可枚举的方法（不可枚举方法，不能使用for in 访问到）</li></ul><h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3><p><strong>核心</strong>：通过调用父类构造，继承父类的属性并保留传参的优点，然后通过将父类实例作为子类原型，实现函数复用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Cat(name)&#123;</div><div class="line">  Animal.call(this);</div><div class="line">  this.name = name || &apos;Tom&apos;;</div><div class="line">&#125;</div><div class="line">Cat.prototype = new Animal();</div><div class="line"></div><div class="line">// Test Code</div><div class="line">var cat = new Cat();</div><div class="line">console.log(cat.name);</div><div class="line">console.log(cat.sleep());</div><div class="line">console.log(cat instanceof Animal); // true</div><div class="line">console.log(cat instanceof Cat); // true</div></pre></td></tr></table></figure></p><p><strong>问题</strong>：</p><ul><li>调用了两次父类构造函数，生成了两份实例（子类实例将子类原型上的那份屏蔽了）</li></ul><h3 id="寄生组合继承-实现复杂"><a href="#寄生组合继承-实现复杂" class="headerlink" title="寄生组合继承(实现复杂)"></a>寄生组合继承(实现复杂)</h3><p><strong>核心</strong>：通过寄生方式，砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性，避免的组合继承的缺点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function Cat(name)&#123;</div><div class="line">  Animal.call(this);</div><div class="line">  this.name = name || &apos;Tom&apos;;</div><div class="line">&#125;</div><div class="line">(function()&#123;</div><div class="line">  // 创建一个没有实例方法的类</div><div class="line">  var Super = function()&#123;&#125;;</div><div class="line">  Super.prototype = Animal.prototype;</div><div class="line">  //将实例作为子类的原型</div><div class="line">  Cat.prototype = new Super();</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">// Test Code</div><div class="line">var cat = new Cat();</div><div class="line">console.log(cat.name);</div><div class="line">console.log(cat.sleep());</div><div class="line">console.log(cat instanceof Animal); // true</div><div class="line">console.log(cat instanceof Cat); // true</div></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;定义父类&quot;&gt;&lt;a href=&quot;#定义父类&quot; class=&quot;headerlink&quot; title=&quot;定义父类&quot;&gt;&lt;/a&gt;定义父类&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="collect" scheme="/tags/collect/"/>
-    
-      <category term="script" scheme="/tags/script/"/>
-    
-      <category term="javascript" scheme="/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Grunt jshint 配置</title>
-    <link href="/2017/10/27/grunt-jshint-options/"/>
-    <id>/2017/10/27/grunt-jshint-options/</id>
-    <published>2017-10-27T04:45:52.000Z</published>
-    <updated>2017-11-02T14:41:08.784Z</updated>
-    
-    <content type="html"><![CDATA[<p>jsHint 同 jsLint 一样都是 js 代码检查工具</p><p>jsHint 规则 参考资料<br><a href="http://www.cnblogs.com/code/articles/4103070.html" target="_blank" rel="external">http://www.cnblogs.com/code/articles/4103070.html</a><br><a href="http://www.htmlhifive.com/conts/web/view/library/JSLint_JSHint" target="_blank" rel="external">http://www.htmlhifive.com/conts/web/view/library/JSLint_JSHint</a></p><h3 id="bitwise"><a href="#bitwise" class="headerlink" title="bitwise"></a>bitwise</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 禁用位运算符(如^，&amp;)</div></pre></td></tr></table></figure><h3 id="curly"><a href="#curly" class="headerlink" title="curly"></a>curly</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// if 和 while 等语句中使用&#123;&#125;来明确代码块</div></pre></td></tr></table></figure><h3 id="eqeqeq"><a href="#eqeqeq" class="headerlink" title="eqeqeq"></a>eqeqeq</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 使用 === 和 !== 替代 == 和 !=</div></pre></td></tr></table></figure><h3 id="forin"><a href="#forin" class="headerlink" title="forin"></a>forin</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 在 for in 循环中使用 Object.prototype.hasOwnProperty() 来过滤原型链中的属性</div></pre></td></tr></table></figure><h3 id="immed"><a href="#immed" class="headerlink" title="immed"></a>immed</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 匿名函数调用必须</div><div class="line">(function() &#123;</div><div class="line">  // body </div><div class="line">&#125;());</div><div class="line">// 而不是</div><div class="line">(function() &#123;</div><div class="line">  // body</div><div class="line">&#125;)();</div><div class="line">// 这是为了表明，表达式的值是函数的结果，而不是函数本身。</div></pre></td></tr></table></figure><h3 id="latedef"><a href="#latedef" class="headerlink" title="latedef"></a>latedef</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 变量定义前禁止使用</div></pre></td></tr></table></figure><h3 id="newcap"><a href="#newcap" class="headerlink" title="newcap"></a>newcap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 构造函数名首字母必须大写</div></pre></td></tr></table></figure><h3 id="noarg"><a href="#noarg" class="headerlink" title="noarg"></a>noarg</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 禁止使用arguments.caller和arguments.callee</div></pre></td></tr></table></figure><h3 id="noempty"><a href="#noempty" class="headerlink" title="noempty"></a>noempty</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 禁止出现空的代码块</div></pre></td></tr></table></figure><h3 id="nonew"><a href="#nonew" class="headerlink" title="nonew"></a>nonew</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 禁止使用构造器</div></pre></td></tr></table></figure><h3 id="plusplus"><a href="#plusplus" class="headerlink" title="plusplus"></a>plusplus</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 禁止使用++和--</div></pre></td></tr></table></figure><h3 id="undef"><a href="#undef" class="headerlink" title="undef"></a>undef</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 禁止使用不在全局变量列表中的未定义的变量</div></pre></td></tr></table></figure><h3 id="strict"><a href="#strict" class="headerlink" title="strict"></a>strict</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 强制使用ES5的严格模式</div></pre></td></tr></table></figure><h3 id="freeze"><a href="#freeze" class="headerlink" title="freeze"></a>freeze</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 禁止复写原生对象(如Array, Date)的原型</div><div class="line">/* jshint freeze:true */</div><div class="line">Array.prototype.count = function (value) &#123; return 4; &#125;;</div><div class="line">// -&gt; Warning: Extending prototype of native object: &apos;Array&apos;.</div></pre></td></tr></table></figure><h3 id="asi"><a href="#asi" class="headerlink" title="asi"></a>asi</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许省略分号</div></pre></td></tr></table></figure><h3 id="boss"><a href="#boss" class="headerlink" title="boss"></a>boss</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许在if，for，while语句中使用赋值;在条件语句中使用赋值经常是笔误if (a = 10) &#123;&#125;</div></pre></td></tr></table></figure><h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许debugger语句</div></pre></td></tr></table></figure><h3 id="eqnull"><a href="#eqnull" class="headerlink" title="eqnull"></a>eqnull</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 允许==null</div><div class="line">// ==null通常用来比较=== null;=== undefined</div></pre></td></tr></table></figure><h3 id="evil"><a href="#evil" class="headerlink" title="evil"></a>evil</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许使用eval</div></pre></td></tr></table></figure><h3 id="expr"><a href="#expr" class="headerlink" title="expr"></a>expr</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许应该出现赋值或函数调用的地方使用表达式</div></pre></td></tr></table></figure><h3 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 允许__iterator__;</div><div class="line">// 不是所有的浏览器都支持__iterator__。</div></pre></td></tr></table></figure><h3 id="lastsemic"><a href="#lastsemic" class="headerlink" title="lastsemic"></a>lastsemic</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 允许单行控制块省略分号</div><div class="line">var name = (function() &#123; return &apos;Anton&apos; &#125;());</div></pre></td></tr></table></figure><h3 id="laxbreak"><a href="#laxbreak" class="headerlink" title="laxbreak"></a>laxbreak</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许不安全的行中断(与laxcomma配合使用)</div></pre></td></tr></table></figure><h3 id="laxcomma"><a href="#laxcomma" class="headerlink" title="laxcomma"></a>laxcomma</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许逗号开头的编码样式</div></pre></td></tr></table></figure><h3 id="loopfunc"><a href="#loopfunc" class="headerlink" title="loopfunc"></a>loopfunc</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许循环中定义函数</div></pre></td></tr></table></figure><h3 id="onecase"><a href="#onecase" class="headerlink" title="onecase"></a>onecase</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许只有一个case条件的switch语句吗</div></pre></td></tr></table></figure><h3 id="proto"><a href="#proto" class="headerlink" title="proto"></a>proto</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许 proto（不是所有的浏览器都支持__proto__.）</div></pre></td></tr></table></figure><h3 id="regexdash"><a href="#regexdash" class="headerlink" title="regexdash"></a>regexdash</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 在正则表达式的控制语句，连字符开头或方括号的结束 - 容忍的存在。</div></pre></td></tr></table></figure><h3 id="scripturl"><a href="#scripturl" class="headerlink" title="scripturl"></a>scripturl</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许 javascript:;</div></pre></td></tr></table></figure><h3 id="shadow"><a href="#shadow" class="headerlink" title="shadow"></a>shadow</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 允许变量shadow</div><div class="line">function test() &#123;</div><div class="line">  var x = 10;</div><div class="line"></div><div class="line">  if (true) &#123;</div><div class="line">      var x = 20;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  return x;</div><div class="line">&#125;</div><div class="line">// 基于“函数作用域”，多次定义变量和单次定义是没有区别的，但是会造成阅读障碍。</div></pre></td></tr></table></figure><h3 id="sub"><a href="#sub" class="headerlink" title="sub"></a>sub</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 允许person[‘name’]</div><div class="line">// JSHint推荐使用 person.name 代替 person[‘name’]</div></pre></td></tr></table></figure><h3 id="supernew"><a href="#supernew" class="headerlink" title="supernew"></a>supernew</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许new function() &#123;…&#125;和new Object;</div></pre></td></tr></table></figure><h3 id="validthis"><a href="#validthis" class="headerlink" title="validthis"></a>validthis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">// 允许严格模式下在非构造函数中使用this</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;jsHint 同 jsLint 一样都是 js 代码检查工具&lt;/p&gt;
-&lt;p&gt;jsHint 规则 参考资料&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/code/articles/4103070.html&quot; target=&quot;_blank&quot; rel=&quot;
-      
-    
-    </summary>
-    
-      <category term="tool" scheme="/categories/tool/"/>
-    
-    
-      <category term="plugin" scheme="/tags/plugin/"/>
-    
-      <category term="grunt" scheme="/tags/grunt/"/>
-    
-      <category term="script" scheme="/tags/script/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown 语言学习</title>
-    <link href="/2017/10/26/markdown-course/"/>
-    <id>/2017/10/26/markdown-course/</id>
-    <published>2017-10-26T14:17:29.000Z</published>
-    <updated>2017-11-02T14:40:22.120Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>Markdown 的目标是实现「易读易写」。</strong></p><p><strong>Markdown 语法的目标是：成为一种适用于网络的书写语言。</strong> </p><p>Markdown 是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p><p>Markdown 的语法简洁明了、学习容易，而且功能比纯文本更强。</p><p><strong> 建议使用缩进表示归属上一层级，如果出现块情况非空行不能处理归属问题 </strong></p><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">H1 :# Header 1</div><div class="line">H2 :## Header 2</div><div class="line">H3 :### Header 3</div><div class="line">H4 :#### Header 4</div><div class="line">H5 :##### Header 5</div><div class="line">H6 :###### Header 6</div></pre></td></tr></table></figure><p>H1 :# Header 1<br>H2 :## Header 2<br>H3 :### Header 3<br>H4 :#### Header 4<br>H5 :##### Header 5<br>H6 :###### Header 6</p><h3 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">（带“*”星号的文本样式，在原版 Markdown 标准中不存在，但在其大部分衍生标准中被添加）</div><div class="line">链接 :[Title](URL)</div><div class="line">加粗 :**Bold**</div><div class="line">斜体字 :*Italics*</div><div class="line">*删除线 :~~text~~</div><div class="line">*高亮 :==text==</div><div class="line">段落 : 段落之间空一行</div><div class="line">换行符 : 一行结束时输入两个空格</div><div class="line">列表 :* 添加星号成为一个新的列表项。</div><div class="line">引用 :&gt; 引用内容</div><div class="line">内嵌代码 : `alert(&apos;Hello World&apos;);`</div><div class="line">画水平线 (HR) :--------</div></pre></td></tr></table></figure><p>链接 :<a href="URL">Title</a><br>加粗 :<strong>Bold</strong><br>斜体字 :<em>Italics</em><br><em>删除线 :<del>text</del></em>高亮 :==text==<br>段落 : 段落之间空一行<br>换行符 : 一行结束时输入两个空格<br>列表 :* 添加星号成为一个新的列表项。<br>引用 :&gt; 引用内容<br>内嵌代码 : <code>alert(&#39;Hello World&#39;);</code><br>画水平线 (HR) :——–</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![Title](src).</div></pre></td></tr></table></figure><h3 id="写代码"><a href="#写代码" class="headerlink" title="写代码"></a>写代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">连续3个【`】闭合，闭合部分写入代码</div></pre></td></tr></table></figure><h3 id="HTML-代码"><a href="#HTML-代码" class="headerlink" title="HTML 代码"></a>HTML 代码</h3><p>在 HTML 区块标签间的 Markdown 格式语法将不会被处理。处在 HTML 区块标签间不同，Markdown 语法在 HTML 区段标签间是有效的。</p><h4 id="特殊字符自动转换"><a href="#特殊字符自动转换" class="headerlink" title="特殊字符自动转换"></a>特殊字符自动转换</h4><table><thead><tr><th>符号</th><th>输入</th></tr></thead><tbody><tr><td>&amp;</td><td>&amp;amp;</td></tr><tr><td>&gt;</td><td>&amp;gt;</td></tr><tr><td>&lt;</td><td>&amp;lt;</td></tr></tbody></table><h3 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</div><div class="line">&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</div><div class="line">&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</div><div class="line">&gt;</div><div class="line">&gt; &gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</div><div class="line">&gt;   id sem consectetuer libero luctus adipiscing.</div><div class="line">&gt;</div><div class="line">&gt; Back to the first level.</div></pre></td></tr></table></figure><blockquote><p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.<br>Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p><blockquote><p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>  id sem consectetuer libero luctus adipiscing.</p></blockquote><p>Back to the first level.</p></blockquote><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">无序列表使用星号、加号或是减号作为列表标记</div><div class="line">* Red    // eq: + Red   - Red</div><div class="line">* Green</div><div class="line">  Light</div><div class="line">* Blue</div></pre></td></tr></table></figure><ul><li>Red</li><li>Green<br>Light</li><li>Blue</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">有序列表则使用数字接着一个英文句点</div><div class="line">很重要的一点是，列表标记上使用的数字并不会影响输出的 HTML 结果</div><div class="line">为未来考虑，建议保留顺序</div><div class="line">1. Bird</div><div class="line">2. McHale</div><div class="line">3. Parish</div></pre></td></tr></table></figure><ol><li>Bird</li><li>McHale</li><li>Parish</li></ol><p>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 &lt;p&gt; 标签包起来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*   Bird</div><div class="line"></div><div class="line">*   Magic</div></pre></td></tr></table></figure></p><p>当然，项目列表很可能会不小心产生，像是下面这样的写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1986. What a great season.</div></pre></td></tr></table></figure></p><p>换句话说，也就是在行首出现数字-句点-空白，要避免这样的状况，你可以在句点前面加上反斜杠。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1986\. What a great season.</div></pre></td></tr></table></figure></p><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">| Tables        | Col           | Type  |</div><div class="line">| ------------- |:-------------:| -----:|</div><div class="line">| SA_User       |     Type      |   int |</div><div class="line">| SA_Role       |   RoleName    |  char |</div><div class="line">| SA_UserRole   |    UserId     |     1 |</div></pre></td></tr></table></figure><table><thead><tr><th>Tables</th><th style="text-align:center">Col</th><th style="text-align:right">Type</th></tr></thead><tbody><tr><td>SA_User</td><td style="text-align:center">Type</td><td style="text-align:right">int</td></tr><tr><td>SA_Role</td><td style="text-align:center">RoleName</td><td style="text-align:right">char</td></tr><tr><td>SA_UserRole</td><td style="text-align:center">UserId</td><td style="text-align:right">1</td></tr></tbody></table><h3 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">一般网址的链接文字就和链接地址一样</div><div class="line">&lt;http://example.com/&gt;</div></pre></td></tr></table></figure><h3 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠"></a>反斜杠</h3><p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 &lt;em&gt; 标签），可以在星号的前面加上反斜杠：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\*literal asterisks\*</div></pre></td></tr></table></figure></p><p>Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">\   反斜线</div><div class="line">`   反引号</div><div class="line">*   星号</div><div class="line">_   底线</div><div class="line">&#123;&#125;  花括号</div><div class="line">[]  方括号</div><div class="line">()  括弧</div><div class="line">#   井字号</div><div class="line">+   加号</div><div class="line">-   减号</div><div class="line">.   英文句点</div><div class="line">!   惊叹号</div></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;Markdown 的目标是实现「易读易写」。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Markdown 语法的目标是：成为一种适用于网络的书写语言。&lt;/strong&gt; &lt;/p&gt;
-&lt;p&gt;Markdown 是一种可以使用普通文本编辑器编写的标记语言，通过
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="script" scheme="/tags/script/"/>
-    
-      <category term="md" scheme="/tags/md/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>YMAL 语言学习</title>
-    <link href="/2017/10/26/yaml-course/"/>
-    <id>/2017/10/26/yaml-course/</id>
-    <published>2017-10-26T14:17:21.000Z</published>
-    <updated>2017-11-02T14:42:44.424Z</updated>
-    
-    <content type="html"><![CDATA[<p>参考：<a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html" target="_blank" rel="external">阮一峰的网络日志 - YAML 语言教程</a></p><p>YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便，也类似于标准通用标记语言的子集XML的数据描述语言，语法比XML简单很多。</p><p>YAML 语言（发音 /ˈjæməl/ ）的设计目标，就是方便人类读写。它实质上是一种通用的数据串行化格式。</p><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ul><li>大小写敏感</li><li>使用缩进表示层级关系</li><li>缩进时不允许使用Tab键，只允许使用空格。</li><li>缩进的空格数目不重要，只要相同层级的元素左侧对齐即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># 表示注释，从这个字符一直到行尾，都会被解析器忽略。</div></pre></td></tr></table></figure></li></ul><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><ul><li>对象：键值对的集合，又称为映射（mapping）/ 哈希（hashes） / 字典（dictionary）</li><li>数组：一组按次序排列的值，又称为序列（sequence） / 列表（list）</li><li>纯量（scalars）：单个的、不可再分的值</li></ul><h3 id="比对-YAML-和-Javascript"><a href="#比对-YAML-和-Javascript" class="headerlink" title="比对 YAML 和 Javascript"></a>比对 YAML 和 Javascript</h3><p><strong>YAML 转换 Javascript</strong></p><ol><li><p><strong>对象</strong>的一组键值对，使用冒号结构表示。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">animal: pets</div><div class="line">out~ &#123; animal: &apos;pets&apos; &#125;</div><div class="line"># 行内对象</div><div class="line">hash: &#123; name: Steve, foo: bar &#125;</div><div class="line">out~ &#123; hash: &#123; name: &apos;Steve&apos;, foo: &apos;bar&apos; &#125; &#125;</div></pre></td></tr></table></figure></li><li><p>一组连词线开头的行，构成一个<strong>数组</strong>。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- Cat</div><div class="line">- Dog</div><div class="line">- Goldfish</div><div class="line">out~ [ &apos;Cat&apos;, &apos;Dog&apos;, &apos;Goldfish&apos; ]</div><div class="line"># 数据结构的子成员是一个数组，则可以在该项下面缩进一个空格。</div><div class="line">-</div><div class="line"> - Cat</div><div class="line"> - Dog</div><div class="line"> - Goldfish</div><div class="line">out~ [ [ &apos;Cat&apos;, &apos;Dog&apos;, &apos;Goldfish&apos; ] ]</div><div class="line"># 行内表示法</div><div class="line">animal: [Cat, Dog]</div><div class="line">out~ &#123; animal: [ &apos;Cat&apos;, &apos;Dog&apos; ] &#125;</div></pre></td></tr></table></figure></li><li><p>对象和数组可以结合使用，形成<strong>复合结构</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">languages:</div><div class="line"> - Ruby</div><div class="line"> - Perl</div><div class="line"> - Python </div><div class="line">websites:</div><div class="line"> YAML: yaml.org </div><div class="line"> Ruby: ruby-lang.org </div><div class="line"> Python: python.org </div><div class="line"> Perl: use.perl.org</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123; languages: [ &apos;Ruby&apos;, &apos;Perl&apos;, &apos;Python&apos; ],</div><div class="line">  websites: </div><div class="line">   &#123; YAML: &apos;yaml.org&apos;,</div><div class="line">     Ruby: &apos;ruby-lang.org&apos;,</div><div class="line">     Python: &apos;python.org&apos;,</div><div class="line">     Perl: &apos;use.perl.org&apos; &#125; &#125;</div></pre></td></tr></table></figure></li><li><p><strong>纯量</strong>是最基本的、不可再分的值。以下数据类型都属于 JavaScript 的纯量。</p><ul><li>字符串 - 字符串默认不使用引号表示。</li><li>布尔值 - 布尔值用true和false表示</li><li>整数     - 数值直接以字面量的形式表示</li><li>浮点数</li><li>Null  - # null用~表示</li><li>时间     - 时间采用 ISO8601 格式</li><li>日期     - 日期采用复合 iso8601 格式的年、月、日表示。</li></ul><p><strong>使用两个感叹号，强制转换数据类型</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">e: !!str 123</div><div class="line">f: !!str true</div></pre></td></tr></table></figure></li></ol><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串是最常见，也是最复杂的一种数据类型。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 字符串默认不使用引号表示。</div><div class="line">str: 这是一行字符串</div><div class="line">out~ &#123; str: &apos;这是一行字符串&apos; &#125;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 如果字符串之中包含空格或特殊字符，需要放在引号之中。</div><div class="line">str: &apos;内容： 字符串&apos;</div><div class="line">out~ &#123; str: &apos;内容: 字符串&apos; &#125;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 单引号和双引号都可以使用，双引号不会对特殊字符转义。</div><div class="line">s1: &apos;内容\n字符串&apos;</div><div class="line">s2: &quot;内容\n字符串&quot;</div><div class="line">out~ &#123; s1: &apos;内容\\n字符串&apos;, s2: &apos;内容\n字符串&apos; &#125;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 单引号之中如果还有单引号，必须连续使用两个单引号转义。</div><div class="line">str: &apos;labor&apos;&apos;s day&apos;</div><div class="line">out~ &#123; str: &apos;labor\&apos;s day&apos; &#125;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 字符串可以写成多行，从第二行开始，必须有一个单空格缩进。换行符会被转为空格。</div><div class="line">str: 这是一段</div><div class="line">  多行</div><div class="line">  字符串</div><div class="line">out~ &#123; str: &apos;这是一段 多行 字符串&apos; &#125;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 多行字符串可以使用|保留换行符，也可以使用&gt;折叠换行。</div><div class="line">this: |</div><div class="line">  Foo</div><div class="line">  Bar</div><div class="line">that: &gt;</div><div class="line">  Foo</div><div class="line">  Bar</div><div class="line">out~ &#123; this: &apos;Foo\nBar\n&apos;, that: &apos;Foo Bar\n&apos; &#125;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># +表示保留文字块末尾的换行，-表示删除字符串末尾的换行。</div><div class="line">s1: |</div><div class="line">  Foo</div><div class="line"></div><div class="line">s2: |+</div><div class="line">  Foo</div><div class="line"></div><div class="line"></div><div class="line">s3: |-</div><div class="line">  Foo</div><div class="line">out~ &#123; s1: &apos;Foo\n&apos;, s2: &apos;Foo\n\n\n&apos;, s3: &apos;Foo&apos; &#125;</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 字符串之中可以插入 HTML 标记。</div><div class="line">message: |</div><div class="line"></div><div class="line">  &lt;p style=&quot;color: red&quot;&gt;</div><div class="line">    段落</div><div class="line">  &lt;/p&gt;</div><div class="line">out~ &#123; message: &apos;\n&lt;p style=&quot;color: red&quot;&gt;\n  段落\n&lt;/p&gt;\n&apos; &#125;</div></pre></td></tr></table></figure><h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>锚点&amp;和别名*，可以用来引用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">defaults: &amp;defaults</div><div class="line">  adapter:  postgres</div><div class="line">  host:     localhost</div><div class="line"></div><div class="line">development:</div><div class="line">  database: myapp_development</div><div class="line">  &lt;&lt;: *defaults</div><div class="line"></div><div class="line">test:</div><div class="line">  database: myapp_test</div><div class="line">  &lt;&lt;: *defaults</div></pre></td></tr></table></figure><p>&amp;用来建立锚点（defaults），&lt;&lt;表示合并到当前数据，*用来引用锚点。<br>等同于</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">defaults:</div><div class="line">  adapter:  postgres</div><div class="line">  host:     localhost</div><div class="line"></div><div class="line">development:</div><div class="line">  database: myapp_development</div><div class="line">  adapter:  postgres</div><div class="line">  host:     localhost</div><div class="line"></div><div class="line">test:</div><div class="line">  database: myapp_test</div><div class="line">  adapter:  postgres</div><div class="line">  host:     localhost</div></pre></td></tr></table></figure><p>另一种写法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- &amp;showell Steve </div><div class="line">- Clark </div><div class="line">- Brian </div><div class="line">- Oren </div><div class="line">- *showell</div></pre></td></tr></table></figure><p>等同于</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[ &apos;Steve&apos;, &apos;Clark&apos;, &apos;Brian&apos;, &apos;Oren&apos;, &apos;Steve&apos; ]</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;参考：&lt;a href=&quot;http://www.ruanyifeng.com/blog/2016/07/yaml.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;阮一峰的网络日志 - YAML 语言教程&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;YAML 是专门用来写配
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="script" scheme="/tags/script/"/>
-    
-      <category term="ymal" scheme="/tags/ymal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo themes (2)</title>
-    <link href="/2017/10/25/hexo-themes-2/"/>
-    <id>/2017/10/25/hexo-themes-2/</id>
-    <published>2017-10-25T15:03:48.000Z</published>
-    <updated>2017-11-02T14:42:02.210Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装模板遇到的问题"><a href="#安装模板遇到的问题" class="headerlink" title="安装模板遇到的问题"></a>安装模板遇到的问题</h2><h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><p>安装模块因网络原因导致失败，也有可能是资源已经关闭（可能性不高）</p><h3 id="themes-config-yml"><a href="#themes-config-yml" class="headerlink" title="themes/.config.yml"></a>themes/.config.yml</h3><p>每个模板都会有自己的配置，与博客自己的 _config.yml 不一样，此配置文件只对模板起作用，因不了解，导致 less 生成 css 文件失败 </p><h3 id="config-yml"><a href="#config-yml" class="headerlink" title=".config.yml"></a>.config.yml</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">languages: zh-CN  # 使用不存在的语言 zh，导致内部调用 ca</div></pre></td></tr></table></figure><h3 id="themes-languages"><a href="#themes-languages" class="headerlink" title="themes/languages"></a>themes/languages</h3><p>因配置错误语言，发现 ejs 具体调用语言方法，具体待进一步去学习<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">__(&apos;index.category&apos;)  # 估计是读取 languages yml 配置的 index.category 变量值</div></pre></td></tr></table></figure></p><h3 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a>node_modules</h3><p>模块脚本等资源都可以直接修改，因发现 hexo-asset-image 模块生产图片路径有误，直接修改 index.js 文件处理脚本部分问题后，可正确输出图片</p><h3 id="多级-categories"><a href="#多级-categories" class="headerlink" title="多级 categories"></a>多级 categories</h3><p>在 md 文件的 categories 写入数组，将按照数组顺序建立层级关系<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">categories:  # parent &gt;&gt; child &gt;&gt; tail</div><div class="line">  - parent   </div><div class="line">  - child</div><div class="line">  - tail</div></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;安装模板遇到的问题&quot;&gt;&lt;a href=&quot;#安装模板遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;安装模板遇到的问题&quot;&gt;&lt;/a&gt;安装模板遇到的问题&lt;/h2&gt;&lt;h3 id=&quot;网络&quot;&gt;&lt;a href=&quot;#网络&quot; class=&quot;headerlink&quot; 
-      
-    
-    </summary>
-    
-      <category term="tool" scheme="/categories/tool/"/>
-    
-    
-      <category term="hexo" scheme="/tags/hexo/"/>
-    
-      <category term="theme" scheme="/tags/theme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一张图简述 MIT 等协议</title>
-    <link href="/2017/10/25/about-license-for-simple/"/>
-    <id>/2017/10/25/about-license-for-simple/</id>
-    <published>2017-10-25T14:08:27.000Z</published>
-    <updated>2017-11-02T14:45:11.530Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>世界上的开源许可证，大概有上百种。很少有人搞得清楚它们的区别。即使在最流行的六种—-GPL、BSD、MIT、Mozilla、Apache和LGPL—-之中做选择，也很复杂，这张图比那种一堆文字要简单易懂的多<br><img src="/2017/10/25/about-license-for-simple/MIT相关协议.png" alt="MIT相关协议"></p><p>引用：<a href="http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html" target="_blank" rel="external">如何选择开源许可证？</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;License&quot;&gt;&lt;a href=&quot;#License&quot; class=&quot;headerlink&quot; title=&quot;License&quot;&gt;&lt;/a&gt;License&lt;/h2&gt;&lt;p&gt;世界上的开源许可证，大概有上百种。很少有人搞得清楚它们的区别。即使在最流行的六种—-GPL、BSD、
-      
-    
-    </summary>
-    
-      <category term="license" scheme="/categories/license/"/>
-    
-    
-      <category term="collect" scheme="/tags/collect/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo theme</title>
-    <link href="/2017/10/25/hexo-themes/"/>
-    <id>/2017/10/25/hexo-themes/</id>
-    <published>2017-10-25T03:53:52.000Z</published>
-    <updated>2017-11-02T14:41:57.100Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="官网提供的模板"><a href="#官网提供的模板" class="headerlink" title="官网提供的模板"></a>官网提供的模板</h2><p>模板地址 <a href="https://hexo.io/themes/" target="_blank" rel="external">hexo themes</a>，点击图片可以预览效果，点击文字可以进入 git<br>下面列举示例，引用 <a href="https://github.com/cgmartin/hexo-theme-bootstrap-blog" target="_blank" rel="external">hexo-theme-bootstrap-blog </a></p><h3 id="安装主题必须在-hexo-2-4-或以上"><a href="#安装主题必须在-hexo-2-4-或以上" class="headerlink" title="安装主题必须在 hexo 2.4 或以上"></a>安装主题必须在 hexo 2.4 或以上</h3><ol><li><p>将主题拉到本地:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/cgmartin/hexo-theme-bootstrap-blog.git themes/bootstrap-blog</div></pre></td></tr></table></figure></li><li><p>安装 hexo-tag-bootstrap for more Bootstrap tags (textcolors, buttons, labels, badges, etc.):</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-tag-bootstrap --save</div></pre></td></tr></table></figure></li><li><p>安装 hexo-tag-fontawesome for placing Font Awesome icons in your Markdown:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-tag-fontawesome --save</div></pre></td></tr></table></figure></li><li><p>修改脚本引用<br>因 google 国内无法访问，打开 themes/bootstrap-blog/layout/_partial/inline-scripts.ejs，将 jQuery 和 bootstrap 引用修改：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;script src=&quot;https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></li><li><p>配置 _config.yml 的 theme 配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">theme: hexo-theme-xups</div><div class="line"># 更新 git</div><div class="line">$ cd themes/bootstrap-blog</div><div class="line">$ git pull</div></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;官网提供的模板&quot;&gt;&lt;a href=&quot;#官网提供的模板&quot; class=&quot;headerlink&quot; title=&quot;官网提供的模板&quot;&gt;&lt;/a&gt;官网提供的模板&lt;/h2&gt;&lt;p&gt;模板地址 &lt;a href=&quot;https://hexo.io/themes/&quot; target=&quot;_bl
-      
-    
-    </summary>
-    
-      <category term="tool" scheme="/categories/tool/"/>
-    
-    
-      <category term="hexo" scheme="/tags/hexo/"/>
-    
-      <category term="theme" scheme="/tags/theme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo 安装</title>
-    <link href="/2017/10/25/hexo-install/"/>
-    <id>/2017/10/25/hexo-install/</id>
-    <published>2017-10-25T03:05:14.000Z</published>
-    <updated>2017-11-02T14:41:43.329Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="hexo-环境"><a href="#hexo-环境" class="headerlink" title="hexo 环境"></a>hexo 环境</h2><h3 id="node-js-amp-npm"><a href="#node-js-amp-npm" class="headerlink" title="node.js &amp; npm"></a>node.js &amp; npm</h3><p>到官网下载最新安装包 <a href="https://nodejs.org/en/download/current/" target="_blank" rel="external">node.js</a>，已经包括 node.js 和 npm，默认安装便可</p><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>到官网下载最新安装包 <a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a>，安装后一定要重启，否则 git 无法作为全局命令使用（弄了N次环境变量都不行，结果重启一下就好了，晕死）</p><h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><ul><li>直接给命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g  # 作为全局命令安装 hexo </div><div class="line">$ hexo init blog           # 通过 cd 命令选定目录后初始化建立 blog</div><div class="line">$ cd blog                  # 进入 blog 目录</div><div class="line">$ npm install              # 还原 npm 引用</div><div class="line">$ hexo server              # 启动 hexo 服务，默认4000端口</div></pre></td></tr></table></figure></li></ul><h3 id="发布-git-静态页面"><a href="#发布-git-静态页面" class="headerlink" title="发布 git 静态页面"></a>发布 git 静态页面</h3><ul><li><p>配置github账户信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;YourName&quot;       </div><div class="line">$ git config --global user.email &quot;YourEmail&quot;</div></pre></td></tr></table></figure></li><li><p>SSH<br>进入 blog 所在目录，右键打开“Git Bash Here”</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;youremail&quot;    # 第一个提示信息是 .ssh 目录，直接回车</div><div class="line">                                      # 第二、三个提示是输入密匙，两次一致便可</div><div class="line">$ cd ~/.ssh                           # 进入 SSH 目录</div><div class="line">$ cat id_rsa.pub                      # SSH 密匙，复制并在 git 上面添加（注意不要复制最后的邮件地址）</div></pre></td></tr></table></figure></li><li><p>git 配置在参考 <a href="http://www.cnblogs.com/visugar/p/6821777.html" target="_blank" rel="external">hexo从零开始到搭建完整</a> 及个人博客 <a href="https://ganqichao.github.io/" target="_blank" rel="external">首个博客</a></p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;hexo-环境&quot;&gt;&lt;a href=&quot;#hexo-环境&quot; class=&quot;headerlink&quot; title=&quot;hexo 环境&quot;&gt;&lt;/a&gt;hexo 环境&lt;/h2&gt;&lt;h3 id=&quot;node-js-amp-npm&quot;&gt;&lt;a href=&quot;#node-js-amp-npm&quot; c
-      
-    
-    </summary>
-    
-      <category term="tool" scheme="/categories/tool/"/>
-    
-    
-      <category term="hexo" scheme="/tags/hexo/"/>
-    
-      <category term="install" scheme="/tags/install/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>首个博客</title>
-    <link href="/2017/10/24/first-blog/"/>
-    <id>/2017/10/24/first-blog/</id>
-    <published>2017-10-24T15:11:14.000Z</published>
-    <updated>2017-11-02T15:04:36.939Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="首次发布个人博客"><a href="#首次发布个人博客" class="headerlink" title="首次发布个人博客"></a>首次发布个人博客</h2><p>尝试学习 node.js 搭建服务端，学习 hexo + node.js 开源项目创建个人博客，初步了解该项目使用技术有</p><table><thead><tr><th>技术</th><th>介绍</th></tr></thead><tbody><tr><td>node.js</td><td>一个Javascript运行环境(runtime)；Node.js 使用事件驱动，非阻塞I/O 模型而得以轻量和高效，非常适合在分布式设备上运行数据密集型的实时应用。</td></tr><tr><td>git</td><td>分布式版本控制系统</td></tr><tr><td>YAML</td><td>_config.yml另一种标记语言，它是一种直观的能够被电脑识别的数据序列化格式，是一个可读性高并且容易被人类阅读，容易和脚本语言交互，用来表达资料序列的编程语言。</td></tr><tr><td>ejs</td><td>EJS是一个JavaScript模板库，用来从JSON数据中生成HTML字符串。</td></tr><tr><td>md</td><td>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</td></tr></tbody></table><h3 id="终于成功搭建-hexo"><a href="#终于成功搭建-hexo" class="headerlink" title="终于成功搭建 hexo"></a>终于成功搭建 hexo</h3><p>坑坑坑…..</p><h4 id="稍微总结一下-hexo-搭建遇到的问题"><a href="#稍微总结一下-hexo-搭建遇到的问题" class="headerlink" title="稍微总结一下 hexo 搭建遇到的问题"></a>稍微总结一下 hexo 搭建遇到的问题</h4><ol><li>搭建了两个网站，结果配置 _config.yml 的 deploy 搞混了</li><li>顺带说明一下变量和值之间的冒号“:”必须在冒号后添加一个空格，语法要求</li><li><p>创建 SSH 命令注意要大小写匹配安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;youremail&quot;    # 配置 ssh</div></pre></td></tr></table></figure></li><li><p>安装 hexo-deployer-git 若失败或提示忽略这忽略那，建议删除 node_modules 目录，重新执行 npm install</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div><div class="line">$ npm install</div></pre></td></tr></table></figure></li></ol><h4 id="下一步"><a href="#下一步" class="headerlink" title="下一步"></a>下一步</h4><p>掌握 _config.yml 配置文件及安装 themes</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;首次发布个人博客&quot;&gt;&lt;a href=&quot;#首次发布个人博客&quot; class=&quot;headerlink&quot; title=&quot;首次发布个人博客&quot;&gt;&lt;/a&gt;首次发布个人博客&lt;/h2&gt;&lt;p&gt;尝试学习 node.js 搭建服务端，学习 hexo + node.js 开源项目创建个人博
-      
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="/tags/hexo/"/>
-    
-      <category term="blog" scheme="/tags/blog/"/>
     
   </entry>
   
