@@ -2,93 +2,128 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/2017/11/06/sdp-page/</loc>
+    <loc>/2017/11/16/jQuery-review/</loc>
     
-    <lastmod>2017-11-06T14:45:56.049Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/11/06/sdp-model-design/</loc>
-    
-    <lastmod>2017-11-06T14:33:33.930Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/11/06/sdp-index/</loc>
-    
-    <lastmod>2017-11-06T14:11:16.900Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/11/06/sdp-user-story/</loc>
-    
-    <lastmod>2017-11-06T14:04:05.403Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/11/06/sdp-usecase/</loc>
-    
-    <lastmod>2017-11-06T12:27:40.116Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/11/06/sdp-system-sub-module/</loc>
-    
-    <lastmod>2017-11-06T12:27:39.366Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/11/06/sdp-system-module/</loc>
-    
-    <lastmod>2017-11-06T12:27:39.320Z</lastmod>
+    <lastmod>2017-11-16T16:51:15.874Z</lastmod>
     
   </url>
   
   <url>
     <loc>/2017/11/06/sdp-system-function/</loc>
     
-    <lastmod>2017-11-06T12:27:39.304Z</lastmod>
+    <lastmod>2017-11-16T14:22:20.769Z</lastmod>
     
   </url>
   
   <url>
-    <loc>/2017/11/06/sdp-exception-record/</loc>
+    <loc>/2017/11/06/sdp-model-design/</loc>
     
-    <lastmod>2017-11-06T12:27:39.163Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/11/06/sdp-datatable/</loc>
-    
-    <lastmod>2017-11-06T12:27:39.116Z</lastmod>
+    <lastmod>2017-11-14T13:38:53.223Z</lastmod>
     
   </url>
   
   <url>
-    <loc>/2017/11/06/sdp-database-design/</loc>
+    <loc>/2017/11/06/sdp-usecase/</loc>
     
-    <lastmod>2017-11-06T12:27:38.898Z</lastmod>
+    <lastmod>2017-11-14T13:38:53.217Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/14/sdp-summary/</loc>
+    
+    <lastmod>2017-11-14T13:38:53.205Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/06/sdp-index/</loc>
+    
+    <lastmod>2017-11-14T13:38:52.905Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/06/sdp-page/</loc>
+    
+    <lastmod>2017-11-14T13:38:52.905Z</lastmod>
     
   </url>
   
   <url>
     <loc>/2017/11/06/sdp-communication-interface/</loc>
     
-    <lastmod>2017-11-06T12:27:38.866Z</lastmod>
+    <lastmod>2017-11-14T13:38:52.889Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/02/markdown-course-2/</loc>
+    
+    <lastmod>2017-11-11T02:41:03.766Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/10/sdp-word-for-standard/</loc>
+    
+    <lastmod>2017-11-11T02:41:03.766Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/06/sdp-system-sub-module/</loc>
+    
+    <lastmod>2017-11-11T02:41:03.001Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/06/sdp-exception-record/</loc>
+    
+    <lastmod>2017-11-11T02:41:02.985Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/06/sdp-system-module/</loc>
+    
+    <lastmod>2017-11-11T02:41:02.985Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/06/sdp-datatable/</loc>
+    
+    <lastmod>2017-11-11T02:41:02.985Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/06/sdp-database-design/</loc>
+    
+    <lastmod>2017-11-11T02:41:02.985Z</lastmod>
     
   </url>
   
   <url>
     <loc>/2017/11/06/sdp-communication-scene/</loc>
     
-    <lastmod>2017-11-06T12:27:38.866Z</lastmod>
+    <lastmod>2017-11-11T02:41:02.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/08/defense-ddos-idea/</loc>
+    
+    <lastmod>2017-11-11T02:41:02.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>/2017/11/06/sdp-user-story/</loc>
+    
+    <lastmod>2017-11-11T02:41:02.172Z</lastmod>
     
   </url>
   
@@ -131,13 +166,6 @@
     <loc>/2017/10/24/first-blog/</loc>
     
     <lastmod>2017-11-02T15:04:36.939Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>/2017/11/02/markdown-course-2/</loc>
-    
-    <lastmod>2017-11-02T15:03:50.882Z</lastmod>
     
   </url>
   

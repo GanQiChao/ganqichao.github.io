@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2017-11-06T12:27:39.163Z</updated>
+  <updated>2017-11-16T16:51:15.874Z</updated>
   <id>/</id>
   
   <author>
@@ -17,22 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>sdp 异常登记</title>
-    <link href="/2017/11/06/sdp-exception-record/"/>
-    <id>/2017/11/06/sdp-exception-record/</id>
-    <published>2017-11-06T03:11:30.000Z</published>
-    <updated>2017-11-06T12:27:39.163Z</updated>
+    <title>jQuery review</title>
+    <link href="/2017/11/16/jQuery-review/"/>
+    <id>/2017/11/16/jQuery-review/</id>
+    <published>2017-11-16T14:25:16.000Z</published>
+    <updated>2017-11-16T16:51:15.874Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p>感觉很久没有更新 jQuery 知识了，这几年都在忙工作，觉得能正常使用 jQuery 就好，遇到问题稍微检查一下源码，找到原理就可以处理，导致很多代码都是勉强处理，例如 ajax 嵌套等问题，今天抽空重新看一遍官网 api documentation 感触良多呀，印象较深的还是 Deferred Object、Callback Object，甚至连 bind() 也重新深入了解。</p><h2 id="bind-amp-on"><a href="#bind-amp-on" class="headerlink" title="bind() &amp; on()"></a>bind() &amp; on()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 绑定多个事件</div><div class="line">$(&apos;#div1&apos;).bind(&apos;click mouseenter&apos;, function(event) &#123; alert( &quot;The &quot; + event.type + &quot; event happened!&quot; ); &#125;);</div><div class="line">$(&apos;#div1&apos;).bind(&#123;</div><div class="line">  click: function () &#123; alert(&apos;click&apos;); &#125;,</div><div class="line">  mouseenter: function() &#123; alert(&apos;mouseenter&apos;); &#125;</div><div class="line">&#125;);</div><div class="line">// 出入 event 数据</div><div class="line">var messager = &apos;test1&apos;;</div><div class="line">$(&apos;#div1&apos;).bind(&apos;click&apos;, &#123; msg: messager &#125;, function(event)&#123; alert(event.data.msg); &#125;);</div><div class="line">messager = &apos;msg change&apos;;</div><div class="line">$(&apos;#div1&apos;).bind(&apos;click&apos;, &#123; msg: messager &#125;, function(event)&#123; alert(event.data.msg); &#125;);</div><div class="line"></div><div class="line">// on()</div><div class="line">$(&apos;#div1&apos;).on(&apos;click&apos;, &apos;p&apos;, &#123; name: &apos;Andy&apos; &#125;, function( event ) &#123; alert(event.data.name); &#125;);</div></pre></td></tr></table></figure><h2 id="trigger-amp-triggerHandler"><a href="#trigger-amp-triggerHandler" class="headerlink" title="trigger() &amp; triggerHandler()"></a>trigger() &amp; triggerHandler()</h2><ol><li>trigger会触发事件冒泡，而triggerHandler则不会</li><li>triggerHandler只触发jQuery对象集合中第一个元素的事件处理函数，而trigger则触发所有对象的事件处理函数</li><li>trigger会触发事件的默认行为，triggerHandler则会阻止事件的默认行为</li><li>trigger和triggerHandler都支持事件命名空间，在命名空间上的表现也完全一致</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">// 原来可以这样传入参数</div><div class="line">$( &quot;#foo&quot; ).on( &quot;custom&quot;, function( event, param1, param2 ) &#123;</div><div class="line">  alert( param1 + &quot;\n&quot; + param2 );</div><div class="line">&#125;);</div><div class="line">$( &quot;#foo&quot;).trigger( &quot;custom&quot;, [ &quot;Custom&quot;, &quot;Event&quot; ] );</div><div class="line"></div><div class="line">// 事件命名空间</div><div class="line">$(&quot;#btn&quot;).bind(&quot;click&quot;,function()&#123;  </div><div class="line">  alert(&quot;no&quot;);  </div><div class="line">&#125;);  </div><div class="line"></div><div class="line">$(&quot;#btn&quot;).bind(&quot;click.a&quot;,function()&#123;  </div><div class="line">  alert(&quot;a&quot;);  </div><div class="line">&#125;);  </div><div class="line">  </div><div class="line">$(&quot;#btn&quot;).bind(&quot;click.b&quot;,function()&#123;  </div><div class="line">  alert(&quot;b&quot;);  </div><div class="line">&#125;);  </div><div class="line"></div><div class="line">// 打印no  </div><div class="line">$(&quot;#btn&quot;).trigger(&quot;click!&quot;);  </div><div class="line">// 打印no,a,b  </div><div class="line">$(&quot;#btn&quot;).trigger(&quot;click&quot;);  </div><div class="line">// 打印a  </div><div class="line">$(&quot;#btn&quot;).trigger(&quot;click.a&quot;);  </div><div class="line">// 无打印  </div><div class="line">$(&quot;#btn&quot;).trigger(&quot;.a&quot;);</div></pre></td></tr></table></figure><h2 id="Callbacks"><a href="#Callbacks" class="headerlink" title="$.Callbacks"></a>$.Callbacks</h2><p>分为4种模式：once、memory、unique、stopOnFalse<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$.Callbacks( &quot;unique stopOnFalse&quot; )</div></pre></td></tr></table></figure></p><p>观察者模式，观察者是委托、回调</p><ol><li>.add(cb) - 添加观察者</li><li>.disable/.disabled - 禁止通知/判断是否禁止通知</li><li>.empty - 清空所有观察者</li><li>.fire(args) - 通知所有观察者，传入参数</li><li>.fireWith([context] [,args]) - 通知所有观察者，传入上下文和参数</li><li>.has(cb) - 判断是否存在观察者</li><li>.lock/locked - <strong>不清楚用处</strong></li><li>.remove(cb) - 取消订阅</li></ol><h2 id="Deferred"><a href="#Deferred" class="headerlink" title="$.Deferred"></a>$.Deferred</h2><p>done/fail/progress 是 callbacks.add，将回调函数存入<br>resolve/reject/notify 是 callbacks.fire，执行回调函数(或队列)</p><p>内部返回 promise 对象，避免外部控制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var wait = function()&#123;</div><div class="line">  var dtd = $.Deferred(); //在函数内部，新建一个Deferred对象</div><div class="line">  var tasks = function()&#123;</div><div class="line">    alert(&quot;执行完毕！&quot;);</div><div class="line">    td.resolve(); // 改变Deferred对象的执行状态</div><div class="line">  &#125;;  </div><div class="line">  setTimeout(tasks,5000);</div><div class="line">  return dtd.promise(); // 返回promise对象</div><div class="line">&#125;;</div><div class="line">$.when(wait())</div><div class="line">  .done(function()&#123; alert(&quot;哈哈，成功了！&quot;); &#125;)</div><div class="line">  .fail(function()&#123; alert(&quot;出错啦！&quot;); &#125;);</div></pre></td></tr></table></figure></p><p>普通操作的回调函数接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$.Deferred(wait)</div><div class="line">  .done(function()&#123; alert(&quot;哈哈，成功了！&quot;); &#125;)</div><div class="line">  .fail(function()&#123; alert(&quot;出错啦！&quot;); &#125;);</div><div class="line"></div><div class="line">var dtd = $.Deferred(); // 生成Deferred对象</div><div class="line">  var wait = function(dtd)&#123;</div><div class="line">  var tasks = function()&#123;</div><div class="line">    alert(&quot;执行完毕！&quot;);</div><div class="line">    dtd.resolve(); // 改变Deferred对象的执行状态</div><div class="line">  &#125;;</div><div class="line">  setTimeout(tasks,5000);</div><div class="line">&#125;;</div><div class="line">dtd.promise(wait);</div><div class="line">wait.done(function()&#123; alert(&quot;哈哈，成功了！&quot;); &#125;)</div><div class="line">  .fail(function()&#123; alert(&quot;出错啦！&quot;); &#125;);</div><div class="line">wait(dtd);</div></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-
+        &lt;p&gt;感觉很久没有更新 jQuery 知识了，这几年都在忙工作，觉得能正常使用 jQuery 就好，遇到问题稍微检查一下源码，找到原理就可以处理，导致很多代码都是勉强处理，例如 ajax 嵌套等问题，今天抽空重新看一遍官网 api documentation 感触良多呀，印象较深
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 前言概要</title>
+    <link href="/2017/11/14/sdp-summary/"/>
+    <id>/2017/11/14/sdp-summary/</id>
+    <published>2017-11-14T05:13:17.000Z</published>
+    <updated>2017-11-14T13:38:53.205Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../../06/sdp-index/">sdp 索引导航</a></p><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><ol><li>弱关系：表示SDP各个模块间基于表示任意组合的一种关联。</li><li>上下文：表示引用和包含，也理解为父子或链式关系；上文表示引用，下文表示包含。<strong>文档中（上/下文）只是为了阅读理解，实际数据不显示</strong>。</li></ol><h2 id="任务转发备注说明"><a href="#任务转发备注说明" class="headerlink" title="任务转发备注说明"></a>任务转发备注说明</h2><ol><li>草稿，创建任务分配给自己，视为草稿，可填写备注，但非必要</li><li>首次转发，创建任务分配他人，不可填写备注；草稿转发他人任务，可填写备注，但非必要</li><li>非首次转发，转发他人，必须填写备注</li><li>转发自己，此情况多为任务发错，重新修改，因此必须填写备注</li><li>完结，可填写备注，非必要</li></ol><p><a href="../../06/sdp-index/">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../../06/sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;关键字&quot;&gt;&lt;a href=&quot;#关键字&quot; class=&quot;headerlink&quot; title=&quot;关键字&quot;&gt;&lt;/a&gt;关键字&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;弱关系：表示SDP各
       
     
     </summary>
@@ -45,26 +65,113 @@
   </entry>
   
   <entry>
-    <title>sdp 页面编码</title>
-    <link href="/2017/11/06/sdp-page/"/>
-    <id>/2017/11/06/sdp-page/</id>
-    <published>2017-11-06T03:11:17.000Z</published>
-    <updated>2017-11-06T14:45:56.049Z</updated>
+    <title>sdp 用词规范</title>
+    <link href="/2017/11/10/sdp-word-for-standard/"/>
+    <id>/2017/11/10/sdp-word-for-standard/</id>
+    <published>2017-11-10T06:08:50.000Z</published>
+    <updated>2017-11-11T02:41:03.766Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>分类（可选，如APP/WEB-）+界面名称（与原型设计界面一样）</td></tr><tr><td>名称</td><td>访问路由路径</td></tr><tr><td>页面</td><td>页面文件放置路径</td></tr><tr><td>原型</td><td>选择对应的原型设计</td></tr><tr><td>附件</td><td>上传相关文件</td></tr><tr><td>描述</td><td>详细叙述页面具体元素、操作、系统响应，<br>便于指导后续测试及系统操作手册编写</td></tr><tr><td>接口</td><td>页面使用到的接口，通过右边菜单选择<br>对应的接口，与引用的使用一样。</td></tr><tr><td>引用</td><td>弱关系</td></tr></tbody></table><p><strong>弱关系</strong></p><ol><li>若A被页面编码引用，则表示A的上文；格式为“（上文）【入口】+ 标题”</li><li>若A与页面编码存在关系，则表示A的下文；格式为“（下文）【出口】+ 标题”</li></ol><p><strong><em>A提示和B提示说明应在原型设计加以说明。</em></strong></p><blockquote><p>示例</p><ul><li>标题：WEB-登录页面</li><li>名称：/Login</li><li>页面：Views/Login/Login.html</li><li>原型：WEB-登录页面</li><li>附件：无</li><li>描述：填写登录信息登陆账号、登陆密码，点击【登陆】按钮<ol><li>若登陆信息验证通过，则提交系统；    <ul><li>若登陆信息正确，则页面转向系统首页；</li><li>若登陆信息有误，则B提示错误信息：<ol><li>【登陆账号不存在】</li><li>【该账号已被停用，请与管理员联系】</li><li>【登陆密码错误】</li></ol></li></ul></li><li>若登陆信息验证不通过，则A提示验证信息：<ul><li>【登陆账号不能为空】</li><li>【登陆密码不能为空】</li></ul></li></ol></li><li>引用：<ol><li>（下文）【出口】WEB-系统首页</li></ol></li><li>接口：如下表</li></ul></blockquote><p><strong>接口</strong></p><table><thead><tr><th>通讯接口</th><th>子模块</th><th>系统模块</th><th>备注</th></tr></thead><tbody><tr><td>登录</td><td>登录管理</td><td>系统安全</td></tr></tbody></table><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../../06/sdp-index/">sdp 索引导航</a></p><h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>CURD是一个数据库技术中的缩写词，一般的项目开发的各种参数的基本功能都是CURD。作用是用于处理数据的基本原子操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">检索 - retrieve   # 数据源获取数据</div><div class="line">搜索 - search     # 获取数据集合，关键字多个字段“或”的检索</div><div class="line">查询 - query      # 获取数据集合，多个条件“并”的检索</div><div class="line">获取 - get        # 获取某一个数据</div></pre></td></tr></table></figure></p><h2 id="功能操作"><a href="#功能操作" class="headerlink" title="功能操作"></a>功能操作</h2><p>分为管理型、业务型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">         #管理       #业务</div><div class="line">add     | 添加      | 新建</div><div class="line">edit    | 修改      | 编辑</div><div class="line">delete  | 删除      | 删除</div></pre></td></tr></table></figure></p><h2 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">创建 - create     # 插入新数据</div><div class="line">更新 - update     # 更新已有数据</div><div class="line">检索 - retrieve   # 读取数据</div><div class="line">删除 - delete     # 删除已有数据</div><div class="line">保存 - save       # 依赖判断主键执行创建或更新操作</div></pre></td></tr></table></figure><h2 id="常用词"><a href="#常用词" class="headerlink" title="常用词"></a>常用词</h2><p>分为常用、备用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">列表 - list</div><div class="line">分页 - pagination、pager</div><div class="line">条件 - filter、condition</div><div class="line">取消 - cancel</div><div class="line">删除 - delete、remove</div><div class="line">结果 - result</div><div class="line">详情 - delele</div><div class="line">元素 - item、el</div><div class="line">某一 - a、some</div><div class="line">组件 - component</div><div class="line">Key - 键</div><div class="line">Value - 值</div></pre></td></tr></table></figure></p><h2 id="注释常用格式"><a href="#注释常用格式" class="headerlink" title="注释常用格式"></a>注释常用格式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">迭代 - 元素</div><div class="line">检索 - 基于...筛选；通过...返回；</div><div class="line">转换 - 将...投影；</div><div class="line">联合 - 并</div><div class="line">循环 - 只要满足指定的条件，就会返回...</div><div class="line">排序 - 根据键按...排序</div><div class="line">判断 - 通过...确定...是否满足条件；通过...确定...是否包含...；</div><div class="line">获取 - 返回</div><div class="line">求值 - 计算</div><div class="line">委托 - 调用...返回(func)；使用指定操作...(action)</div><div class="line">属性 - 提供...；获取...；</div><div class="line">实例化 - 创建；</div><div class="line">构造函数 - 使用...初始化新的...；</div><div class="line">条件 - 如果...则...；</div><div class="line">try - 尝试</div></pre></td></tr></table></figure><p><a href="../../06/sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;../../06/sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;获取数据&quot;&gt;&lt;a href=&quot;#获取数据&quot; class=&quot;headerlink&quot; title=&quot;获取数据&quot;&gt;&lt;/a&gt;获取数据&lt;/h2&gt;&lt;p&gt;CURD是一个数据库技术
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DDos 防御思路</title>
+    <link href="/2017/11/08/defense-ddos-idea/"/>
+    <id>/2017/11/08/defense-ddos-idea/</id>
+    <published>2017-11-08T02:52:52.000Z</published>
+    <updated>2017-11-11T02:41:02.969Z</updated>
+    
+    <content type="html"><![CDATA[<p>检测 ip 和 api。</p><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol><li>数据采集</li><li>异常分析</li><li>智能优化</li></ol><h3 id="数据采集"><a href="#数据采集" class="headerlink" title="数据采集"></a>数据采集</h3><ol><li>黑名单 ip 过滤</li><li>ip + api 采集，可制定采集规则，后续自主学习</li><li>白名单 ip 过滤</li><li>超时 ip 资源释放监控</li></ol><h3 id="异常分析"><a href="#异常分析" class="headerlink" title="异常分析"></a>异常分析</h3><ol><li>监控器在时间间隔分析时间段内 ip + api 采集</li><li>提取警告 api，违反特定规则</li><li>提取异常 api，ip 超出警告限制，列入黑名单并通知管理员</li></ol><h3 id="智能优化"><a href="#智能优化" class="headerlink" title="智能优化"></a>智能优化</h3><ol><li>优化监控器时间间隔</li><li>优化分析时间段</li><li>建立白名单和白名单有效时间</li><li>建立黑名单和黑名单有效时间</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;检测 ip 和 api。&lt;/p&gt;
+&lt;h2 id=&quot;思路：&quot;&gt;&lt;a href=&quot;#思路：&quot; class=&quot;headerlink&quot; title=&quot;思路：&quot;&gt;&lt;/a&gt;思路：&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;数据采集&lt;/li&gt;
+&lt;li&gt;异常分析&lt;/li&gt;
+&lt;li&gt;智能优化&lt;/li&gt;
+&lt;/
+      
+    
+    </summary>
+    
+      <category term="net" scheme="/categories/net/"/>
+    
+    
+      <category term="ddos" scheme="/tags/ddos/"/>
+    
+      <category term="safe" scheme="/tags/safe/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 索引导航</title>
+    <link href="/2017/11/06/sdp-index/"/>
+    <id>/2017/11/06/sdp-index/</id>
+    <published>2017-11-06T15:06:35.000Z</published>
+    <updated>2017-11-14T13:38:52.905Z</updated>
+    
+    <content type="html"><![CDATA[<p>软件流程管理系统，简称 SDP，用于在软件研发中对资源和过程的一套自主研发的管理型系统，该系统还在完善中。</p><p>系统核心是如何结合研发管理，因此必须对研发流程的各个模块标准化，包括如何命名、如何描述、用词标准等。</p><p>以下是各个模块的链接，先占位再完善内容：</p><p>描述部分要求使用 MD 语言，这里提供部分学习链接<br><a href="/2017/10/26/markdown-course/"> Markdown 语言学习 </a><br><a href="/2017/11/02/markdown-course-2/"> Markdown 语言学习 2 </a></p><p><strong>前言</strong><br><a href="/2017/11/10/sdp-word-for-standard/">SDP 用词规范</a><br><a href="/2017/11/14/sdp-summary/">SDP 前言概要</a></p><ol><li><h3 id="Use-Case-业务用例"><a href="#Use-Case-业务用例" class="headerlink" title="Use Case - 业务用例"></a><a href="../sdp-usecase/">Use Case - 业务用例</a></h3><p>业务用例、需求汇总文档、修改汇总文档、会议记录文档、聊天记录文档，所有由客户提出需求相关的汇总资料。</p></li><li><h3 id="User-Story-用户故事"><a href="#User-Story-用户故事" class="headerlink" title="User Story - 用户故事"></a><a href="../sdp-user-story/">User Story - 用户故事</a></h3><p>用户故事、需求详情、修改详情，细化业务用例内容，拆分每一项内容作为独立的工作登记记录，可以理解为任务分解。</p></li><li><h3 id="Sequence-Diagram-时序图"><a href="#Sequence-Diagram-时序图" class="headerlink" title="Sequence Diagram - 时序图"></a>Sequence Diagram - 时序图</h3><p>必须结合用户故事，主要描述业务角色、业务工作和业务实体如何依据时间来协调工作，关注与职责，从而挖掘系统真实的功能。</p></li><li><h3 id="Model-Design-原型设计"><a href="#Model-Design-原型设计" class="headerlink" title="Model Design - 原型设计"></a><a href="../sdp-model-design/">Model Design - 原型设计</a></h3><p>名字其实 Prototype Design 更适合，管理项目启动初期，为响应需求而设计的系统原型图<strong>草稿</strong>。</p></li><li><h3 id="System-Module-系统模块"><a href="#System-Module-系统模块" class="headerlink" title="System Module - 系统模块"></a><a href="../sdp-system-module/">System Module - 系统模块</a></h3><p>以“用”为视角，为系统设计功能菜单便于用户在需求阶段理解系统，此模块多为一级菜单，需要结合系统子模块做进一步完善。</p></li><li><h3 id="System-Sub-Module-系统子模块"><a href="#System-Sub-Module-系统子模块" class="headerlink" title="System Sub Module - 系统子模块"></a><a href="../sdp-system-sub-module/">System Sub Module - 系统子模块</a></h3><p>延续系统模块，细化一级菜单，此模块多为二级菜单，即可视的用户页面。非页面子模块需结合设计分解，但不建议在此系统子模块。</p></li><li><h3 id="System-Function-系统功能"><a href="#System-Function-系统功能" class="headerlink" title="System Function - 系统功能"></a><a href="../sdp-system-function/">System Function - 系统功能</a></h3><p>延续系统子模块，细化用户页面，描述页面加载和功能按钮具体的作用，多为检索和提交操作，非直观可视的无需作为系统功能，如获取数据源。</p></li><li><h3 id="Domain-Model-领域模型"><a href="#Domain-Model-领域模型" class="headerlink" title="Domain Model - 领域模型"></a>Domain Model - 领域模型</h3><p>以“设计”为视角，结合业务知识分解核心领域，如人可分为心肺功能、神经系统等，而不是跑步。</p></li><li><h3 id="Database-Design-数据库设计"><a href="#Database-Design-数据库设计" class="headerlink" title="Database Design - 数据库设计"></a><a href="../sdp-database-design/">Database Design - 数据库设计</a></h3><p>数据库引擎、ORM 技术选型、数据库命名及初始化 SQL。</p></li><li><h3 id="Data-Table-数据库表"><a href="#Data-Table-数据库表" class="headerlink" title="Data Table - 数据库表"></a><a href="../sdp-datatable/">Data Table - 数据库表</a></h3><p>延续数据库中数据表设计，包括字段、备注。</p></li><li><h3 id="Communication-Interface-通讯接口"><a href="#Communication-Interface-通讯接口" class="headerlink" title="Communication Interface - 通讯接口"></a><a href="../sdp-communication-interface/">Communication Interface - 通讯接口</a></h3><p>前端和后端的通讯接口标准和期望正确的系统响应，约定接口输入参数和输出结果，还有验证规则要求，便于前端人员和后端人员编码一致。</p></li><li><h3 id="Communication-Scene-通讯场景"><a href="#Communication-Scene-通讯场景" class="headerlink" title="Communication Scene - 通讯场景"></a><a href="../sdp-communication-scene/">Communication Scene - 通讯场景</a></h3><p>后端编码，依据不同场景下输入参数及测试数据，系统如何响应编写场景说明。</p></li><li><h3 id="Page-Code-页面编码"><a href="#Page-Code-页面编码" class="headerlink" title="Page Code - 页面编码"></a><a href="../sdp-page/">Page Code - 页面编码</a></h3><p>前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。</p></li><li><h3 id="Test-Plan-测试计划"><a href="#Test-Plan-测试计划" class="headerlink" title="Test Plan - 测试计划"></a>Test Plan - 测试计划</h3><p>用于检测后端编码不同场景是否按照测试计划所设计方案正确执行。</p></li><li><h3 id="Exception-Record-异常登记"><a href="#Exception-Record-异常登记" class="headerlink" title="Exception Record - 异常登记"></a><a href="../sdp-exception-record/">Exception Record - 异常登记</a></h3><p>测试和编码人员提交系统存在的 BUG 以及其处理结果。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;软件流程管理系统，简称 SDP，用于在软件研发中对资源和过程的一套自主研发的管理型系统，该系统还在完善中。&lt;/p&gt;
+&lt;p&gt;系统核心是如何结合研发管理，因此必须对研发流程的各个模块标准化，包括如何命名、如何描述、用词标准等。&lt;/p&gt;
+&lt;p&gt;以下是各个模块的链接，先占位再完善内
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 异常登记</title>
+    <link href="/2017/11/06/sdp-exception-record/"/>
+    <id>/2017/11/06/sdp-exception-record/</id>
+    <published>2017-11-06T13:11:30.000Z</published>
+    <updated>2017-11-11T02:41:02.985Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>测试和编码人员提交系统存在的 BUG 以及其处理结果。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>异常情况问题</td></tr><tr><td>名称</td><td>访问路由路径</td></tr><tr><td>描述</td><td><br>BUG描述：主要描述bug出现的情况<br>界面截图：访问的界面截图<br>测试结果：目前系统的情况描述，可以是图片或者文字<br>期望结果：期望的情况描述，可以是图片或者文字</td></tr><tr><td>引用</td><td>弱关系，展示应当按照引用顺序排序</td></tr></tbody></table><p><strong>弱关系</strong></p><ol><li><del>若A与页面编码存在关系，则表示A的下文；格式为“（下文）页面编码-标题”</del></li><li><del>若A与【修改】用户故事存在关系，则表示A的下文；格式为“（下文）【修改】用户故事-标题”</del></li><li>若A与其他任意模块存在关系，则表示A的下文；格式为“（下文）【模块】模块名称+标题”</li></ol><blockquote><p>示例</p><ul><li>标题：基准地价定级计算系统登录界面登录验证结果不提示</li><li>名称：/Login</li><li>描述：<ol><li>BUG描述：在登录的时候，没有输入密码，点击登录按钮，系统没有任何反应</li><li>界面截图：Login</li><li>测试结果：登录验证不通过没有反应</li><li>期望结果：不输入密码，输入框样式改变，警示用户不能空 </li></ol></li><li>引用：<ol><li>【修改】用户故事-反馈意见10-27</li></ol></li></ul></blockquote><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;测试和编码人员提交系统存在的 BUG 以及其处理结果。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;项目&lt;/th&gt;
 &lt;th&gt;描述&lt;/th&gt;
-&lt;/
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;
       
     
     </summary>
@@ -80,19 +187,24 @@
     <title>sdp 通讯场景</title>
     <link href="/2017/11/06/sdp-communication-scene/"/>
     <id>/2017/11/06/sdp-communication-scene/</id>
-    <published>2017-11-06T03:11:00.000Z</published>
-    <updated>2017-11-06T12:27:38.866Z</updated>
+    <published>2017-11-06T13:11:00.000Z</published>
+    <updated>2017-11-11T02:41:02.969Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>后端编码，依据不同场景下输入参数及测试数据，系统如何响应编写场景说明。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>通讯场景名称，用于说明通讯场景用途，<br>可使用对应通讯接口+序号</td></tr><tr><td>名称</td><td>英文表示，可使用对应通讯接口+序号</td></tr><tr><td>子模块</td><td>选择通讯场景所属系统子模块</td></tr><tr><td>接口</td><td>选择通讯场景对应通讯接口</td></tr><tr><td>描述</td><td>用于说明通讯场景作用</td></tr><tr><td>详细说明</td><td>详细说明通讯接口请求过程，<br>包括验证内容，验证成功与否返回处理方式</td></tr><tr><td>输入实例</td><td>填写通讯接口所需输入参数</td></tr><tr><td>输出实例</td><td>根据通讯接口自动生成接口返回结构<br>Data 部分内容，除备注外，其余不可修改</td></tr><tr><td>测试地址</td><td>通过选择通讯接口自动生成通讯接口<br>请求测试地址，可修改</td></tr><tr><td>响应内容</td><td>点击【测试按钮】，返回通讯接口请求<br>返回完整结构内容</td></tr><tr><td>引用</td><td>弱关系</td></tr></tbody></table><p><strong>描述</strong></p><ol><li>属性：通讯接口输入参数，根据选择通讯接口自动生成，不可修改</li><li>类型：通讯接口输入参数类型，根据选择通讯接口自动生成，不可修改</li><li>值：填写对应通讯接口输入参数值，用于测试</li><li>备注：通讯接口输入参数备注，根据选择通讯接口自动生成，可修改</li></ol><blockquote><p>示例</p><ul><li>标题：新建定级项目</li><li>名称：ProjectCreate</li><li>子模块：定级项目管理</li><li>接口：新建定级项目</li><li>描述：用于测试新建定级项目通讯接口</li><li>详细说明：<ol><li>需要验证项目名称、项目编号、专家ID集合</li><li>验证通过执行操作，返回成功信息</li><li>验证不通过不执行操作返回验证失败信息</li></ol></li><li>输入实例：见《附表：输入实例》</li><li>输出实例：无</li><li>测试地址：localhost:3128/none/api//LandGradingProject/ ProjectCreate</li><li>响应内容：见《附表：响应内容》</li><li>引用：无</li></ul></blockquote><p><strong>附表：输入实例</strong></p><table><thead><tr><th>属性</th><th>类型</th><th>值</th><th>备注</th></tr></thead><tbody><tr><td>Name</td><td>string</td><td>南宁定级项目</td><td>定级项目名称</td></tr><tr><td>No</td><td>string</td><td>NN2017102901</td><td>定级项目编号</td></tr><tr><td>Description</td><td>string</td><td>定级项目描述</td></tr><tr><td>ExpertIds</td><td>IList</td><td>[1,3]</td><td>专家ID集合</td></tr></tbody></table><p><strong>附表：响应内容</strong></p><table><thead><tr><th>属性</th><th>值</th></tr></thead><tbody><tr><td>Success</td><td>true</td></tr><tr><td>Info</td><td></td></tr><tr><td>Data</td><td></td></tr><tr><td>Code</td><td>200</td></tr></tbody></table><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;后端编码，依据不同场景下输入参数及测试数据，系统如何响应编写场景说明。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/
       
     
     </summary>
@@ -108,19 +220,21 @@
     <title>sdp 通讯接口</title>
     <link href="/2017/11/06/sdp-communication-interface/"/>
     <id>/2017/11/06/sdp-communication-interface/</id>
-    <published>2017-11-06T03:10:49.000Z</published>
-    <updated>2017-11-06T12:27:38.866Z</updated>
+    <published>2017-11-06T13:10:49.000Z</published>
+    <updated>2017-11-14T13:38:52.889Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>前端和后端的通讯接口标准和期望正确的系统响应，约定接口输入参数和输出结果，还有验证规则要求，便于前端人员和后端人员编码一致。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>通讯接口名称，用于说明通讯接口用途</td></tr><tr><td>名称</td><td>英文表示，一般情况使用领域模型对应类名表示</td></tr><tr><td>子模块</td><td>选择通讯接口所属系统子模块</td></tr><tr><td>系统功能</td><td>选择通讯接口所属系统功能</td></tr><tr><td>数据表</td><td>用于自动生成代码，指定Execute方法中Dao类型</td></tr><tr><td>代码模板</td><td>用于自动生成代码选用模板，模板类型有以下5种</td></tr><tr><td>描述</td><td>用于表达通讯接口作用，<br>以及通讯接口请求过程（包括验证、返回成功与否），<br>由于返回结构固定，若需要修改返回结构，需要在此说明</td></tr><tr><td>输入参数</td><td>填写通讯接口所需输入参数</td></tr><tr><td>输出参数</td><td>填写通讯接口返回结果参数，选用代码模板后，<br>会自动生成固定的输出参数结构</td></tr><tr><td>标准约束</td><td>填写通讯接口输入参数约束条件</td></tr><tr><td>引用</td><td>弱关系，较少场景需要使用</td></tr></tbody></table><p><strong>代码模板</strong></p><ol><li>Query：一般用于查询列表数据时候选用，Execute方法执行后按照固定格式返回列表内容</li><li>Get：一般用于查询单条数据时候选用，自动检验数据是否存在，Execute方法执行后返回内容</li><li>Create：一般用于创建单条新数据时候选用，Execute方法执行后不返回内容</li><li>Update：一般用于更新单条数据时候选用，自动检验数据是否存在，Execute方法执行后不返回内容</li><li>Delete：一般用于删除单条数据时候选用，自动检验数据是否存在，Execute方法执行后不返回内容</li></ol><p><strong>描述</strong><br>不要使用“当输入参数Key值不为空的时候根据输入值查询数据库字段【RecordNo】、【Address】、【Region】、【StreetName】，并返回结果”这样的说明，改为“基于Key检索备案号/地址/区域/街道”，【/】表示【或】关系，可使用【、】表示【与】关系。</p><p><strong>输入参数</strong></p><ol><li>属性：英文表示，参数英文名称，使用骆驼命名法命名，首字母需大写</li><li>类型：选择属性对应的C#代码数据类型</li><li>备注：属性注释</li></ol><p><strong>输出参数</strong></p><ol><li>Success：布朗类型，表示通讯接口结果返回成功与否，结构固定部分，一般不需进行修改</li><li>Info：字符串类型，表示通讯接口结果返回信息，结构固定部分，一般不需进行修改</li><li>Data：用户定义类型，表示通讯接口返回对象，通讯接口实际返回类型在这里进行修改</li><li>Code：整型类型，表示通讯接口返回成功与否状态码，结构固定部分，一般不需进行修改</li></ol><p><strong>标准约束</strong></p><ol><li>属性：英文表示，参数英文名称，使用骆驼命名法命名，首字母需大写，对应输入参数属性名称</li><li>类型：选择属性对应的C#代码数据类型，对应输入参数属性类型</li><li>验证方式：包括非空、长度、正则表达式验证，允许多种验证方式组合使用</li><li>备注：对应验证方式的说明</li></ol><blockquote><p>示例</p><ul><li>标题：新建定级项目</li><li>名称：ProjectCreate</li><li>子模块：定级项目管理</li><li>系统功能：新建定级项目</li><li>数据表：LandGradingProject</li><li>代码模板：Create</li><li>描述：用于保存新建定级项目<ol><li>需要验证项目名称、项目编号、专家ID集合</li><li>验证通过执行操作，返回成功信息</li><li>验证不通过不执行操作返回验证失败信息</li></ol></li><li>输入参数：见《附表：输入参数》</li><li>输出参数：见《附表：输出参数》</li><li>标准约束：见《附表：标准约束》</li><li>引用：无</li></ul></blockquote><p><strong>附表：输入参数</strong></p><table><thead><tr><th>属性</th><th>类型</th><th>备注</th></tr></thead><tbody><tr><td>Name</td><td>string</td><td>定级项目名称</td></tr><tr><td>No</td><td>string</td><td>定级项目编号</td></tr><tr><td>Description</td><td>string</td><td>定级项目描述</td></tr><tr><td>ExpertIds</td><td>IList</td><td>专家ID集合</td></tr></tbody></table><p><strong>附表：输出参数</strong></p><table><thead><tr><th>属性</th><th>类型</th><th>备注</th></tr></thead><tbody><tr><td>Success</td><td>bool</td><td>返回成功与否</td></tr><tr><td>Info</td><td>string</td><td>返回信息</td></tr><tr><td>Data</td><td>string</td><td>返回数据</td></tr><tr><td>Code</td><td>int</td><td>返回状态码</td></tr></tbody></table><p><strong>附表：标准约束</strong></p><table><thead><tr><th>属性</th><th>类型</th><th>验证方式</th><th>备注</th></tr></thead><tbody><tr><td>Name</td><td>string</td><td>非空</td><td>项目名称不能为空</td></tr><tr><td></td><td></td><td>长度（20）</td><td>项目名称在20个字符之内</td></tr><tr><td>No</td><td>string</td><td>非空</td><td>项目编号不能为空</td></tr><tr><td></td><td></td><td>长度（20）</td><td>项目编号在20个字符之内</td></tr><tr><td>ExpertIds</td><td>IList</td><td>非空</td><td>专家ID不能为空</td></tr></tbody></table><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前端和后端的通讯接口标准和期望正确的系统响应，约定接口输入参数和输出结果，还有验证规则要求，便于前端人员和后端人员编码一致。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项
       
     
     </summary>
@@ -136,18 +250,25 @@
     <title>sdp 数据库表</title>
     <link href="/2017/11/06/sdp-datatable/"/>
     <id>/2017/11/06/sdp-datatable/</id>
-    <published>2017-11-06T03:10:30.000Z</published>
-    <updated>2017-11-06T12:27:39.116Z</updated>
+    <published>2017-11-06T13:10:30.000Z</published>
+    <updated>2017-11-11T02:41:02.985Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>延续数据库中数据表设计，包括字段、备注。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>数据表中文名称</td></tr><tr><td>名称</td><td>数据库存放表名称，必须英文名称，<br>若自定义表建议可考虑使用中文</td></tr><tr><td>数据库</td><td>归属数据库</td></tr><tr><td>描述</td><td>说明表存放数据，格式：该表用于存放…<br>若存在外键请在此加以说明，使用MD表格格式<br>表头：外键、关系表、关系表主键</td></tr><tr><td>字段</td><td>此表的字段设计</td></tr><tr><td>引用</td><td>弱关系，展示应当按照引用顺序排序。</td></tr></tbody></table><p><strong>弱关系</strong></p><ol><li>若A与【修改】业务用例存在关系，则表示A的上文；格式为“（上文）【修改】业务用例-标题”。</li><li>若A与【修改】用户故事存在关系，则表示A的上文；格式为“（上文）【修改】用户故事-标题”。</li></ol><blockquote><p>示例</p><ul><li>标题：系统用户表</li><li>名称： SA_User</li><li>数据库： 房屋租赁备案</li><li>描述： 该表用于存放系统用户登录账号数据，派生系统管理员和注册用户</li><li>字段：见《附件：字段》</li><li>引用：</li></ul></blockquote><p><strong>附件：字段</strong></p><table><thead><tr><th>名称</th><th>类型</th><th>长度</th><th>非空</th><th>主键</th><th>备注</th></tr></thead><tbody><tr><td>Id</td><td>uniqueidentifier</td><td>36</td><td>是</td><td>是</td><td>主键</td></tr><tr><td>LoginName</td><td>nvarchar</td><td>20</td><td>是</td><td>否</td><td>登录账号，长度不可大于20个中文</td></tr><tr><td>UserName</td><td>nvarchar</td><td>20</td><td>是</td><td>否</td><td>用户名称，长度不可大于20个中文</td></tr><tr><td>LoginPassword</td><td>nvarchar</td><td>255</td><td>是</td><td>否</td><td>登录密码，加密</td></tr><tr><td>UserState</td><td>int</td><td>1</td><td>是</td><td>否</td><td>用户状态，0-启用，1-禁用</td></tr><tr><td>UserType</td><td>int</td><td>1</td><td>是</td><td>否</td><td>用户类型，0-注册用户，1-系统管理员</td></tr><tr><td>Token</td><td>nvarchar</td><td>255</td><td>否</td><td>否</td><td>令牌</td></tr><tr><td>TokenCreateTime</td><td>datetime</td><td></td><td>否</td><td>否</td><td>令牌创建时间</td></tr><tr><td>TokenFailureTime</td><td>datetime</td><td></td><td>否</td><td>否</td><td>令牌失效时间</td></tr></tbody></table><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;延续数据库中数据表设计，包括字段、备注。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
 
       
     
@@ -164,19 +285,24 @@
     <title>sdp 数据库设计</title>
     <link href="/2017/11/06/sdp-database-design/"/>
     <id>/2017/11/06/sdp-database-design/</id>
-    <published>2017-11-06T03:10:16.000Z</published>
-    <updated>2017-11-06T12:27:38.898Z</updated>
+    <published>2017-11-06T13:10:16.000Z</published>
+    <updated>2017-11-11T02:41:02.985Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>数据库引擎、ORM 技术选型、数据库命名及初始化 SQL。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>数据库中文名称</td></tr><tr><td>名称</td><td>数据实例名称，英文或中文</td></tr><tr><td>描述</td><td>数据库引擎、ORM 技术选型</td></tr><tr><td>字段</td><td>此表的字段设计</td></tr><tr><td>引用</td><td>弱关系，展示应当按照引用顺序排序。</td></tr></tbody></table><p><strong>弱关系</strong></p><ol><li>若A与【需求】业务用例存在关系，则表示A的上文；格式为“（上文）【需求】业务用例-标题”。</li><li>若A与【需求】用户故事存在关系，则表示A的上文；格式为“（上文）【需求】用户故事-标题”。</li><li>若A与【修改】业务用例存在关系，则表示A的上文；格式为“（上文）【修改】业务用例-标题”。</li><li>若A与【修改】用户故事存在关系，则表示A的上文；格式为“（上文）【修改】用户故事-标题”。</li></ol><blockquote><p>示例</p><ul><li>标题：房屋租赁备案</li><li>名称：RentRecord</li><li>描述：数据库使用 SQL Server 2008 R2 版本，第三方数据库工具使用 Simple.Data.Core、Simple.Data.Ado、Simple.Data.SqlServer</li><li>引用：</li></ul></blockquote><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;数据库引擎、ORM 技术选型、数据库命名及初始化 SQL。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
       
     
     </summary>
@@ -192,19 +318,21 @@
     <title>sdp 系统功能</title>
     <link href="/2017/11/06/sdp-system-function/"/>
     <id>/2017/11/06/sdp-system-function/</id>
-    <published>2017-11-06T03:09:56.000Z</published>
-    <updated>2017-11-06T12:27:39.304Z</updated>
+    <published>2017-11-06T13:09:56.000Z</published>
+    <updated>2017-11-16T14:22:20.769Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>延续系统子模块，细化用户页面，描述页面加载和功能按钮具体的作用，多为检索和提交操作，非直观可视的无需作为系统功能，如获取数据源。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>动词 + 名称，如新建用户、编辑用户</td></tr><tr><td>名称</td><td>英文标识，如访问地址</td></tr><tr><td>系统模块</td><td>选择归属系统模块</td></tr><tr><td>子模块</td><td>选择归属系统子模块</td></tr><tr><td>描述</td><td>概述此功能实现内容，<br>格式：主要实现…此功能在**页面，提交表单内容标准（表格）</td></tr><tr><td>引用</td><td>弱引用，展示应当按照引用顺序排序。</td></tr></tbody></table><p><strong>弱关系</strong></p><ol><li>若A与【修改】用户故事存在关系，则表示A的上文；格式为“（上文）【修改】用户故事-标题”。</li></ol><blockquote><p>示例</p><ul><li>标题：修改个人资料</li><li>名称：Modify Personal Info</li><li>系统模块：个人信息管理</li><li>子模块：个人资料</li><li>描述：<ol><li>主要实现当前登录用户修改自己的个人资料</li><li>此功能在【修改个人资料】页面，系统展示当前登录用户的个人资料，修改后提交，系统保存修改信息</li><li>个人资料信息（采用表格描述），见《附表：个人资料信息》</li></ol></li><li>引用：</li></ul></blockquote><p><strong>附表：个人资料信息</strong></p><table><thead><tr><th>字段</th><th>选项</th><th>必填</th><th>备注</th></tr></thead><tbody><tr><td>名称</td><td></td><td>是</td><td></td></tr><tr><td>账号</td><td></td><td></td><td>不可修改</td></tr><tr><td>性别</td><td>男/女</td><td></td><td></td></tr><tr><td>手机</td><td></td><td>是</td><td>必须手机号码</td></tr></tbody></table><p><strong><em>示例中可见展示个人资料作为修改个人资料的描述不单独作为系统功能，因此获取个人资料不算系统功能，但【查看个人资料】可作为系统功能，具体视业务需要</em></strong></p><p>若设计时，单独有查看个人资料页面链接，然后再此页面还放置修改个人资料的按钮作为开关或链接，那么可视为两个功能。</p><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;延续系统子模块，细化用户页面，描述页面加载和功能按钮具体的作用，多为检索和提交操作，非直观可视的无需作为系统功能，如获取数据源。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th
       
     
     </summary>
@@ -220,19 +348,21 @@
     <title>sdp 系统子模块</title>
     <link href="/2017/11/06/sdp-system-sub-module/"/>
     <id>/2017/11/06/sdp-system-sub-module/</id>
-    <published>2017-11-06T03:09:49.000Z</published>
-    <updated>2017-11-06T12:27:39.366Z</updated>
+    <published>2017-11-06T13:09:49.000Z</published>
+    <updated>2017-11-11T02:41:03.001Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>延续系统模块，细化一级菜单，此模块多为二级菜单，即可视的用户页面。非页面子模块需结合设计分解，但不建议在此系统子模块。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>二级菜单名称，名词作为前缀，如用户管理，不要使用“管理用户”</td></tr><tr><td>名称</td><td>英文标识，如访问地址</td></tr><tr><td>系统模块</td><td>选择归属系统模块</td></tr><tr><td>描述</td><td>概述此子模块实现内容，格式：主要实现…</td></tr><tr><td>引用</td><td>弱引用，展示应当按照引用顺序排序。</td></tr></tbody></table><p><strong>弱关系</strong></p><ol><li>若A与【修改】业务用例存在关系，则表示A的上文；格式为“（上文）【修改】业务用例-标题”。</li><li>若A与【修改】用户故事存在关系，则表示A的上文；格式为“（上文）【修改】用户故事-标题”。</li></ol><blockquote><p>示例</p><ul><li>标题：用户管理</li><li>名称：User Manage</li><li>描述：主要实现用户的添加及修改，密码重置，帐号启用及停用，配置用户的角色给予相关权限。</li><li>引用：</li></ul></blockquote><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;延续系统模块，细化一级菜单，此模块多为二级菜单，即可视的用户页面。非页面子模块需结合设计分解，但不建议在此系统子模块。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目&lt;/
       
     
     </summary>
@@ -248,19 +378,21 @@
     <title>sdp 系统模块</title>
     <link href="/2017/11/06/sdp-system-module/"/>
     <id>/2017/11/06/sdp-system-module/</id>
-    <published>2017-11-06T03:09:29.000Z</published>
-    <updated>2017-11-06T12:27:39.320Z</updated>
+    <published>2017-11-06T13:09:29.000Z</published>
+    <updated>2017-11-11T02:41:02.985Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>努力编写中。。。。。。</p><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>以“用”为视角，为系统设计功能菜单便于用户在需求阶段理解系统，此模块多为一级菜单，需要结合系统子模块做进一步完善。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>一级菜单名称，名词作为前缀，如系统配置，不要使用“配置系统”</td></tr><tr><td>名称</td><td>英文标识，如访问地址</td></tr><tr><td>描述</td><td>概述此系统模块实现内容，格式：该模块主要实现…</td></tr><tr><td>引用</td><td>弱引用，展示应当按照引用顺序排序。</td></tr></tbody></table><p><strong>弱关系</strong></p><ol><li>若A与【修改】业务用例存在关系，则表示A的上文；格式为“（上文）【修改】业务用例-标题”。</li><li>若A与【修改】用户故事存在关系，则表示A的上文；格式为“（上文）【修改】用户故事-标题”。</li></ol><blockquote><p>示例</p><ul><li>标题：授权管理</li><li>名称： Auth Manage</li><li>描述：该模块主要实现管理员对系统用户信息、系统角色、动物中心管理员和申请流程审核员的管理</li><li>引用：</li></ul></blockquote><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;努力编写中。。。。。。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以“用”为视角，为系统设计功能菜单便于用户在需求阶段理解系统，此模块多为一级菜单，需要结合系统子模块做进一步完善。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目&lt;/th
       
     
     </summary>
@@ -276,19 +408,80 @@
     <title>sdp 原型设计</title>
     <link href="/2017/11/06/sdp-model-design/"/>
     <id>/2017/11/06/sdp-model-design/</id>
-    <published>2017-11-06T03:09:03.000Z</published>
-    <updated>2017-11-06T14:33:33.930Z</updated>
+    <published>2017-11-06T13:09:03.000Z</published>
+    <updated>2017-11-14T13:38:53.223Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>名字其实 Prototype Design 更适合，管理项目启动初期，为响应需求而设计的系统原型图<strong>草稿</strong>。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>分类（可选，如APP/WEB-）+界面名称+后缀（可选，_v1.0）</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>附件</td><td>具体的界面设计，主要以图片为主，可上传多个</td></tr><tr><td>描述</td><td>介绍界面的主要元素以及各个元素的输入格式、<br>验证方式或者元素的点击事件可能发生的情况。<br>描写该页面的操作，主要用于生成操作文档</td></tr><tr><td>引用</td><td>弱关系，展示应当按照引用顺序排序</td></tr></tbody></table><p><strong>引用</strong></p><ol><li>若A与业务用例【需求】存在关系，则表示A的下文；格式为“（下文）【需求】+ 标题”</li><li>若A被原型设计引用，则表示A的上文；格式为“（上文）【入口】+ 标题”</li><li>若A与原型设计存在关系，则表示A的下文；格式为“（下文）【出口】+ 标题”</li></ol><blockquote><p>示例</p><ul><li>标题：WEB-登录页面</li><li>名称：Login</li><li>附件：《基准地价定级计算系统登录界面》</li><li>描述：<ol><li>元素描述：输入框有账户和密码，登录按钮，密码采用掩码的方式显示。</li><li>元素验证：账户和密码为必填项，统一采用提交时（登录）验证。<del>账户若未填写账户，提示【账户不能为空】。密码若未填写密码，则提示【登录密码不能为空】。</del>验证提示统一采用输入框样式改变的提示方式。</li><li>元素事件：登录按钮—若登录不成功，则弹出框提示用户不成功原因。登录成功直接跳转到首页。</li></ol></li><li>操作说明：用户打开系统访问地址，进入到系统登录界面，输入账号和密码，点击登录按钮，登录成功则直接跳转到系统首页，不成功则提示用户不成功信息。</li><li>引用：<ol><li>（下文）【出口】WEB-系统首页</li></ol></li></ul></blockquote><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>名字其实 Prototype Design 更适合，管理项目启动初期，为响应需求而设计的系统原型图<strong>草稿</strong>。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>分类+界面+后缀</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>附件</td><td>具体的界面设计，主要以图片为主，可上传多个</td></tr><tr><td>描述</td><td>介绍界面的主要元素以及各个元素的输入格式、<br>验证方式或者元素的点击事件可能发生的情况。<br>描写该页面的操作，主要用于生成操作文档</td></tr><tr><td>引用</td><td>弱关系，展示应当按照引用顺序排序</td></tr></tbody></table><p><strong>标题</strong></p><ol><li>分类：如APP/WEB，非必要</li><li>界面：名词作为前缀，如用户管理列表，用户编辑</li><li>后缀：如_v1.0，非必要</li></ol><p><strong>引用</strong></p><ol><li>若A与业务用例【分类】存在关系，则表示A的下文；格式为“（下文）【分类】业务用例 + 标题”</li><li>若A被原型设计引用，则表示A的上文；格式为“（上文）【入口】原型设计 + 标题”</li><li>若A与原型设计存在关系，则表示A的下文；格式为“（下文）【出口】原型设计 + 标题”</li></ol><blockquote><p>示例</p><ul><li>标题：WEB登录页面</li><li>名称：Login</li><li>附件：《基准地价定级计算系统登录界面》</li><li>描述：<ol><li>元素描述：输入框有账户和密码，登录按钮，密码采用掩码的方式显示。</li><li>元素验证：账户和密码为必填项，统一采用提交时（登录）验证。<del>账户若未填写账户，提示【账户不能为空】。密码若未填写密码，则提示【登录密码不能为空】。</del>验证提示统一采用输入框样式改变的提示方式。</li><li>元素事件：登录按钮—若登录不成功，则弹出框提示用户不成功原因。登录成功直接跳转到首页。</li></ol></li><li>引用：<ol><li>（下文）【出口】原型设计-WEB系统首页</li></ol></li></ul></blockquote><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;名字其实 Prototype Design 更适合，管理项目启动初期，为响应需求而设计的系统原型图&lt;strong&gt;草稿&lt;/strong&gt;。&lt;/p&gt;
 &lt;table&gt;
-&lt;
+&lt;thead&gt;
+&lt;tr
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 业务用例</title>
+    <link href="/2017/11/06/sdp-usecase/"/>
+    <id>/2017/11/06/sdp-usecase/</id>
+    <published>2017-11-06T13:06:49.000Z</published>
+    <updated>2017-11-14T13:38:53.217Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>业务用例、需求汇总文档、修改汇总文档、会议记录文档、聊天记录文档，所有由客户提出需求相关的汇总资料。<br>业务用例必须结合用户故事一起说明，本章介绍业务用例。</p><h2 id="使用场景划分"><a href="#使用场景划分" class="headerlink" title="使用场景划分"></a>使用场景划分</h2><ul><li><p>客户提供需求资料文档<br>客户提供具体待研发系统的需求资料，项目负责人需要按照客户提供的需求问题进行响应，这种情况下，必须以【需求】为主导开展工作（项目）。应当将严格按照需求资料内容在SDP系统详细记录，具体要求如下：</p><ol><li>相关需求资料文档登记为一个【业务用例】，分类标记【需求】</li><li>进入研发阶段以后，客户再次提供任何资料或反馈建议，每次都必须登记为一个【业务用例】，分类标记【修改】</li><li>用户故事的标记中，【需求】和【修改】是针对资料文档每一项进行详细记录，主要目的有：响应用户需求和反馈（工作量评估）、衡量是否完成标准。</li></ol></li><li><p>自主研发系统<br>业务用例和用户故事以【业务】为主，基于故事开展工作（SDP、基准地价）。应当将严格按照需求资料内容在SDP系统详细记录，具体要求如下：</p><ol><li>分析待研究组织、业务执行者和用例，则每个系统卖点登记为一个【业务用例】，分类标记【业务】，业务用例必须有具体执行者。</li><li>用户故事的【业务】是对业务用例的详细描述，必须结合现状和改进场景加以阐述。</li><li>用户故事主要目的是响应用户需求和反馈（工作量评估）、衡量是否完成标准。</li></ol></li><li><p>协助客户共同编写需求<br>需求人员协助客户共同对待研发系统深入研究，可以【业务】和【需求】为主导开展工作，具体有双方协商（如准备开展的土地出让项目）。此类情况按应当结合上述1、2两点开展工作。</p></li></ul><blockquote><p>总结<br>业务用例和用户故事具体标记分为三类：<strong>需求、修改、业务</strong>，存在一一对应关系。需求和修改主要是为了面对客户，由系统自动生产相关响应文档《需求设计文档》，结合系统功能可另外生成《系统功能需求文档》《系统研发工作量评估》。业务主要便于研发人员从业务角度理解待研发系统在实际工作中具体起到的作用，通过现状和改进后得到体现。</p></blockquote><h2 id="需求汇总-Requirement"><a href="#需求汇总-Requirement" class="headerlink" title="需求汇总 - Requirement"></a>需求汇总 - Requirement</h2><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>文档名称</td></tr><tr><td>名称</td><td>英文，【REQ】 – yyyyMMdd</td></tr><tr><td>业务角色</td><td>以下所有都改为分类</td></tr><tr><td>附件</td><td>具体资料及文档，可上传多个</td></tr><tr><td>需求</td><td>介绍资料背景，如获取时间、谁提供、如何获取、<br>个人对于需求理解，以助于日后将场景还原，<br>例如需求会议记录概要。</td></tr><tr><td>引用</td><td>弱关系，展示应当按照引用顺序排序。</td></tr></tbody></table><p><strong>标题</strong></p><ol><li>展示：分类+标题。</li><li>分类：【需求】，标题的前缀，SDP系统提供选项。</li><li>文档：后缀添加年月日yyyyMMdd，也可添加版本号_v1.0。</li></ol><p><strong>引用</strong></p><ol><li>若A与业务用例存在关系，则表示A的下文；格式为“（下文）【需求】业务用例-标题”。</li><li>若A与用户故事存在关系，则表示A的下文；格式为“（下文）【需求】用户故事-标题”。</li></ol><blockquote><p>示例</p><ul><li>标题：【需求】基准地价定级计算系统需求20171021</li><li>名称：【REQ】- 20171021</li><li>附件：《基准地价定级计算系统需求规格说明书》</li><li>描述：2017-10-21由提供，该需求文档经过双方两次远程视频会议及多次QQ沟通。</li><li>引用：无</li></ul></blockquote><h2 id="修改汇总-Change"><a href="#修改汇总-Change" class="headerlink" title="修改汇总 - Change"></a>修改汇总 - Change</h2><p>进入编码阶段后，任何新需求和反馈问题全部统一视为【修改】</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>文档名称，参照“业务用例【需求】，标题”</td></tr><tr><td>名称</td><td>英文，【CHG】 – yyyyMMdd</td></tr><tr><td>附件</td><td>资料文件</td></tr><tr><td>描述</td><td>参照“业务用例【需求】，描述”</td></tr><tr><td>引用</td><td>参照“业务用例【需求】，引用”</td></tr></tbody></table><h2 id="业务用例-Use-Case"><a href="#业务用例-Use-Case" class="headerlink" title="业务用例 - Use Case"></a>业务用例 - Use Case</h2><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>执行者+用例</td></tr><tr><td>执行者</td><td>与待研究组织打交道的人</td></tr><tr><td>待研究组织</td><td>本次系统使用的组织</td></tr><tr><td>用例</td><td>待研究组织的价值</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>附件</td><td>可不上传</td></tr><tr><td>描述</td><td>简述该用例现状。</td></tr><tr><td>引用</td><td>参照《业务用例【需求】》</td></tr></tbody></table><blockquote><p>示例</p><ul><li>标题：【业务】评估部门获取网格点分值成果</li><li>名称：Appraisal dep get the grid point score result</li><li>附件：无</li><li>描述：因评估部门制作土地等级等价格成果图件，需要评估土地地价，现行是采用网格点价格方式，故需要从数据部门获取到网格点分值以便于计算网格点价格。</li><li>引用：无</li></ul></blockquote><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;业务用例、需求汇总文档、修改汇总文档、会议记录文档、聊天记录文档，所有由客户提出需求相关的汇总资料。&lt;br&gt;业务用例必须结合用户故事一起说明，本章介绍业务用例。&lt;/p&gt;
+&lt;h2 id=&quot;
+      
+    
+    </summary>
+    
+      <category term="sdp" scheme="/categories/sdp/"/>
+    
+    
+      <category term="project" scheme="/tags/project/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sdp 页面编码</title>
+    <link href="/2017/11/06/sdp-page/"/>
+    <id>/2017/11/06/sdp-page/</id>
+    <published>2017-11-06T03:11:17.000Z</published>
+    <updated>2017-11-14T13:38:52.905Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>分类+界面</td></tr><tr><td>名称</td><td>访问路由路径</td></tr><tr><td>页面</td><td>页面文件放置路径</td></tr><tr><td>原型</td><td>选择对应的原型设计</td></tr><tr><td>附件</td><td>上传相关文件</td></tr><tr><td>描述</td><td>详细叙述页面具体元素、操作、系统响应，<br>便于指导后续测试及系统操作手册编写</td></tr><tr><td>接口</td><td>页面使用到的接口，通过右边菜单选择<br>对应的接口，与引用的使用一样。</td></tr><tr><td>引用</td><td>弱关系</td></tr></tbody></table><p><strong>标题</strong></p><ol><li>分类：如APP/WEB，非必要</li><li>界面：可于与原型设计界面一样，若需将原型分解，按照单独为页面命名</li></ol><p><strong>弱关系</strong></p><ol><li>若A被页面编码引用，则表示A的上文；格式为“（上文）【入口】页面编码 + 标题”</li><li>若A与页面编码存在关系，则表示A的下文；格式为“（下文）【出口】页面编码 + 标题”</li></ol><p><strong><em>A提示和B提示说明应在原型设计加以说明。</em></strong></p><blockquote><p>示例</p><ul><li>标题：WEB登录页面</li><li>名称：/Login</li><li>页面：Views/Login/Login.html</li><li>原型：WEB登录页面</li><li>附件：无</li><li>描述：填写登录信息登陆账号、登陆密码，点击【登陆】按钮<ol><li>若登陆信息验证通过，则提交系统；    <ul><li>若登陆信息正确，则页面转向系统首页；</li><li>若登陆信息有误，则B提示错误信息：<ol><li>【登陆账号不存在】</li><li>【该账号已被停用，请与管理员联系】</li><li>【登陆密码错误】</li></ol></li></ul></li><li>若登陆信息验证不通过，则A提示验证信息：<ul><li>【登陆账号不能为空】</li><li>【登陆密码不能为空】</li></ul></li><li>操作说明：<ul><li>简要说明使用方式<br>用户打开系统访问地址，进入到系统登录界面，输入账号和密码，点击登录按钮，登录成功则直接跳转到系统首页，不成功则提示用户不成功信息。</li><li>图片<br>截已完成的完整页面</li></ul></li></ol></li><li>引用：<ol><li>（下文）【出口】页面编码-WEB系统首页</li></ol></li><li>接口：见《附表：接口》</li></ul></blockquote><p><strong>附表：接口</strong></p><table><thead><tr><th>通讯接口</th><th>子模块</th><th>系统模块</th><th>备注</th></tr></thead><tbody><tr><td>登录</td><td>登录管理</td><td>系统安全</td></tr></tbody></table><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thea
       
     
     </summary>
@@ -305,70 +498,17 @@
     <link href="/2017/11/06/sdp-user-story/"/>
     <id>/2017/11/06/sdp-user-story/</id>
     <published>2017-11-06T03:07:28.000Z</published>
-    <updated>2017-11-06T14:04:05.403Z</updated>
+    <updated>2017-11-11T02:41:02.172Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>用户故事、需求详情、修改详情，细化业务用例内容，拆分每一项内容作为独立的工作登记记录，可以理解为任务分解。</p><h3 id="需求详情-Requirement-Detail"><a href="#需求详情-Requirement-Detail" class="headerlink" title="需求详情 - Requirement Detail"></a>需求详情 - Requirement Detail</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>需求项</td></tr><tr><td>展示</td><td>分类+标题</td></tr><tr><td>分类</td><td>【需求】，标题的前缀，SDP系统提供选项</td></tr><tr><td>名称</td><td>英文或yyyyMMdd-01</td></tr><tr><td>描述</td><td>1）客户对该需求项的描述。<br>2）需求分析师对需求的理解和响应</td></tr><tr><td>引用</td><td>弱关系</td></tr></tbody></table><p><strong>需求项</strong><br>需求文档具体的每项需求应当记录一个用户故事；另外需求分为【功能性需求】和【非功能性需求】，非功能型需求指响应时间等，建议在标题前缀添加【功能】与【非功能】标识</p><p><strong>弱关系</strong></p><ol><li>若A与业务用例存在关系，则表示A的上文；格式为“（上文）【需求】业务用例-标题”</li><li>若A与用户故事存在关系，则表示A的下级；格式为“（下文）【需求】【功能】用户故事-标题”</li><li>若A与系统功能存在关系，则表示A的下级；格式为“（下文）系统功能-标题”</li></ol><blockquote><p>示例1</p><ul><li>标题：【需求】【功能】网格点分值计算</li><li>名称：20171106-01</li><li>描述：网格点是由网格大小将定级范围划分；分值计算是由因子树、计算方式按用途（商业、住宅、办公）分别计算各种用途下每个网格点的分值；因子树是由外部ArgGis工具制作图层shp文件导入。</li><li>引用：<ol><li>（上文）【需求】业务用例-基准地价定级计算系统需求20171021</li><li>（下文）【需求】【功能】因子因素体系及图层管理</li></ol></li></ul></blockquote><p>用户故事【需求】还存在关键字说明，如上例的因子、图层。</p><blockquote><p>示例2</p><ul><li>标题：【需求】关键字说明</li><li>名称：Keyword</li><li>描述：<ol><li>因子…</li><li>因素…</li><li>图层…</li></ol></li><li>引用：无</li></ul></blockquote><h3 id="修改详情-Change-Detail"><a href="#修改详情-Change-Detail" class="headerlink" title="修改详情 - Change Detail"></a>修改详情 - Change Detail</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>修改项，参照“用户故事【需求】，标题”<br>应当严格按照引用业务用例划分为【修改】</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>描述</td><td>资料文件</td></tr><tr><td>引用</td><td>参照“用户故事【修改】”</td></tr></tbody></table><h3 id="用户故事-User-Story"><a href="#用户故事-User-Story" class="headerlink" title="用户故事 - User Story"></a>用户故事 - User Story</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>执行者/业务工人/业务实体+场景概述</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>故事</td><td>叙述现状和改进，现状将严格依据客户当前实际情况。<br>改进将采用步骤方式说明执行者、业务工人、<br>业务实体和待研发系统之间是如何协调以完成工作。</td></tr><tr><td>引用</td><td>参照《用户故事【需求】》</td></tr></tbody></table><p><strong>标题</strong></p><ol><li>业务工人， 与系统直接打交道的组织内的人</li><li>业务实体， 非人，系统、时间等</li><li>场景概述，概述故事</li></ol><blockquote><p>示例</p><ul><li>标题：【业务】数据人员计算网格点分值成果</li><li>名称：Data manager get grid point score result</li><li>描述：<ol><li>数据人员建立因子树</li><li>数据人员导入图层</li><li>数据人员建立网格</li><li>数据人员提交计算方式</li><li>系统计算并记录网格点分值</li><li>数据人员下载网格点分值成果shp</li></ol></li><li>引用：<ol><li>（上文）【业务】评估部门获取网格点分值成果</li><li>（下文）【业务】数据人员建立因子树</li><li>（下文）【业务】数据人员导入图层</li><li>（下文）【业务】数据人员建立网格</li><li>（下文）【业务】数据人员提交计算方式</li><li>（下文）【业务】系统计算并记录网格点分值</li></ol></li></ul></blockquote><p><strong>（下文）【业务】数据人员建立因子树</strong></p><blockquote><p>示例：</p><ul><li>标题：【业务】数据人员建立因子树</li><li>名称：Data manager build factor tree</li><li>描述：（假设不存在现状，直接叙述故事步骤）<ol><li>数据人员添加因素和因子</li><li>数据人员修改因素和因子</li><li>数据人员删除错误因素和因子</li><li>数据人员验证因子数据</li><li>略</li></ol></li><li>引用：<ol><li>（上文）【业务】数据人员计算网格点分值成果</li></ol></li></ul></blockquote><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="../sdp-index/">sdp 索引导航</a></p><p>用户故事、需求详情、修改详情，细化业务用例内容，拆分每一项内容作为独立的工作登记记录，可以理解为任务分解。</p><h3 id="需求详情-Requirement-Detail"><a href="#需求详情-Requirement-Detail" class="headerlink" title="需求详情 - Requirement Detail"></a>需求详情 - Requirement Detail</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>需求项</td></tr><tr><td>展示</td><td>分类+标题</td></tr><tr><td>分类</td><td>【需求】，标题的前缀，SDP系统提供选项</td></tr><tr><td>名称</td><td>英文或yyyyMMdd-01</td></tr><tr><td>描述</td><td>1）客户对该需求项的描述。<br>2）需求分析师对需求的理解和响应</td></tr><tr><td>引用</td><td>弱关系</td></tr></tbody></table><p><strong>需求项</strong><br>需求文档具体的每项需求应当记录一个用户故事；另外需求分为【功能性需求】和【非功能性需求】，非功能型需求指响应时间等，建议在标题前缀添加【功能】与【非功能】标识</p><p><strong>弱关系</strong></p><ol><li>若A与业务用例存在关系，则表示A的上文；格式为“（上文）【需求】业务用例-标题”</li><li>若A与用户故事存在关系，则表示A的下级；格式为“（下文）【需求】【功能】用户故事-标题”</li><li>若A与系统功能存在关系，则表示A的下级；格式为“（下文）系统功能-标题”</li></ol><blockquote><p>示例1</p><ul><li>标题：【需求】【功能】网格点分值计算</li><li>名称：20171106-01</li><li>描述：网格点是由网格大小将定级范围划分；分值计算是由因子树、计算方式按用途（商业、住宅、办公）分别计算各种用途下每个网格点的分值；因子树是由外部ArgGis工具制作图层shp文件导入。</li><li>引用：<ol><li>（上文）【需求】业务用例-基准地价定级计算系统需求20171021</li><li>（下文）【需求】【功能】因子因素体系及图层管理</li></ol></li></ul></blockquote><p>用户故事【需求】还存在关键字说明，如上例的因子、图层。</p><blockquote><p>示例2</p><ul><li>标题：【需求】关键字说明</li><li>名称：Keyword</li><li>描述：<ol><li>因子…</li><li>因素…</li><li>图层…</li></ol></li><li>引用：无</li></ul></blockquote><h3 id="修改详情-Change-Detail"><a href="#修改详情-Change-Detail" class="headerlink" title="修改详情 - Change Detail"></a>修改详情 - Change Detail</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>修改项，参照“用户故事【需求】，标题”<br>应当严格按照引用业务用例划分为【修改】</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>描述</td><td>资料文件</td></tr><tr><td>引用</td><td>参照“用户故事【修改】”</td></tr></tbody></table><h3 id="用户故事-User-Story"><a href="#用户故事-User-Story" class="headerlink" title="用户故事 - User Story"></a>用户故事 - User Story</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>执行者/业务工人/业务实体+场景概述</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>故事</td><td>叙述现状和改进，现状将严格依据客户当前实际情况。<br>改进将采用步骤方式说明执行者、业务工人、<br>业务实体和待研发系统之间是如何协调以完成工作。</td></tr><tr><td>引用</td><td>参照《用户故事【需求】》</td></tr></tbody></table><p><strong>标题</strong></p><ol><li>业务工人， 与系统直接打交道的组织内的人</li><li>业务实体， 非人，系统、时间等</li><li>场景概述，概述故事</li></ol><blockquote><p>示例</p><ul><li>标题：【业务】数据人员计算网格点分值成果</li><li>名称：Data manager get grid point score result</li><li>描述：<ol><li>数据人员建立因子树</li><li>数据人员导入图层</li><li>数据人员建立网格</li><li>数据人员提交计算方式</li><li>系统计算并记录网格点分值</li><li>数据人员下载网格点分值成果shp</li></ol></li><li>引用：<ol><li>（上文）【业务】评估部门获取网格点分值成果</li><li>（下文）【业务】数据人员建立因子树</li><li>（下文）【业务】数据人员导入图层</li><li>（下文）【业务】数据人员建立网格</li><li>（下文）【业务】数据人员提交计算方式</li><li>（下文）【业务】系统计算并记录网格点分值</li></ol></li></ul></blockquote><p><strong>（下文）【业务】数据人员建立因子树</strong></p><blockquote><p>示例：</p><ul><li>标题：【业务】数据人员建立因子树</li><li>名称：Data manager build factor tree</li><li>描述：（假设不存在现状，直接叙述故事步骤）<ol><li>数据人员添加因素和因子</li><li>数据人员修改因素和因子</li><li>数据人员删除错误因素和因子</li><li>数据人员验证因子数据</li><li>略</li></ol></li><li>引用：<ol><li>（上文）【业务】数据人员计算网格点分值成果</li></ol></li></ul></blockquote><p><a href="../sdp-index/">sdp 索引导航</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;../sdp-index/&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;用户故事、需求详情、修改详情，细化业务用例内容，拆分每一项内容作为独立的工作登记记录，可以理解为任务分解。&lt;/p&gt;
-&lt;h3 id=&quot;需求详情-Requirement-
-      
-    
-    </summary>
-    
-      <category term="sdp" scheme="/categories/sdp/"/>
-    
-    
-      <category term="project" scheme="/tags/project/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sdp 业务用例</title>
-    <link href="/2017/11/06/sdp-usecase/"/>
-    <id>/2017/11/06/sdp-usecase/</id>
-    <published>2017-11-06T03:06:49.000Z</published>
-    <updated>2017-11-06T12:27:40.116Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="../sdp-index/index.html">sdp 索引导航</a></p><p>业务用例、需求汇总文档、修改汇总文档、会议记录文档、聊天记录文档，所有由客户提出需求相关的汇总资料。<br>业务用例必须结合用户故事一起说明，本章介绍业务用例。</p><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ol><li>弱关系：表示SDP各个模块间基于表示任意组合的一种关联。</li><li>上下文：表示引用和包含，也理解为父子或链式关系；上文表示引用，下文表示包含。</li></ol><h3 id="使用场景划分"><a href="#使用场景划分" class="headerlink" title="使用场景划分"></a>使用场景划分</h3><ul><li><p><strong>客户提供需求资料文档</strong><br>  客户提供具体待研发系统的需求资料，项目负责人需要按照客户提供的需求问题进行响应，这种情况下，必须以【需求】为主导开展工作（项目）。应当将严格按照需求资料内容在SDP系统详细记录，具体要求如下：</p><ol><li>相关需求资料文档登记为一个【业务用例】，分类标记【需求】</li><li>进入研发阶段以后，客户再次提供任何资料或反馈建议，每次都必须登记为一个【业务用例】，分类标记【修改】</li><li>用户故事的标记中，【需求】和【修改】是针对资料文档每一项进行详细记录，主要目的有：响应用户需求和反馈（工作量评估）、衡量是否完成标准。</li></ol></li><li><p><strong>自主研发系统</strong><br>  业务用例和用户故事以【业务】为主，基于故事开展工作（SDP、基准地价）。应当将严格按照需求资料内容在SDP系统详细记录，具体要求如下：</p><ol><li>分析待研究组织、业务执行者和用例，则每个系统卖点登记为一个【业务用例】，分类标记【业务】，业务用例必须有具体执行者。</li><li>用户故事的【业务】是对业务用例的详细描述，必须结合现状和改进场景加以阐述。</li><li>用户故事主要目的是响应用户需求和反馈（工作量评估）、衡量是否完成标准。</li></ol></li><li><p><strong>协助客户共同编写需求</strong><br>  需求人员协助客户共同对待研发系统深入研究，可以【业务】和【需求】为主导开展工作，具体有双方协商（如准备开展的土地出让项目）。此类情况按应当结合上述1、2两点开展工作。</p></li></ul><blockquote><p>总结<br>业务用例和用户故事具体标记分为三类：<strong>需求、修改、业务</strong>，存在一一对应关系。需求和修改主要是为了面对客户，由系统自动生产相关响应文档《需求设计文档》，结合系统功能可另外生成《系统功能需求文档》《系统研发工作量评估》。业务主要便于研发人员从业务角度理解待研发系统在实际工作中具体起到的作用，通过现状和改进后得到体现。</p></blockquote><h3 id="需求汇总-Requirement"><a href="#需求汇总-Requirement" class="headerlink" title="需求汇总 - Requirement"></a>需求汇总 - Requirement</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>文档名称</td></tr><tr><td>名称</td><td>英文，【REQ】 – yyyyMMdd</td></tr><tr><td>业务角色</td><td>以下所有都改为分类</td></tr><tr><td>附件</td><td>具体资料及文档，可上传多个</td></tr><tr><td>需求</td><td>介绍资料背景，如获取时间、谁提供、如何获取、<br>个人对于需求理解，以助于日后将场景还原，<br>例如需求会议记录概要。</td></tr><tr><td>引用</td><td>弱关系</td></tr></tbody></table><p><strong>标题</strong></p><ol><li>展示：分类+标题。</li><li>分类：【需求】，标题的前缀，SDP系统提供选项。</li><li>文档：后缀添加年月日yyyyMMdd，也可添加版本号_v1.0。</li></ol><p><strong>引用</strong></p><ol><li>若A与业务用例存在关系，则表示A的下文；格式为“（下文）【需求】业务用例-标题”。</li><li>若A与用户故事存在关系，则表示A的下文；格式为“（下文）【需求】用户故事-标题”。</li><li>展示应当按照引用顺序排序。</li></ol><blockquote><p>示例</p><ul><li>标题：【需求】基准地价定级计算系统需求20171021</li><li>名称：【REQ】- 20171021</li><li>附件：《基准地价定级计算系统需求规格说明书》</li><li>描述：2017-10-21由提供，该需求文档经过双方两次远程视频会议及多次QQ沟通。</li><li>引用：无</li></ul></blockquote><h3 id="修改汇总-Change"><a href="#修改汇总-Change" class="headerlink" title="修改汇总 - Change"></a>修改汇总 - Change</h3><p>进入编码阶段后，任何新需求和反馈问题全部统一视为【修改】</p><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>文档名称，参照“业务用例【需求】，标题”</td></tr><tr><td>名称</td><td>英文，【CHG】 – yyyyMMdd</td></tr><tr><td>附件</td><td>资料文件</td></tr><tr><td>描述</td><td>参照“业务用例【需求】，描述”</td></tr><tr><td>引用</td><td>参照“业务用例【需求】，引用”</td></tr></tbody></table><h3 id="业务用例-Use-Case"><a href="#业务用例-Use-Case" class="headerlink" title="业务用例 - Use Case"></a>业务用例 - Use Case</h3><table><thead><tr><th>项目</th><th>描述</th></tr></thead><tbody><tr><td>标题</td><td>执行者+用例</td></tr><tr><td>执行者</td><td>与待研究组织打交道的人</td></tr><tr><td>待研究组织</td><td>本次系统使用的组织</td></tr><tr><td>用例</td><td>待研究组织的价值</td></tr><tr><td>名称</td><td>英文</td></tr><tr><td>附件</td><td>可不上传</td></tr><tr><td>描述</td><td>简述该用例现状。</td></tr><tr><td>引用</td><td>参照《业务用例【需求】》</td></tr></tbody></table><blockquote><p>示例</p><ul><li>标题：【业务】评估部门获取网格点分值成果</li><li>名称：Appraisal dep get the grid point score result</li><li>附件：无</li><li>描述：因评估部门制作土地等级等价格成果图件，需要评估土地地价，现行是采用网格点价格方式，故需要从数据部门获取到网格点分值以便于计算网格点价格。</li><li>引用：无</li></ul></blockquote><p><a href="../sdp-index/index.html">sdp 索引导航</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;../sdp-index/index.html&quot;&gt;sdp 索引导航&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;业务用例、需求汇总文档、修改汇总文档、会议记录文档、聊天记录文档，所有由客户提出需求相关的汇总资料。&lt;br&gt;业务用例必须结合用户故事一起说明，本章介绍业务用例。&lt;/p
-      
-    
-    </summary>
-    
-      <category term="sdp" scheme="/categories/sdp/"/>
-    
-    
-      <category term="project" scheme="/tags/project/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sdp 索引导航</title>
-    <link href="/2017/11/06/sdp-index/"/>
-    <id>/2017/11/06/sdp-index/</id>
-    <published>2017-11-06T03:06:35.000Z</published>
-    <updated>2017-11-06T14:11:16.900Z</updated>
-    
-    <content type="html"><![CDATA[<p>软件流程管理系统，简称 SDP，用于在软件研发中对资源和过程的一套自主研发的管理型系统，该系统还在完善中。</p><p>系统核心是如何结合研发管理，因此必须对研发流程的各个模块标准化，包括如何命名、如何描述、用词标准等。</p><p>以下是各个模块的链接，先占位再完善内容：</p><ol><li><h3 id="Use-Case-业务用例"><a href="#Use-Case-业务用例" class="headerlink" title="Use Case - 业务用例"></a><a href="../sdp-usecase/index.html">Use Case - 业务用例</a></h3><p>业务用例、需求汇总文档、修改汇总文档、会议记录文档、聊天记录文档，所有由客户提出需求相关的汇总资料。</p></li><li><h3 id="User-Story-用户故事"><a href="#User-Story-用户故事" class="headerlink" title="User Story - 用户故事"></a><a href="../sdp-user-story/index.html">User Story - 用户故事</a></h3><p>用户故事、需求详情、修改详情，细化业务用例内容，拆分每一项内容作为独立的工作登记记录，可以理解为任务分解。</p></li><li><h3 id="Sequence-Diagram-时序图"><a href="#Sequence-Diagram-时序图" class="headerlink" title="Sequence Diagram - 时序图"></a>Sequence Diagram - 时序图</h3><p>必须结合用户故事，主要描述业务角色、业务工作和业务实体如何依据时间来协调工作，关注与职责，从而挖掘系统真实的功能。</p></li><li><h3 id="Model-Design-原型设计"><a href="#Model-Design-原型设计" class="headerlink" title="Model Design - 原型设计"></a><a href="../sdp-model-design/index.html">Model Design - 原型设计</a></h3><p>名字其实 Prototype Design 更适合，管理项目启动初期，为响应需求而设计的系统原型图<strong>草稿</strong>。</p></li><li><h3 id="System-Module-系统模块"><a href="#System-Module-系统模块" class="headerlink" title="System Module - 系统模块"></a><a href="../sdp-system-module/index.html">System Module - 系统模块</a></h3><p>以“用”为视角，为系统设计功能菜单便于用户在需求阶段理解系统，此模块多为一级菜单，需要结合系统子模块做进一步完善。</p></li><li><h3 id="System-Sub-Module-系统子模块"><a href="#System-Sub-Module-系统子模块" class="headerlink" title="System Sub Module - 系统子模块"></a><a href="../sdp-system-sub-module/index.html">System Sub Module - 系统子模块</a></h3><p>延续系统模块，细化一级菜单，此模块多为二级菜单，即可视的用户页面。非页面子模块需结合设计分解，但不建议在此系统子模块。</p></li><li><h3 id="System-Function-系统功能"><a href="#System-Function-系统功能" class="headerlink" title="System Function - 系统功能"></a><a href="../sdp-system-function/index.html">System Function - 系统功能</a></h3><p>延续系统子模块，细化用户页面，描述页面加载和功能按钮具体的作用，多为检索和提交操作，非直观可视的无需作为系统功能，如获取数据源。</p></li><li><h3 id="Domain-Model-领域模型"><a href="#Domain-Model-领域模型" class="headerlink" title="Domain Model - 领域模型"></a>Domain Model - 领域模型</h3><p>以“设计”为视角，结合业务知识分解核心领域，如人可分为心肺功能、神经系统等，而不是跑步。</p></li><li><h3 id="Database-Design-数据库设计"><a href="#Database-Design-数据库设计" class="headerlink" title="Database Design - 数据库设计"></a><a href="../sdp-database-design/index.html">Database Design - 数据库设计</a></h3><p>数据库引擎、ORM 技术选型、数据库命名及初始化 SQL。</p></li><li><h3 id="Data-Table-数据库表"><a href="#Data-Table-数据库表" class="headerlink" title="Data Table - 数据库表"></a><a href="../sdp-datatable/index.html">Data Table - 数据库表</a></h3><p>延续数据库中数据表设计，包括字段、备注。</p></li><li><h3 id="Communication-Interface-通讯接口"><a href="#Communication-Interface-通讯接口" class="headerlink" title="Communication Interface - 通讯接口"></a><a href="../sdp-communication-interface/index.html">Communication Interface - 通讯接口</a></h3><p>前端和后端的通讯接口标准和期望正确的系统响应，约定接口输入参数和输出结果，还有验证规则要求，便于前端人员和后端人员编码一致。</p></li><li><h3 id="Communication-Scene-通讯场景"><a href="#Communication-Scene-通讯场景" class="headerlink" title="Communication Scene - 通讯场景"></a><a href="../sdp-communication-scene/index.html">Communication Scene - 通讯场景</a></h3><p>后端编码，依据不同场景下输入参数及测试数据，系统如何响应编写场景说明。</p></li><li><h3 id="Page-Code-页面编码"><a href="#Page-Code-页面编码" class="headerlink" title="Page Code - 页面编码"></a><a href="../sdp-page/index.html">Page Code - 页面编码</a></h3><p>前端编码，依据页面可视元素和操作，编写系统操作步骤及页面说明。</p></li><li><h3 id="Test-Plan-测试计划"><a href="#Test-Plan-测试计划" class="headerlink" title="Test Plan - 测试计划"></a>Test Plan - 测试计划</h3><p>用于检测后端编码不同场景是否按照测试计划所设计方案正确执行。</p></li><li><h3 id="Exception-Record-异常登记"><a href="#Exception-Record-异常登记" class="headerlink" title="Exception Record - 异常登记"></a><a href="../sdp-exception-record/index.html">Exception Record - 异常登记</a></h3><p>测试和编码人员提交系统存在的 BUG 以及其处理结果。</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;软件流程管理系统，简称 SDP，用于在软件研发中对资源和过程的一套自主研发的管理型系统，该系统还在完善中。&lt;/p&gt;
-&lt;p&gt;系统核心是如何结合研发管理，因此必须对研发流程的各个模块标准化，包括如何命名、如何描述、用词标准等。&lt;/p&gt;
-&lt;p&gt;以下是各个模块的链接，先占位再完善内
+&lt;h3 id=&quot;需求详情-Requirement-Detail&quot;&gt;&lt;a
       
     
     </summary>
@@ -453,113 +593,6 @@
     
     
       <category term="git" scheme="/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>markdown 语言学习 2</title>
-    <link href="/2017/11/02/markdown-course-2/"/>
-    <id>/2017/11/02/markdown-course-2/</id>
-    <published>2017-11-02T14:39:31.000Z</published>
-    <updated>2017-11-02T15:03:50.882Z</updated>
-    
-    <content type="html"><![CDATA[<p>本章主要介绍前端 MarkDown 解释脚本 showdown 的使用和<strong>坑</strong>。</p><p>git 地址 <a href="https://github.com/showdownjs/showdown" target="_blank" rel="external">showdown.js</a></p><p>cdn 地址 </p><ul><li><a href="https://cdn.bootcss.com/showdown/1.7.6/showdown.js" target="_blank" rel="external">cdn showdown 1.7.6 源码</a></li><li><a href="https://cdn.bootcss.com/showdown/1.7.6/showdown.min.js" target="_blank" rel="external">cdn showdown 1.7.6 压缩</a></li></ul><p>直接上代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function compile()&#123;</div><div class="line">  // 获取要转换的文字</div><div class="line">  var text = document.getElementById(&quot;markdown&quot;).value;</div><div class="line">  // 创建实例</div><div class="line">  var converter = new showdown.Converter();</div><div class="line">  // 支持表格转换</div><div class="line">  converter.setOption(&apos;tables&apos;, true);</div><div class="line">  // 进行转换</div><div class="line">  var html = converter.makeHtml(text);</div><div class="line">  // 展示到对应的地方  result便是id名称</div><div class="line">  document.getElementById(&quot;html-shower&quot;).innerHTML = html;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><h3 id="git-wiki-链接"><a href="#git-wiki-链接" class="headerlink" title="git wiki 链接"></a>git wiki 链接</h3><ul><li><a href="https://github.com/showdownjs/showdown/wiki" target="_blank" rel="external">Showdown</a></li><li><a href="https://github.com/showdownjs/showdown/wiki/Showdown-options" target="_blank" rel="external">Showdown Options</a></li></ul><h3 id="表格支持的大坑"><a href="#表格支持的大坑" class="headerlink" title="表格支持的大坑"></a>表格支持的大坑</h3><blockquote><p>一定要用两个 “–”，保证不要有空行，其他格式都不重要，为兼容考虑建议习惯“–”就好</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">| table | column   | type   |</div><div class="line">| --    | --       | --     |</div><div class="line">| User  | UserName | string |</div><div class="line">| Role  | RoleName | string |</div></pre></td></tr></table></figure><p>效果<br>| table | column   | type   |<br>| –    | –       | –     |<br>| User  | UserName | string |<br>| Role  | RoleName | string |</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;本章主要介绍前端 MarkDown 解释脚本 showdown 的使用和&lt;strong&gt;坑&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;git 地址 &lt;a href=&quot;https://github.com/showdownjs/showdown&quot; target=&quot;_blank&quot; re
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="script" scheme="/tags/script/"/>
-    
-      <category term="md" scheme="/tags/md/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Simple.Data 关于视图使用</title>
-    <link href="/2017/11/02/Simple-Data-about-view-use/"/>
-    <id>/2017/11/02/Simple-Data-about-view-use/</id>
-    <published>2017-11-02T03:51:21.000Z</published>
-    <updated>2017-11-02T14:15:16.833Z</updated>
-    
-    <content type="html"><![CDATA[<p>Simple.Data 分页必须依赖数据表的主键，否则抛异常 AdoAdapterException 【Cannot apply paging to table with no primary key.】</p><p>基于数据查询性能考虑，我们会建立视图简化查询语句，也就是创建 view 对象，但视图是无法拥有主键，所以提出以下方案。</p><p>参考原有分页方法，为表建立排序字段 【<em>#</em>】<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ROW_NUMBER() OVER(&#123;0&#125;) AS [_#_]  // &#123;0&#125; 字段名称 + 排序</div><div class="line">// CreateTime 降序</div><div class="line">ROW_NUMBER() OVER(CreateTime desc) AS [_#_]</div></pre></td></tr></table></figure></p><p>因此视图的建立应该指派其排序方式，分页编码使用如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var pageRange = (offset + 1).to(offset + limit);</div><div class="line">expression = expression.And(limit &gt; 0, () =&gt; view[&quot;_#_&quot;] == pageRange);</div></pre></td></tr></table></figure></p><p>但此方法不可添加查询条件，否则排序结果因筛选数据而导致失效</p><p><strong>特殊情况</strong><br>between and 排序功能失效，原因未能确认<br>暂时只能使用 Linq 重新排序，要么修改 Simple.Data 分页处理，在条件后增加 order by</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Simple.Data 分页必须依赖数据表的主键，否则抛异常 AdoAdapterException 【Cannot apply paging to table with no primary key.】&lt;/p&gt;
-&lt;p&gt;基于数据查询性能考虑，我们会建立视图简化查询语句，也就
-      
-    
-    </summary>
-    
-      <category term="database" scheme="/categories/database/"/>
-    
-    
-      <category term="Simple.Data" scheme="/tags/Simple-Data/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Simple.Data 使用建议</title>
-    <link href="/2017/10/31/Simple-Data-suggest-for-use/"/>
-    <id>/2017/10/31/Simple-Data-suggest-for-use/</id>
-    <published>2017-10-31T12:43:42.000Z</published>
-    <updated>2017-10-31T15:02:44.802Z</updated>
-    
-    <content type="html"><![CDATA[<p>实际使用 Simple.Data 依然存在一些问题需要注意，还有一些使用经验分析<br>Simple.Data 使用动态类型可以忽略大小写，但建议采用 C# 规范保持首字母大写</p><h2 id="加载关联对象"><a href="#加载关联对象" class="headerlink" title="加载关联对象"></a>加载关联对象</h2><p>数据库存在表 Node，字段有 No 和 ParentNo，No 是主键，ParentNo 是外键关联表 Node 的 No，即自身引用</p><ul><li><p>定义节点</p><p>定义数据类和对象类</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 节点数据表类</div><div class="line">public class Node</div><div class="line">&#123;</div><div class="line">  public string No &#123; get; set; &#125;        // 当前节点编号</div><div class="line">  public string ParentNo &#123; get; set; &#125;  // 上级节点编号</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 节点对象类</div><div class="line">public class NodeObject</div><div class="line">&#123;</div><div class="line">  public string No &#123; get; set; &#125;          // 当前节点编号</div><div class="line">  public NodeObject Parent &#123; get; set; &#125;  // 上级节点对象</div><div class="line">&#125;</div></pre></td></tr></table></figure></li><li><p>检索节点</p><p>变量 db 表示数据库对象实体</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var no = &quot;001&quot;;</div><div class="line">var getToDynamic = db.Node.Get(no);        // dynamic</div><div class="line">var getByTemplate = db.Node.Get&lt;Node&gt;(no); // dynamic，实际类型 Node</div><div class="line">Node getToNode = db.Node.Get&lt;Node&gt;(no);    // Node</div></pre></td></tr></table></figure><p>dynamic 类型转换</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var nodeByStrong = (Node)getToDynamic;  // 强类型转换 Node</div><div class="line">Node nodeByDefined = getToDynamic;      // 定义转换实体 Node</div><div class="line">string parentNo = getToDynamic.ParentNo;   // dynamic 获取属性</div><div class="line">//string parentNo = nodeByStrong.ParentNo; // 实际类型获取属性</div></pre></td></tr></table></figure><p>读取上级节点</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/* 存在外键可通过表名获取 SimpleQuery，再获取数据对象</div><div class="line"> * 原理是 SimpleRecord 分析外键获取 SimpleQuery</div><div class="line"> * SimpleQuery 对象使用部分命令，如：OrderBy/Select 等</div><div class="line"> * 但因存在 Where 命令，暂时为止如何使用重写 Where </div><div class="line"> */</div><div class="line">var parentByDynamic = getToDynamic.Node.FirstOrDefault();</div><div class="line">var gradeParent = getToDynamic.Node.Node.FirstOrDefault(); // 待测试</div><div class="line"></div><div class="line">/* 通过上级节点对象获取编号</div><div class="line"> * 通过属性获取上级节点编号</div><div class="line"> */</div><div class="line">Assert.AreEqual(parentByDynamic.No, getToDynamic.ParentNo); // true</div><div class="line">Assert.AreEqual(gradeParent.No, parentByDynamic.ParentNo);  // true</div></pre></td></tr></table></figure><p>节点对象使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// NodeObject，可以使用 var 定义，注意不可 Get&lt;NodeObject&gt;，否则 Node 没有值</div><div class="line">dynamic nodeObject1 = db.Node.With(db.Node).Get(no);</div><div class="line">// 相当于：dynamic nodeObject1 = db.Node.WithNode().Get(no);</div><div class="line"></div><div class="line">// NodeObject，可以使用 var 或 dynamic 定义，若不使用 As 则无法赋值 Parent</div><div class="line">NodeObject nodeObject2 = db.Node.With(db.Node.As(&quot;Parent&quot;)).Get(no);</div><div class="line">/* 相当于</div><div class="line"> * dynamic node = db.Node;  // 用一张表情况下建议使用变量，代码更容易理解</div><div class="line"> * NodeObject nodeObject1 = db.Node</div><div class="line"> *   Join(db.Node.As(&quot;Parent&quot;), out parent).On(parent.No == node.ParentNo)</div><div class="line"> *   //.Join(db.Node.As(&quot;Parent&quot;), out parent).On(no: node.ParentNo)</div><div class="line"> *   .With(parent.As(&quot;Parent&quot;))</div><div class="line"> *   .Get(no);</div><div class="line"> */</div><div class="line"></div><div class="line">Assert.AreEqual(nodeObject1.Node.No, nodeObject2.Parent.No)</div></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;实际使用 Simple.Data 依然存在一些问题需要注意，还有一些使用经验分析&lt;br&gt;Simple.Data 使用动态类型可以忽略大小写，但建议采用 C# 规范保持首字母大写&lt;/p&gt;
-&lt;h2 id=&quot;加载关联对象&quot;&gt;&lt;a href=&quot;#加载关联对象&quot; class=&quot;hea
-      
-    
-    </summary>
-    
-      <category term="database" scheme="/categories/database/"/>
-    
-    
-      <category term="Simple.Data" scheme="/tags/Simple-Data/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sql 日期时间函数</title>
-    <link href="/2017/10/30/sql-date-function/"/>
-    <id>/2017/10/30/sql-date-function/</id>
-    <published>2017-10-30T13:40:40.000Z</published>
-    <updated>2017-10-30T13:55:47.082Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="datediff"><a href="#datediff" class="headerlink" title="datediff"></a>datediff</h2><p><strong>功能</strong>： 返回两个日期之间的间隔<br><strong>语法</strong>： datediff ( date-path, date-expression-1, date-expression-2 )<br><strong>date-part</strong>： year | quarter | month | week | day | hour | minute | second | millisecond<br><strong>date-part 2</strong>： yy/yyyy | qq/q | mm/m | wk/ww | dd,d | hh | mi/n | ss/s | ms | dy/y(年的某一日)</p><h2 id="getdate"><a href="#getdate" class="headerlink" title="getdate"></a>getdate</h2><p><strong>功能</strong>： 返回当前系统日期时间<br><strong>语法</strong>： getdate()</p><h2 id="day、month、year"><a href="#day、month、year" class="headerlink" title="day、month、year"></a>day、month、year</h2><p><strong>功能</strong>： 返回天、月、年</p><h2 id="dateadd"><a href="#dateadd" class="headerlink" title="dateadd"></a>dateadd</h2><p><strong>功能</strong>： 返回增加日期类型后的日期<br><strong>语法</strong>：dateadd ( date-part, number, date )</p><h2 id="datepart"><a href="#datepart" class="headerlink" title="datepart"></a>datepart</h2><p><strong>功能</strong>：返回指定日期类型的值，等同于 day()、month()、year()<br><strong>语法</strong>：datapart ( date-part, date)</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;datediff&quot;&gt;&lt;a href=&quot;#datediff&quot; class=&quot;headerlink&quot; title=&quot;datediff&quot;&gt;&lt;/a&gt;datediff&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;： 返回两个日期之间的间隔&lt;br&gt;&lt;strong&gt;语法
-      
-    
-    </summary>
-    
-      <category term="database" scheme="/categories/database/"/>
-    
-    
-      <category term="collect" scheme="/tags/collect/"/>
-    
-      <category term="sql" scheme="/tags/sql/"/>
     
   </entry>
   
