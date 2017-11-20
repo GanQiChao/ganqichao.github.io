@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2017-11-16T16:51:15.874Z</updated>
+  <updated>2017-11-20T15:33:53.788Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>jQuery review</title>
+    <title>svn 使用技巧</title>
+    <link href="/2017/11/20/svn-skill/"/>
+    <id>/2017/11/20/svn-skill/</id>
+    <published>2017-11-20T15:07:34.000Z</published>
+    <updated>2017-11-20T15:33:53.788Z</updated>
+    
+    <content type="html"><![CDATA[<p>从事微软 C#.NET 开发12年，使用 VS 系列也12年，真正使用源代码管理工具也快10年了，现在回想起来真不知道没有使用源代码管理是怎么过来的。</p><p>记得最初使用的是 CVS 现在到没有多大印象了，后来也用了一段时间的 VSS，毕竟 VS 自带不可能没有用过吧！！不过后来新出的 VSTS 却完全没有兴趣尝试了，因为已经改用 SVN，一直到现在。</p><p>SVN 最大的体会就是一个 trunk 搞定~~！！确实是呀，虽然建立了 branches/tags，但从来不用，感觉没有必要呀，也没有去弄懂，就围绕 trunk 一直改呀改的，能用能管理就好。</p><p>直到一天，发现同时开发多个版本，噩梦就来了（不过噩梦就自己补脑吧），下面说说实际使用 SVN 的可行方案。（已实践）</p><p>众所周知，VS 是按照解决方案和项目组合而成，而项目可以依据模块呀、业务层、逻辑层等的纵向横向再纵向划分（自由发挥吧），那么当要修改某一个项目或几个项目又不想影响他人工作（担心研究性质的代码影响）怎么办呢？</p><p>最好的解决方案是为要修改的项目创建分支，然后将具体的项目 switch 到分支上。那么有很多分支咋办，如8个呢，那就要么项目划分有问题，要么这次修改就有问题，但如果是有一个接口项目，五个实现项目，要改变接口那么 所有此接口实现五个项目就必须改啦，再有一个单元测试也要改，然后等等、等等的的项目呢？汗呀~~~~</p><p>遇到以上情况，我只能说有必要将项目分这么细吗？引用起来不嫌弃他麻烦吗？（弱弱的说一句，貌似这是我以前曾经有过的风格，不过没有弄分支便是了，哈哈）</p><p>当然啦，也可以通过建立目录将同类型或相近的项目打包运走咯~~~注意不是临时改呀，否则等着挂吧。</p><p>tags 使用就是标记，当然要将整个解决方案标记起来，如 v1.0/v1.2。如果已经标记的版本出现 issue，那么应该用 branches v1.0-issue-12（修改那个项目就分支哪个，不要整个解决方案，获取代码可以烦死你） 来修复此 bug，修复后重新标记 tags 版本 v1.0.1，然后可以将此 issue branches 删除掉。</p><p>好了，这里就总结到这。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;从事微软 C#.NET 开发12年，使用 VS 系列也12年，真正使用源代码管理工具也快10年了，现在回想起来真不知道没有使用源代码管理是怎么过来的。&lt;/p&gt;
+&lt;p&gt;记得最初使用的是 CVS 现在到没有多大印象了，后来也用了一段时间的 VSS，毕竟 VS 自带不可能没有用过
+      
+    
+    </summary>
+    
+      <category term="tool" scheme="/categories/tool/"/>
+    
+    
+      <category term="svn" scheme="/tags/svn/"/>
+    
+      <category term="vs2015+" scheme="/tags/vs2015/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jQuery 重新回顾</title>
     <link href="/2017/11/16/jQuery-review/"/>
     <id>/2017/11/16/jQuery-review/</id>
     <published>2017-11-16T14:25:16.000Z</published>
-    <updated>2017-11-16T16:51:15.874Z</updated>
+    <updated>2017-11-20T15:06:52.297Z</updated>
     
     <content type="html"><![CDATA[<p>感觉很久没有更新 jQuery 知识了，这几年都在忙工作，觉得能正常使用 jQuery 就好，遇到问题稍微检查一下源码，找到原理就可以处理，导致很多代码都是勉强处理，例如 ajax 嵌套等问题，今天抽空重新看一遍官网 api documentation 感触良多呀，印象较深的还是 Deferred Object、Callback Object，甚至连 bind() 也重新深入了解。</p><h2 id="bind-amp-on"><a href="#bind-amp-on" class="headerlink" title="bind() &amp; on()"></a>bind() &amp; on()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 绑定多个事件</div><div class="line">$(&apos;#div1&apos;).bind(&apos;click mouseenter&apos;, function(event) &#123; alert( &quot;The &quot; + event.type + &quot; event happened!&quot; ); &#125;);</div><div class="line">$(&apos;#div1&apos;).bind(&#123;</div><div class="line">  click: function () &#123; alert(&apos;click&apos;); &#125;,</div><div class="line">  mouseenter: function() &#123; alert(&apos;mouseenter&apos;); &#125;</div><div class="line">&#125;);</div><div class="line">// 出入 event 数据</div><div class="line">var messager = &apos;test1&apos;;</div><div class="line">$(&apos;#div1&apos;).bind(&apos;click&apos;, &#123; msg: messager &#125;, function(event)&#123; alert(event.data.msg); &#125;);</div><div class="line">messager = &apos;msg change&apos;;</div><div class="line">$(&apos;#div1&apos;).bind(&apos;click&apos;, &#123; msg: messager &#125;, function(event)&#123; alert(event.data.msg); &#125;);</div><div class="line"></div><div class="line">// on()</div><div class="line">$(&apos;#div1&apos;).on(&apos;click&apos;, &apos;p&apos;, &#123; name: &apos;Andy&apos; &#125;, function( event ) &#123; alert(event.data.name); &#125;);</div></pre></td></tr></table></figure><h2 id="trigger-amp-triggerHandler"><a href="#trigger-amp-triggerHandler" class="headerlink" title="trigger() &amp; triggerHandler()"></a>trigger() &amp; triggerHandler()</h2><ol><li>trigger会触发事件冒泡，而triggerHandler则不会</li><li>triggerHandler只触发jQuery对象集合中第一个元素的事件处理函数，而trigger则触发所有对象的事件处理函数</li><li>trigger会触发事件的默认行为，triggerHandler则会阻止事件的默认行为</li><li>trigger和triggerHandler都支持事件命名空间，在命名空间上的表现也完全一致</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">// 原来可以这样传入参数</div><div class="line">$( &quot;#foo&quot; ).on( &quot;custom&quot;, function( event, param1, param2 ) &#123;</div><div class="line">  alert( param1 + &quot;\n&quot; + param2 );</div><div class="line">&#125;);</div><div class="line">$( &quot;#foo&quot;).trigger( &quot;custom&quot;, [ &quot;Custom&quot;, &quot;Event&quot; ] );</div><div class="line"></div><div class="line">// 事件命名空间</div><div class="line">$(&quot;#btn&quot;).bind(&quot;click&quot;,function()&#123;  </div><div class="line">  alert(&quot;no&quot;);  </div><div class="line">&#125;);  </div><div class="line"></div><div class="line">$(&quot;#btn&quot;).bind(&quot;click.a&quot;,function()&#123;  </div><div class="line">  alert(&quot;a&quot;);  </div><div class="line">&#125;);  </div><div class="line">  </div><div class="line">$(&quot;#btn&quot;).bind(&quot;click.b&quot;,function()&#123;  </div><div class="line">  alert(&quot;b&quot;);  </div><div class="line">&#125;);  </div><div class="line"></div><div class="line">// 打印no  </div><div class="line">$(&quot;#btn&quot;).trigger(&quot;click!&quot;);  </div><div class="line">// 打印no,a,b  </div><div class="line">$(&quot;#btn&quot;).trigger(&quot;click&quot;);  </div><div class="line">// 打印a  </div><div class="line">$(&quot;#btn&quot;).trigger(&quot;click.a&quot;);  </div><div class="line">// 无打印  </div><div class="line">$(&quot;#btn&quot;).trigger(&quot;.a&quot;);</div></pre></td></tr></table></figure><h2 id="Callbacks"><a href="#Callbacks" class="headerlink" title="$.Callbacks"></a>$.Callbacks</h2><p>分为4种模式：once、memory、unique、stopOnFalse<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$.Callbacks( &quot;unique stopOnFalse&quot; )</div></pre></td></tr></table></figure></p><p>观察者模式，观察者是委托、回调</p><ol><li>.add(cb) - 添加观察者</li><li>.disable/.disabled - 禁止通知/判断是否禁止通知</li><li>.empty - 清空所有观察者</li><li>.fire(args) - 通知所有观察者，传入参数</li><li>.fireWith([context] [,args]) - 通知所有观察者，传入上下文和参数</li><li>.has(cb) - 判断是否存在观察者</li><li>.lock/locked - <strong>不清楚用处</strong></li><li>.remove(cb) - 取消订阅</li></ol><h2 id="Deferred"><a href="#Deferred" class="headerlink" title="$.Deferred"></a>$.Deferred</h2><p>done/fail/progress 是 callbacks.add，将回调函数存入<br>resolve/reject/notify 是 callbacks.fire，执行回调函数(或队列)</p><p>内部返回 promise 对象，避免外部控制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var wait = function()&#123;</div><div class="line">  var dtd = $.Deferred(); //在函数内部，新建一个Deferred对象</div><div class="line">  var tasks = function()&#123;</div><div class="line">    alert(&quot;执行完毕！&quot;);</div><div class="line">    td.resolve(); // 改变Deferred对象的执行状态</div><div class="line">  &#125;;  </div><div class="line">  setTimeout(tasks,5000);</div><div class="line">  return dtd.promise(); // 返回promise对象</div><div class="line">&#125;;</div><div class="line">$.when(wait())</div><div class="line">  .done(function()&#123; alert(&quot;哈哈，成功了！&quot;); &#125;)</div><div class="line">  .fail(function()&#123; alert(&quot;出错啦！&quot;); &#125;);</div></pre></td></tr></table></figure></p><p>普通操作的回调函数接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$.Deferred(wait)</div><div class="line">  .done(function()&#123; alert(&quot;哈哈，成功了！&quot;); &#125;)</div><div class="line">  .fail(function()&#123; alert(&quot;出错啦！&quot;); &#125;);</div><div class="line"></div><div class="line">var dtd = $.Deferred(); // 生成Deferred对象</div><div class="line">  var wait = function(dtd)&#123;</div><div class="line">  var tasks = function()&#123;</div><div class="line">    alert(&quot;执行完毕！&quot;);</div><div class="line">    dtd.resolve(); // 改变Deferred对象的执行状态</div><div class="line">  &#125;;</div><div class="line">  setTimeout(tasks,5000);</div><div class="line">&#125;;</div><div class="line">dtd.promise(wait);</div><div class="line">wait.done(function()&#123; alert(&quot;哈哈，成功了！&quot;); &#125;)</div><div class="line">  .fail(function()&#123; alert(&quot;出错啦！&quot;); &#125;);</div><div class="line">wait(dtd);</div></pre></td></tr></table></figure></p>]]></content>
     
@@ -560,31 +588,6 @@
       
       
         &lt;h3 id=&quot;本地版本库-repository&quot;&gt;&lt;a href=&quot;#本地版本库-repository&quot; class=&quot;headerlink&quot; title=&quot;本地版本库 - repository**&quot;&gt;&lt;/a&gt;本地版本库 - repository**&lt;/h3&gt;&lt;p&gt;什么是版本库
-      
-    
-    </summary>
-    
-      <category term="tool" scheme="/categories/tool/"/>
-    
-    
-      <category term="git" scheme="/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 学习</title>
-    <link href="/2017/11/05/git-study/"/>
-    <id>/2017/11/05/git-study/</id>
-    <published>2017-11-05T09:19:15.000Z</published>
-    <updated>2017-11-05T13:33:01.140Z</updated>
-    
-    <content type="html"><![CDATA[<p>推荐<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的官方网 Git教程</a></p><p>Git 的由来不多说，只有一句</p><blockquote><p>Linus花了两周时间自己用C写了一个分布式版本控制系统，这就是Git！一个月之内，Linux系统的源码已经由Git管理了！牛是怎么定义的呢？大家可以体会一下。</p></blockquote><p>Linus一直痛恨的CVS及SVN都是集中式的版本控制系统，而Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别呢？</p><h3 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h3><p>先说集中式版本控制系统，版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。</p><h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3><p>那分布式版本控制系统与集中式版本控制系统有何不同呢？首先，分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</p><h3 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h3><ol><li><p>CVS/SVN<br>CVS作为最早的开源而且免费的集中式版本控制系统，直到现在还有不少人在用。由于CVS自身设计的问题，会造成提交文件不完整，版本库莫名其妙损坏的情况。同样是开源而且免费的SVN修正了CVS的一些稳定性问题，是目前用得最多的集中式版本库控制系统。</p></li><li><p>收费<br>除了免费的外，还有收费的集中式版本控制系统，比如IBM的ClearCase（以前是Rational公司的，被IBM收购了），特点是安装比Windows还大，运行比蜗牛还慢，能用ClearCase的一般是世界500强，他们有个共同的特点是财大气粗，或者人傻钱多。</p></li><li><p>VSS<br>微软自己也有一个集中式版本控制系统叫VSS，集成在Visual Studio中。由于其反人类的设计，连微软自己都不好意思用了。</p></li><li><p>Git<br>分布式版本控制系统除了Git以及促使Git诞生的BitKeeper外，还有类似Git的Mercurial和Bazaar等。这些分布式版本控制系统各有特点，但最快、最简单也最流行的依然是Git！</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;推荐&lt;a href=&quot;https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;廖雪峰的官方网 Gi
       
     
     </summary>

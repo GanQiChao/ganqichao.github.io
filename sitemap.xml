@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2017/11/20/svn-skill/</loc>
+    
+    <lastmod>2017-11-20T15:33:53.788Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>/2017/11/16/jQuery-review/</loc>
     
-    <lastmod>2017-11-16T16:51:15.874Z</lastmod>
+    <lastmod>2017-11-20T15:06:52.297Z</lastmod>
     
   </url>
   
@@ -37,14 +44,14 @@
   </url>
   
   <url>
-    <loc>/2017/11/06/sdp-index/</loc>
+    <loc>/2017/11/06/sdp-page/</loc>
     
     <lastmod>2017-11-14T13:38:52.905Z</lastmod>
     
   </url>
   
   <url>
-    <loc>/2017/11/06/sdp-page/</loc>
+    <loc>/2017/11/06/sdp-index/</loc>
     
     <lastmod>2017-11-14T13:38:52.905Z</lastmod>
     
@@ -58,14 +65,14 @@
   </url>
   
   <url>
-    <loc>/2017/11/02/markdown-course-2/</loc>
+    <loc>/2017/11/10/sdp-word-for-standard/</loc>
     
     <lastmod>2017-11-11T02:41:03.766Z</lastmod>
     
   </url>
   
   <url>
-    <loc>/2017/11/10/sdp-word-for-standard/</loc>
+    <loc>/2017/11/02/markdown-course-2/</loc>
     
     <lastmod>2017-11-11T02:41:03.766Z</lastmod>
     
@@ -79,7 +86,7 @@
   </url>
   
   <url>
-    <loc>/2017/11/06/sdp-exception-record/</loc>
+    <loc>/2017/11/06/sdp-datatable/</loc>
     
     <lastmod>2017-11-11T02:41:02.985Z</lastmod>
     
@@ -93,7 +100,7 @@
   </url>
   
   <url>
-    <loc>/2017/11/06/sdp-datatable/</loc>
+    <loc>/2017/11/06/sdp-exception-record/</loc>
     
     <lastmod>2017-11-11T02:41:02.985Z</lastmod>
     
